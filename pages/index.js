@@ -15,7 +15,7 @@ export default function Index() {
       <Navbar />
       <MainDiv>
         <Box
-          maxWidth="xl"
+          maxWidth="lg"
           sx={{
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },
@@ -40,7 +40,9 @@ export default function Index() {
 }
 
 const MainDiv = styled.div`
-  padding: 0 1rem;  
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 1500px;
 
   .texts {
     padding: 0 1rem;
