@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import styled from 'styled-components';
 
 const ActiveLink = ({ href, children }) => {
   const router = useRouter();
@@ -15,13 +16,36 @@ const ActiveLink = ({ href, children }) => {
   }, [router.pathname, href]);
 
   return (
-    <a href={href} onClick={handleClick} className={isActive ? 'active' : null}>
-      {children}
-    </a>
+    <StyledLink>
+      <a href={href} onClick={handleClick} className={isActive ? 'active' : null}>
+        {children}
+      </a>
+    </StyledLink>
   );
 };
 
 export default ActiveLink;
+
+const StyledLink = styled.div`
+  a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 1.1rem;
+    display: flex;
+    align-items: center;
+    
+  }
+
+  a.active {
+    border-bottom: 2px solid #fff;
+  }
+
+
+  a:hover {
+    border-bottom: 2px solid #fff;
+  }
+
+`;
 
 // Este componente usa o hook useRouter do Next.js para obter a rota atual
 //e o hook useState do React para gerenciar o estado de "ativo" ou "inativo"

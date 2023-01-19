@@ -2,6 +2,7 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Navbar from '../src/components/Navbar';
+import ImageList from '../src/components/ImageList';
 import styled from 'styled-components';
 
 
@@ -14,6 +15,7 @@ export default function Index() {
       <MainDiv>
         <Navbar />
         <h1>Home</h1>
+        <ImageList />
       </MainDiv>
     </ThemeProvider>
   );

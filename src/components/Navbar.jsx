@@ -1,19 +1,17 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import logo from '../images/logo.png';
 import Image from 'next/image';
+import ActiveLink from './ActiveLink';
 
-const pages = ['Início', 'Sobreo o Hotel', 'Acomodações', 'Galeria', 'Contato'];
+const pages = ['Início', 'A Pousada', 'Acomodações', 'Galeria', 'Contato'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -27,20 +25,19 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar sx={{ background: '#272e38' }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link href="/">
-            <Box
-              sx={{ height: 54 }}
-            >
-              <Image
-                src={logo}
-                alt="Logo"
-                style={{ height: '100%', width: '100%' }}
-              />
-            </Box>
-          </Link>
+          <Box
+            sx={{ height: 54 }}
+          >
+            <Image
+              src={logo}
+              alt="Logo"
+              style={{ height: '100%', width: '100%' }}
+            />
+          </Box>
+
 
           <Box
             sx={{
@@ -75,13 +72,39 @@ function Navbar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
+                ul: { background: '#272e38', color: '#fff', textDecoration: 'none' }
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem>
+                <ActiveLink href="/">
+                  INÍCIO
+                </ActiveLink>
+              </MenuItem>
+
+              <MenuItem>
+                <ActiveLink href="/sobre">
+                  A POUSADA
+                </ActiveLink>
+              </MenuItem>
+
+              <MenuItem>
+                <ActiveLink href="/acomodacoes">
+                  ACOMODAÇÕES
+                </ActiveLink>
+              </MenuItem>
+
+              <MenuItem>
+                <ActiveLink href="/galeria">
+                  GALERIA
+                </ActiveLink>
+              </MenuItem>
+
+              <MenuItem>
+                <ActiveLink href="/contato">
+                  CONTATO
+                </ActiveLink>
+              </MenuItem>
+
             </Menu>
           </Box>
           <Box
@@ -91,19 +114,31 @@ function Navbar() {
               justifyContent: { xs: 'flex-end' },
             }}
           >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+
+            <ActiveLink href="/">
+              INÍCIO
+            </ActiveLink>
+
+            <ActiveLink href="/sobre">
+              A POUSADA
+            </ActiveLink>
+
+            <ActiveLink href="/acomodacoes">
+              ACOMODAÇÕES
+            </ActiveLink>
+
+            <ActiveLink href="/galeria">
+              GALERIA
+            </ActiveLink>
+
+            <ActiveLink href="/contato">
+              CONTATO
+            </ActiveLink>
+
           </Box>
         </Toolbar>
       </Container>
-    </AppBar>
+    </AppBar >
   );
 }
 export default Navbar;
