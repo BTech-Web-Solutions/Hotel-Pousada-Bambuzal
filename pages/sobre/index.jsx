@@ -1,11 +1,12 @@
 import React from 'react';
 import Navbar from '../../src/components/Navbar';
+import About from '../../src/components/About';
 
 const index = () => {
   return (
     <div>
       <Navbar />
-      <h1>Sobre</h1>
+      <About />
     </div>
   );
 };
