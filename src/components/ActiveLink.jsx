@@ -29,7 +29,7 @@ export default ActiveLink;
 const StyledLink = styled.div`
   a {
     text-decoration: none;
-    color: #fff;
+    color: #d3873b;
     margin-left: 1.1rem;
     display: flex;
     align-items: center;
@@ -37,12 +37,12 @@ const StyledLink = styled.div`
   }
 
   a.active {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #eb5322;
   }
 
 
   a:hover {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #d3873b;
   }
 
 `;

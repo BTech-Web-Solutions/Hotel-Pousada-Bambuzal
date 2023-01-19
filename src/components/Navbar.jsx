@@ -11,8 +11,6 @@ import logo from '../images/logo.png';
 import Image from 'next/image';
 import ActiveLink from './ActiveLink';
 
-const pages = ['Início', 'A Pousada', 'Acomodações', 'Galeria', 'Contato'];
-
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -25,7 +23,14 @@ function Navbar() {
   };
 
   return (
-    <AppBar sx={{ background: '#272e38' }} position="static">
+    <AppBar
+      sx={{
+        background: '#272e38',
+        marginBottom: 5,
+
+      }}
+      position="static"
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box
