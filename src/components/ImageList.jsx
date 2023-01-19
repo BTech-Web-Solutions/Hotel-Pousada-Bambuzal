@@ -6,8 +6,8 @@ export default function WovenImageList() {
   return (
     <ImageList
       sx={{
-        width: 500,
-        height: 500,
+        width: '95%',
+        height: '100%',
         img: {
           borderRadius: '10px',
           boxShadow: '0 0 5px rgba(0,0,0,0.5)',
