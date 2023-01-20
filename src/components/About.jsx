@@ -38,7 +38,7 @@ export default function About() {
     <section>
       <div>
         <div>
-          <img src="" alt="" />
+          <img src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/1.jpg?raw=true" alt="" />
           <h1>A Pousada</h1>
           <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio voluptatibus vel molestiae autem ex</h3>
         </div>
