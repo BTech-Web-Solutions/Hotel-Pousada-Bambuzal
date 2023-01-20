@@ -6,8 +6,12 @@ export default function WovenImageList() {
   return (
     <ImageList
       sx={{
-        width: 500,
-        height: 500
+        width: '95%',
+        height: '100%',
+        img: {
+          borderRadius: '10px',
+          boxShadow: '0 0 5px rgba(0,0,0,0.5)',
+        }
       }}
       variant="woven" cols={3} gap={8}>
       {itemData.map((item) => (
@@ -26,27 +30,27 @@ export default function WovenImageList() {
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
-    title: 'Bed',
+    img: 'https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/1.jpg?raw=true',
+    title: 'Entrada',
   },
   {
-    img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
-    title: 'Kitchen',
+    img: 'https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/2.jpg?raw=true',
+    title: 'Chalé Duplo',
   },
   {
-    img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
-    title: 'Sink',
+    img: 'https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/3.jpg?raw=true',
+    title: 'Piscina',
   },
   {
-    img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
-    title: 'Books',
+    img: 'https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/4.jpg?raw=true',
+    title: 'Varanda',
   },
   {
-    img: 'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
-    title: 'Chairs',
+    img: 'https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/5.jpg?raw=true',
+    title: 'Beira da Piscina',
   },
   {
-    img: 'https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62',
-    title: 'Candle',
+    img: 'https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/6.jpg?raw=true',
+    title: 'Area',
   },
 ];
