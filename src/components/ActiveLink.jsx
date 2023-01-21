@@ -29,7 +29,7 @@ export default ActiveLink;
 const StyledLink = styled.div`
   a {
     text-decoration: none;
-    color: #d3873b;
+    color: #F98821;
     margin-left: 1.1rem;
     display: flex;
     align-items: center;

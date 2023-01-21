@@ -25,8 +25,7 @@ function Navbar() {
   return (
     <AppBar
       sx={{
-        background: '#272e38',
-        marginBottom: 5,
+        background: '#181818',
 
       }}
       position="static"

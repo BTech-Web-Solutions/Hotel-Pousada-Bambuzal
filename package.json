@@ -17,9 +17,11 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@next/font": "latest",
+    "bootstrap": "^5.2.3",
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
+    "react-bootstrap": "^2.7.0",
     "react-dom": "latest",
     "styled-components": "^5.3.6"
   },
