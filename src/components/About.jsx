@@ -44,7 +44,7 @@ export default function About() {
           </div>
         </div>
 
-        <div style={{display:'flex', justifyContent:'space-around', marginTop:'-5px', marginRight:'38px', left: 0 }}>
+        <div style={{display:'flex', justifyContent:'space-around', marginTop:'-65px' }}>
           <Card sx={{ width: 980, display:'flex', mt:2, borderRadius:'18px' }}>
             <CardMedia
             sx={{objectFit:'cover'}}
