@@ -28,7 +28,7 @@ function Navbar() {
         background: '#181818',
 
       }}
-      position="static"
+    // position="static"
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
