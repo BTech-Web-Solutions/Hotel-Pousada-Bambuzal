@@ -12,7 +12,7 @@ const Carrousel = () => {
           <div
             style={{
               color: 'white',
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
               position: 'absolute',
               zIndex: '1',
               width: '100%',
@@ -30,7 +30,7 @@ const Carrousel = () => {
           <div
             style={{
               color: 'white',
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
               position: 'absolute',
               zIndex: '1',
               width: '100%',
@@ -47,7 +47,7 @@ const Carrousel = () => {
           <div
             style={{
               color: 'white',
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
               position: 'absolute',
               zIndex: '1',
               width: '100%',
@@ -64,7 +64,7 @@ const Carrousel = () => {
           <div
             style={{
               color: 'white',
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
               position: 'absolute',
               zIndex: '1',
               width: '100%',
