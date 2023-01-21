@@ -1,8 +1,13 @@
+@font-face {
+  font-family: 'Proxima-Nova';
+  src: url('../src/utils/font/Proxima\ Nova\ Regular.otf');
+ }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Proxima-Nova', sans-serif;
 
 }
 

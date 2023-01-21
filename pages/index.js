@@ -1,11 +1,10 @@
 import * as React from 'react';
-
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Navbar from '../src/components/Navbar';
-import ImageList from '../src/components/ImageList';
-import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Carrousel from '../src/components/Carrousel';
 import styled from 'styled-components';
+import { Box } from '@mui/material';
 
 
 const theme = createTheme({});
@@ -15,15 +14,72 @@ export default function Index() {
   return (
     <>
 
-
       <ThemeProvider theme={theme}>
+
         <Navbar />
+
         <MainDiv>
-          <h1>Texto de teste</h1>
+          <Box
+            maxWidth='60%'
+            sx={{
+              position: 'absolute',
+              zIndex: '5',
+            }}
+          >
+            <Typography
+              variant="h1"
+              component="h1"
+              sx={{
+                color: 'white',
+                fontWeight: '600',
+                fontSize: {
+                  lg: '5rem',
+                  md: '4rem',
+                  sm: '3rem',
+                  xs: '2rem'
+                },
+
+              }}
+
+            >
+
+              Lugar de Paz
+
+            </Typography>
+
+            <Typography
+              variant="h1"
+              component="h1"
+              sx={{
+                color: 'white',
+                fontWeight: '10',
+                fontSize: {
+                  lg: '3rem',
+                  md: '2rem',
+                  sm: '1rem',
+                  xs: '1rem'
+                },
+                marginTop: '3rem'
+
+              }}
+
+            >
+
+              Um paraíso em meio às montanhas da região
+              serrana de Macaé para você desfrutar da natureza
+              com requinte e qualidade.
+
+            </Typography>
+          </Box>
+
+
+
           <Carrousel />
 
         </MainDiv>
+
       </ThemeProvider>
+
     </>
   );
 }
@@ -34,9 +90,4 @@ const MainDiv = styled.div`
   align-items: center;
   justify-content: center;
 
-  h1 {
-    position: absolute;
-    z-index: 5;
-    color: white;
-  }
 `;
