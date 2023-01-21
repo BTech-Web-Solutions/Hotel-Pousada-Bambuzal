@@ -91,9 +91,5 @@ const StyledCarrousel = styled.div`
     display: none;
   }
   
-  img {
-    width: 100%;
-    
-  }
 
 `;
