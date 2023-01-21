@@ -1,20 +1,13 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Container } from '@mui/material';
 
 function Copyright() {
   return (
@@ -35,20 +28,39 @@ const theme = createTheme();
 
 export default function About() {
   return (
-    <section>
-      <div>
-        <div>
-          <img src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/1.jpg?raw=true" alt="" />
-          <h1>A Pousada</h1>
-          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio voluptatibus vel molestiae autem ex</h3>
+    <Container sx={{bgcolor:'#161616', position:'relative', height:'100vh'}}>
+        <div style={{display:'flex', justifyContent:'space-around'}}>
+          <Card sx={{ width: 980, display:'flex', mt:2, borderRadius: '18px' }}>
+            <CardMedia
+            component="img"
+            alt="placa entrada da pousada"
+            height="460"
+            image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/1.jpg?raw=true"
+            />
+          </Card>
+          <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+            <h1 style={{color:'white', marginTop:'-18px'}}>A Pousada</h1>
+            <h4 style={{color:'white', marginTop:'18px', width:'70%'}}>São mais de <b>16.000 m²</b> da mais pura beleza natural de toda região.</h4>
+          </div>
         </div>
-        <div>
-          <img src="" alt="" />
-          <h1>A Pousada</h1>
-          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio voluptatibus vel molestiae autem ex</h3>
-          <button>Saiba mais</button>
+
+        <div style={{display:'flex', justifyContent:'space-around', marginTop:'-5px', marginRight:'38px', left: 0 }}>
+          <Card sx={{ width: 980, display:'flex', mt:2, borderRadius:'18px' }}>
+            <CardMedia
+            sx={{objectFit:'cover'}}
+            component="img"
+            alt="placa entrada da pousada"
+            height="460"
+            image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/7.jpg?raw=true"
+            />
+          </Card>
+          <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+            <h3 style={{color:'white', marginTop:'18px', width:'70%'}}>Perfeito para quem busca tranquilidade e contato com a natureza.</h3>
+            <Button variant='contained' sx={{bgcolor:'#F0551ECC', mt:26}}>Saiba Mais</Button>
+          </div>
         </div>
-      </div>
-    </section>
+    </Container>
   )
 }
+
+// https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/7.jpg?raw=true
