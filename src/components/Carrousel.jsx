@@ -9,7 +9,7 @@ const Carrousel = () => {
       <Carousel>
         <Carousel.Item>
           <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/1.jpg?raw=true"
+            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/1.png?raw=true"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -19,7 +19,7 @@ const Carrousel = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/2.jpg?raw=true"
+            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/2.png?raw=true"
             alt="Second slide"
           />
 
@@ -30,7 +30,7 @@ const Carrousel = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/3.jpg?raw=true"
+            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/3.png?raw=true"
             alt="Third slide"
           />
 
@@ -39,6 +39,16 @@ const Carrousel = () => {
             <p>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/4.png?raw=true"
+            alt="First slide"
+          />
+          <Carousel.Caption>
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -54,7 +64,7 @@ const StyledCarrousel = styled.div`
   }
 
   img {
-    width: 80%;
+    width: 100%;
   }
 
 `;
