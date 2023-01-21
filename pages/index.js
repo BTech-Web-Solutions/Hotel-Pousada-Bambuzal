@@ -19,9 +19,8 @@ export default function Index() {
       <ThemeProvider theme={theme}>
         <Navbar />
         <MainDiv>
-
-          <Carrousel />
           <h1>Texto de teste</h1>
+          <Carrousel />
 
         </MainDiv>
       </ThemeProvider>
@@ -30,5 +29,14 @@ export default function Index() {
 }
 
 const MainDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
+  h1 {
+    position: absolute;
+    z-index: 5;
+    color: white;
+  }
 `;
