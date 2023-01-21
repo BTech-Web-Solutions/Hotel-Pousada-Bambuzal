@@ -19,16 +19,10 @@ export default function Index() {
       <ThemeProvider theme={theme}>
         <Navbar />
         <MainDiv>
-          <Box
-            maxHeight='lg'
-            sx={{
-              flexGrow: 1,
-              objectFit: 'cover',
-            }}
-          >
-            <Carrousel />
-          </Box>
+
+          <Carrousel />
           <h1>Texto de teste</h1>
+
         </MainDiv>
       </ThemeProvider>
     </>
