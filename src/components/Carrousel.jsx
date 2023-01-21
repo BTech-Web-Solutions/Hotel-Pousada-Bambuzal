@@ -7,8 +7,8 @@ const Carrousel = () => {
 
   return (
     <StyledCarrousel>
-      <Carousel>
-        <Carousel.Item>
+      <Carousel pause={false}>
+        <Carousel.Item interval={5000}>
           <div
             style={{
               color: 'white',
@@ -26,7 +26,7 @@ const Carrousel = () => {
           />
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={5000}>
           <div
             style={{
               color: 'white',
@@ -43,7 +43,7 @@ const Carrousel = () => {
           />
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={5000}>
           <div
             style={{
               color: 'white',
@@ -60,7 +60,7 @@ const Carrousel = () => {
           />
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={5000}>
           <div
             style={{
               color: 'white',
