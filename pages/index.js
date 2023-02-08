@@ -4,7 +4,8 @@ import Navbar from '../src/components/Navbar';
 import Typography from '@mui/material/Typography';
 import Carrousel from '../src/components/Carrousel';
 import styled from 'styled-components';
-import { Box } from '@mui/material';
+import { backdropClasses, Box } from '@mui/material';
+import Button from '../src/components/Button';
 
 
 const theme = createTheme({});
@@ -12,7 +13,11 @@ const theme = createTheme({});
 export default function Index() {
 
   return (
-    <>
+    <div
+      style={{
+        maxWidth: '1600px',
+      }}
+    >
 
       <ThemeProvider theme={theme}>
 
@@ -21,6 +26,7 @@ export default function Index() {
         <MainDiv>
           <Box
             maxWidth='60%'
+
             sx={{
               position: 'absolute',
               zIndex: '5',
@@ -34,10 +40,10 @@ export default function Index() {
                 fontStyle: 'normal',
                 fontWeight: '700',
                 fontSize: {
-                  lg: '5rem',
-                  md: '4rem',
+                  xs: '2rem',
                   sm: '3rem',
-                  xs: '2rem'
+                  md: '4rem',
+                  lg: '5rem',
                 },
 
               }}
@@ -55,12 +61,17 @@ export default function Index() {
                 color: 'white',
                 fontWeight: '100',
                 fontSize: {
-                  lg: '3rem',
+                  xs: '0.8rem',
                   md: '2rem',
                   sm: '1rem',
-                  xs: '1rem'
+                  lg: '3rem',
                 },
-                marginTop: '3rem'
+                marginTop: {
+                  xs: '1rem',
+                  sm: '1rem',
+                  md: '2rem',
+                  lg: '3rem',
+                }
 
               }}
 
@@ -71,8 +82,25 @@ export default function Index() {
               com requinte e qualidade.
 
             </Typography>
-          </Box>
 
+            <Box
+              sx={{
+                marginTop: {
+                  xs: '1rem',
+                  sm: '1rem',
+                  md: '2rem',
+                  lg: '3rem',
+                },
+                display: 'flex',
+                justifyContent: 'center',
+
+              }}
+            >
+              <Button title='Reserve Agora' />
+            </Box>
+
+
+          </Box>
 
 
           <Carrousel />
@@ -81,7 +109,7 @@ export default function Index() {
 
       </ThemeProvider>
 
-    </>
+    </div>
   );
 }
 

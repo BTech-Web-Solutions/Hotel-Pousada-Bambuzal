@@ -1,4 +1,3 @@
-import { red } from '@mui/material/colors';
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import styled from 'styled-components';
@@ -12,7 +11,7 @@ const Carrousel = () => {
           <div
             style={{
               color: 'white',
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
               position: 'absolute',
               zIndex: '1',
               width: '100%',
@@ -23,6 +22,7 @@ const Carrousel = () => {
           <img
             src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/1.png?raw=true"
             alt="First slide"
+
           />
         </Carousel.Item>
 
@@ -30,7 +30,7 @@ const Carrousel = () => {
           <div
             style={{
               color: 'white',
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
               position: 'absolute',
               zIndex: '1',
               width: '100%',
@@ -47,7 +47,7 @@ const Carrousel = () => {
           <div
             style={{
               color: 'white',
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
               position: 'absolute',
               zIndex: '1',
               width: '100%',
@@ -64,7 +64,7 @@ const Carrousel = () => {
           <div
             style={{
               color: 'white',
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
               position: 'absolute',
               zIndex: '1',
               width: '100%',
@@ -83,13 +83,15 @@ const Carrousel = () => {
 
 export default Carrousel;
 
-const StyledCarrousel = styled.div`
-
-
-  
+const StyledCarrousel = styled.div`  
   h3, p, span, a {
     display: none;
   }
   
-
+  img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    
+  }
 `;

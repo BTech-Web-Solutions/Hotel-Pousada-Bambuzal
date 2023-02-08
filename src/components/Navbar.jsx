@@ -58,7 +58,7 @@ function Navbar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: "#F95510" }} />
             </IconButton>
             <Menu
               id="menu-appbar"

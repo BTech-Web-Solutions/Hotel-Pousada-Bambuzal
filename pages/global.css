@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Proxima-Nova';
-  src: url('../src/utils/font/Proxima\ Nova\ Regular.otf');
+  src: url('../src/utils/font/Proxima\ Nova\ Light.otf');
  }
 
 * {
@@ -14,6 +14,9 @@
 body {
   background-color: #202020;
   height: 100vh;
+  border: '1px solid red';
+  max-width: 1600px;
+  margin: 0 auto;
 
 }
 
