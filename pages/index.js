@@ -6,6 +6,7 @@ import Carrousel from '../src/components/Carrousel';
 import styled from 'styled-components';
 import { backdropClasses, Box } from '@mui/material';
 import Button from '../src/components/Button';
+import About from '../src/components/About';
 
 
 const theme = createTheme({});
@@ -105,7 +106,10 @@ export default function Index() {
 
           <Carrousel />
 
+
         </MainDiv>
+        
+        <About />
 
       </ThemeProvider>
 
