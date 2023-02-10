@@ -107,7 +107,7 @@ const Footer = () => {
           textAlign: 'center',
         }}
       >
-        <h1 className='title'>Contatos</h1>
+        <h1 className='title '>Contatos</h1>
 
         <p>
           {`(22) 9 8811-2500`} <br />
@@ -133,7 +133,7 @@ const Footer = () => {
           textAlign: 'center',
         }}
       >
-        <h1 className='title'>Redes Sociais</h1>
+        <h1 className='title titleStart'>Redes Sociais</h1>
 
         <a
           className='social'
@@ -154,6 +154,8 @@ const Footer = () => {
 
         <a
           className='social'
+          href='https://www.instagram.com/hpbambuzal/'
+          target={'_blank'}
         >
           <Image
             style={{ marginRight: '0.5rem' }}
@@ -184,6 +186,10 @@ const StyledFooter = styled.footer`
     color: #eb5322;
     font-weight: 800;
     font-size: 2rem;
+  }
+
+  .titleStart {
+    text-align: start;
   }
 
   a.active {
