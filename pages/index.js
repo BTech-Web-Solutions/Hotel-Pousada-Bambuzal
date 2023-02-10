@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { backdropClasses, Box } from '@mui/material';
 import Button from '../src/components/Button';
 import About from '../src/components/About';
+import Footer from '../src/components/Footer';
 
 
 const theme = createTheme({});
@@ -110,6 +111,8 @@ export default function Index() {
         </MainDiv>
         
         <About />
+
+        <Footer />
 
       </ThemeProvider>
 

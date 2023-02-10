@@ -30,7 +30,7 @@ function Navbar() {
       }}
       position="static"
     >
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar disableGutters>
           <Box
             sx={{ height: 54 }}
