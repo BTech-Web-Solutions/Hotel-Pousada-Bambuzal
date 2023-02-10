@@ -8,11 +8,19 @@ import { backdropClasses, Box } from '@mui/material';
 import Button from '../src/components/Button';
 import About from '../src/components/About';
 import Footer from '../src/components/Footer';
-
+import Loading from '../src/components/Loading';
 
 const theme = createTheme({});
 
 export default function Index() {
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    // Simulando o carregamento da página
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 100);
+  }, []);
 
   return (
     <div
@@ -20,8 +28,10 @@ export default function Index() {
         maxWidth: '1600px',
       }}
     >
-
+      
       <ThemeProvider theme={theme}>
+
+        {isLoading ? <Loading /> : null}
 
         <Navbar />
 
