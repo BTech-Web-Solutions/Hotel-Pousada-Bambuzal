@@ -12,18 +12,25 @@ const Footer = () => {
   return (
     <StyledFooter>
 
-      {/* space1 */}
+     
+              {/* space1 */}
       <Box
         sx={{
           // border: '1px solid red',
           height: {
-            xs: '100%',
-            sm: '100%',
-            md: '100%',
-            lg: '100%',
-            xl: '100%',
+            xs: '20%',
+            sm: '20%',
+            md: '20%',
+            lg: '20%',
+            xl: '20%',
           },
-          width: '20%',
+          width: {
+            xs: '20%',
+            sm: '20%',
+            md: '20%',
+            lg: '20%',
+            xl: '20%',
+          },
           padding: '2rem',
         }}
       >
@@ -71,7 +78,6 @@ const Footer = () => {
             lg: '100%',
             xl: '100%',
           },
-          width: '20%',
           padding: '2rem',
         }}
       >
@@ -83,15 +89,17 @@ const Footer = () => {
           SANA, MACAÉ - RJ
         </p>
 
-        <Button
-          title='Ver no Mapa'
-        />
+        <div style={{ display: 'flex', flexWrap: 'nowrap' }}>
+          <Button
+            title='Ver no Mapa'
+          />
+        </div>
 
 
 
       </Box>
 
-      {/* space3 */}
+              {/* space3 */}
       <Box
         sx={{
           // border: '1px solid red',
@@ -102,7 +110,7 @@ const Footer = () => {
             lg: '100%',
             xl: '100%',
           },
-          width: '20%',
+          
           padding: '2rem',
           textAlign: 'center',
         }}
@@ -127,8 +135,7 @@ const Footer = () => {
             md: '100%',
             lg: '100%',
             xl: '100%',
-          },
-          width: '20%',
+          },          
           padding: '2rem',
           textAlign: 'center',
         }}
@@ -212,40 +219,46 @@ const StyledFooter = styled.footer`
   }
 
 
-  @media screen and (min-width: 1920px){
+  @media screen and (max-width: 1920px){
      /*styles here*/ 
   }
 
-  @media screen and (min-width: 1440px){ 
+  @media screen and (max-width: 1440px){ 
     /*styles here*/
   }
 
-  @media screen and (min-width: 1200px){ 
+  @media screen and (max-width: 1200px){ 
     /*styles here*/ 
   }
 
-  @media screen and (min-width: 1024px){ 
-    /*styles here*/ 
+  @media screen and (max-width: 1024px){ 
+    /*styles here*/
+
+    .test {
+      display: flex;
+      flex-direction: column;
+    }
+    
   }
 
 
-  @media screen and (min-width: 992px){
+  @media screen and (max-width: 992px){
      /*styles here*/
   }
 
-  @media screen and (min-width: 768px){
+  @media screen and (max-width: 768px){
      /*styles here*/
   }
 
-  @media screen and (min-width: 576px){ 
+  @media screen and (max-width: 576px){ 
     /*styles here*/ 
   }
 
-  @media screen and (min-width: 480px){
+  @media screen and (max-width: 480px){
      /*styles here*/ 
   }
   
-  @media screen and (min-width: 320px){
+  @media screen and (max-width: 320px){
      /*styles here*/ 
 
   }

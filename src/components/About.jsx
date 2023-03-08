@@ -106,6 +106,7 @@ export default function About() {
                   md: "2rem",
                   lg: "3rem",
                 },
+                marginBottom: "1rem",
               }}
             >
               A Pousada
@@ -128,6 +129,7 @@ export default function About() {
           </Box>
         </Grid>
       </Grid>
+
       <Grid
         container
         sx={{
@@ -147,7 +149,13 @@ export default function About() {
             lg: "2.5rem",
             xl: "2rem",
           },
-          marginTop: "-2.5rem",
+          marginTop: {
+            xs: "0rem",
+            sm: "0rem",
+            md: "-2.5rem",
+            lg: "-2.5rem",
+            xl: "-2.5rem",
+          },
         }}
         spacing={2}
       >
@@ -197,6 +205,7 @@ export default function About() {
                   md: "1rem",
                   lg: "2rem",
                 },
+                marginBottom: "1rem",
               }}
             >
               Perfeito para quem busca tranquilidade e contato com a natureza.

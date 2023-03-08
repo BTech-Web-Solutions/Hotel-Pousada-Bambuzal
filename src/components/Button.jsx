@@ -26,40 +26,41 @@ const StyledButton = styled.button`
     background-color: #eb5422;
   }
 
-  @media screen and (min-width: 1920px){
+  @media screen and (max-width: 1920px){
      /*styles here*/ 
   }
 
-  @media screen and (min-width: 1440px){ 
+  @media screen and (max-width: 1440px){ 
     /*styles here*/
   }
 
-  @media screen and (min-width: 1200px){ 
+  @media screen and (max-width: 1200px){ 
     /*styles here*/ 
   }
 
-  @media screen and (min-width: 1024px){ 
-    /*styles here*/ 
+  @media screen and (max-width: 1024px){ 
+      /*styles here*/
+    
   }
 
 
-  @media screen and (min-width: 992px){
+  @media screen and (max-width: 992px){
      /*styles here*/
   }
 
-  @media screen and (min-width: 768px){
+  @media screen and (max-width: 768px){
      /*styles here*/
   }
 
-  @media screen and (min-width: 576px){ 
+  @media screen and (max-width: 576px){ 
     /*styles here*/ 
   }
 
-  @media screen and (min-width: 480px){
+  @media screen and (max-width: 480px){
      /*styles here*/ 
   }
   
-  @media screen and (min-width: 320px){
+  @media screen and (max-width: 320px){
      /*styles here*/ 
 
   }
