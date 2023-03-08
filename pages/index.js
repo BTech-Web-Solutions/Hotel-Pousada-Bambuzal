@@ -100,8 +100,10 @@ export default function Index() {
               }}
             >
               
-              <Link href="https://book.securebookings.net/roomrate?id=c4dd3ad1-0057-1672770166-46f7-a98b-44ec5a1f6793&lang=br">
-                <TheButton title='Reserve Agora' />
+              <Link
+                style={{ textDecoration: "none" }}
+                href="https://book.securebookings.net/roomrate?id=c4dd3ad1-0057-1672770166-46f7-a98b-44ec5a1f6793&lang=br">
+                <TheButton title="Ver no Mapa" />
               </Link>
             </Box>
 
