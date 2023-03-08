@@ -1,24 +1,24 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import Box from '@mui/material/Box';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '../components/Button';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import Box from "@mui/material/Box";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "../components/Button";
+import Typography from "@mui/material/Typography";
 
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Container, Grid } from '@mui/material';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Container, Grid } from "@mui/material";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
+      {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
         Your Website
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -26,59 +26,52 @@ function Copyright() {
 export default function About() {
   return (
     <Box
+      id="sobre"
       sx={{
-        bgcolor: '#161616',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        margin: '1.5rem 0',
-        padding:'3rem',
+        bgcolor: "#161616",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        margin: "1.5rem 0",
+        padding: "3rem",
       }}
     >
-
       <Grid
         container
         sx={{
-          display: 'flex',
-          flexDirection: { 
-            xs: 'column',
-            sm: 'column',
-            md:'row',
-            lg:'row',
-            xl:'row',
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+            lg: "row",
+            xl: "row",
           },
           marginLeft: {
-            xs: '0rem',
-            sm: '0rem',
-            md: '5rem',
-            lg: '2rem',
-            xl: '10rem',
+            xs: "0rem",
+            sm: "0rem",
+            md: "5rem",
+            lg: "2rem",
+            xl: "10rem",
           },
         }}
-       spacing={2}
+        spacing={2}
       >
-        <Grid
-          item
-          xs={7}
-        >
-
+        <Grid item xs={7}>
           <Box
-            component='img'
-            src='https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/1.jpg?raw=true'
+            component="img"
+            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/1.jpg?raw=true"
             sx={{
               width: {
-                xs: '180%',
-                sm: '170%',
-                md: '90%',
-                lg: '90%',
-                xl: '90%',
+                xs: "180%",
+                sm: "170%",
+                md: "90%",
+                lg: "90%",
+                xl: "90%",
               },
-              borderRadius: '20px',
-
+              borderRadius: "20px",
             }}
-            
           />
-
         </Grid>
         <Grid
           item
@@ -88,52 +81,49 @@ export default function About() {
           lg={5}
           xl={5}
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-          
         >
           <Box
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <Typography
-              variant='h2'
-              color='white'
-              textAlign='center'  
+              variant="h2"
+              color="white"
+              textAlign="center"
               sx={{
                 fontSize: {
-                  xs: '1rem',
-                  sm: '1rem',
-                  md: '2rem',
-                  lg: '3rem',
+                  xs: "1rem",
+                  sm: "1rem",
+                  md: "2rem",
+                  lg: "3rem",
                 },
-                
-              }}            
+              }}
             >
               A Pousada
             </Typography>
 
             <Typography
-              color='white'
+              color="white"
               sx={{
                 fontSize: {
-                  xs: '0.5rem',
-                  sm: '0.5rem',
-                  md: '1rem',
-                  lg: '2rem',
+                  xs: "0.5rem",
+                  sm: "0.5rem",
+                  md: "1rem",
+                  lg: "2rem",
                 },
               }}
             >
-              São mais de <b>16.000 m²</b> da mais pura beleza natural da região.
+              São mais de <b>16.000 m²</b> da mais pura beleza natural da
+              região.
             </Typography>
           </Box>
         </Grid>
@@ -141,50 +131,41 @@ export default function About() {
       <Grid
         container
         sx={{
-          display: 'flex',
-          flexDirection: { 
-            xs: 'column',
-            sm: 'column',
-            md:'row',
-            lg:'row',
-            xl:'row',
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+            lg: "row",
+            xl: "row",
           },
           // bgcolor: 'red',
           marginRight: {
-            xs: '0rem',
-            sm: '0rem',
-            md: '1.5rem',
-            lg: '2.5rem',
-            xl: '2rem',
+            xs: "0rem",
+            sm: "0rem",
+            md: "1.5rem",
+            lg: "2.5rem",
+            xl: "2rem",
           },
-          marginTop: '-2.5rem'
-          
+          marginTop: "-2.5rem",
         }}
-       spacing={2}
+        spacing={2}
       >
-        <Grid
-          item
-          xs={7}
-          
-        >
-
+        <Grid item xs={7}>
           <Box
-            component='img'
-            src='https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/7.jpg?raw=true'
+            component="img"
+            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/7.jpg?raw=true"
             sx={{
               width: {
-                xs: '180%',
-                sm: '170%',
-                md: '90%',
-                lg: '90%',
-                xl: '90%',
+                xs: "180%",
+                sm: "170%",
+                md: "90%",
+                lg: "90%",
+                xl: "90%",
               },
-              borderRadius: '20px',
-
+              borderRadius: "20px",
             }}
-            
           />
-
         </Grid>
         <Grid
           item
@@ -194,29 +175,27 @@ export default function About() {
           lg={5}
           xl={5}
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Box
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
             }}
           >
             <Typography
-              color='white'
+              color="white"
               sx={{
                 fontSize: {
-                  xs: '0.5rem',
-                  sm: '0.5rem',
-                  md: '1rem',
-                  lg: '2rem',
+                  xs: "0.5rem",
+                  sm: "0.5rem",
+                  md: "1rem",
+                  lg: "2rem",
                 },
               }}
             >
@@ -224,13 +203,11 @@ export default function About() {
             </Typography>
 
             <Box>
-              <Button
-                title='Saiba Mais'
-              />
+              <Button title="Saiba Mais" />
             </Box>
           </Box>
         </Grid>
-      </Grid>       
+      </Grid>
     </Box>
   );
 }
@@ -238,8 +215,8 @@ export default function About() {
 // https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/1.jpg?raw=true
 // https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/7.jpg?raw=true
 
-
-{/* <Grid
+{
+  /* <Grid
           item
           xs={4}
         >
@@ -271,4 +248,5 @@ export default function About() {
             component='img'
             src='https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/7.jpg?raw=true'
           />
-        </Gridd> */}
+        </Gridd> */
+}

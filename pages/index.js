@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Navbar from '../src/components/Navbar';
 import Typography from '@mui/material/Typography';
@@ -98,7 +99,10 @@ export default function Index() {
 
               }}
             >
-              <Button title='Reserve Agora' />
+              
+              <Link href="https://book.securebookings.net/roomrate?id=c4dd3ad1-0057-1672770166-46f7-a98b-44ec5a1f6793&lang=br">
+                <Button title='Reserve Agora' />
+              </Link>
             </Box>
 
 

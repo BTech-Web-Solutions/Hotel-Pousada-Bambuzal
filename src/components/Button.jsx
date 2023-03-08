@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = ({ title }) => {
+const Button = ({ title, onClick }) => {
   return (
-    <StyledButton>
+    <StyledButton
+      onClick={onClick}
+    >
       {title}
     </StyledButton>
   );
