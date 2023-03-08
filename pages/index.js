@@ -62,7 +62,7 @@ export default function Index() {
               component="h1"
               sx={{
                 color: 'white',
-                fontWeight: '100',
+                fontWeight: '400',
                 fontSize: {
                   xs: '0.8rem',
                   sm: '2rem',

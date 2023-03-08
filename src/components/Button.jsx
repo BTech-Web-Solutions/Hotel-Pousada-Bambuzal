@@ -20,7 +20,7 @@ export default function TheButton({ title }) {
           lg: "8px 50px",
           xl: "8px 50px",
         },
-        fontWeight: "100",
+        fontWeight: "400",
         fontSize: {
           xs: "0.7rem",
           sm: "1rem",
