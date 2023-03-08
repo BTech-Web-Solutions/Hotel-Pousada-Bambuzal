@@ -54,6 +54,10 @@ export default function About() {
             lg: "2rem",
             xl: "10rem",
           },
+          flexDirection: {
+            xs: "column-reverse",
+            sm: "column-reverse",
+          }
         }}
         spacing={2}
       >

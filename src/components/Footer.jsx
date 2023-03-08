@@ -89,11 +89,9 @@ const Footer = () => {
           SANA, MACAÉ - RJ
         </p>
 
-        <div style={{ display: 'flex', flexWrap: 'nowrap' }}>
           <Button
             title='Ver no Mapa'
           />
-        </div>
 
 
 
