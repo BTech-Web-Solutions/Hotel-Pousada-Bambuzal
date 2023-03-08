@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styled from "styled-components";
 import Box from "@mui/material/Box";
 import Image from "next/image";
@@ -97,7 +98,12 @@ const Footer = () => {
           SANA, MACAÉ - RJ
         </Typography>
 
-        <TheButton title="Ver no Mapa" />
+        <Link
+          style={{ textDecoration: "none" }}
+          href="https://goo.gl/maps/vFgyaLqkfeZghtUR7"
+        >
+          <TheButton title="Ver no Mapa" />
+        </Link>
       </Box>
 
       {/* space3 */}
