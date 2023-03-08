@@ -51,7 +51,13 @@ const Footer = () => {
             justifyContent: "space-between",
             alignItems: "center",
             flexWrap: "wrap",
-            gap: "1rem",
+            gap: {
+              xs: "1rem",
+              sm: "1rem",
+              md: "0.1rem",
+              lg: "0.1rem",
+              xl: "0.1rem",
+            },
           }}
         >
           <ActiveLink href="/">INÍCIO</ActiveLink>
