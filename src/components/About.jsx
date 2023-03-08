@@ -57,7 +57,10 @@ export default function About() {
           flexDirection: {
             xs: "column-reverse",
             sm: "column-reverse",
-          }
+            md: "row",
+            lg: "row",
+            xl: "row",
+          },
         }}
         spacing={2}
       >
@@ -105,9 +108,9 @@ export default function About() {
               textAlign="center"
               sx={{
                 fontSize: {
-                  xs: "1rem",
-                  sm: "1rem",
-                  md: "2rem",
+                  xs: "2rem",
+                  sm: "2rem",
+                  md: "2.3rem",
                   lg: "3rem",
                 },
                 marginBottom: "1rem",
@@ -120,9 +123,9 @@ export default function About() {
               color="white"
               sx={{
                 fontSize: {
-                  xs: "0.5rem",
-                  sm: "0.5rem",
-                  md: "1rem",
+                  xs: "1rem",
+                  sm: "1rem",
+                  md: "1.5rem",
                   lg: "2rem",
                 },
               }}
@@ -204,9 +207,9 @@ export default function About() {
               color="white"
               sx={{
                 fontSize: {
-                  xs: "0.5rem",
-                  sm: "0.5rem",
-                  md: "1rem",
+                  xs: "1rem",
+                  sm: "1rem",
+                  md: "1.5rem",
                   lg: "2rem",
                 },
                 marginBottom: "1rem",

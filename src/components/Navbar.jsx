@@ -26,6 +26,7 @@ function Navbar() {
     <AppBar
       sx={{
         background: "#181818",
+        padding: "1rem 0",
       }}
       position="static"
     >
@@ -84,7 +85,7 @@ function Navbar() {
               </MenuItem>
 
               <MenuItem>
-                <ActiveLink href="/sobre">A POUSADA</ActiveLink>
+                <ActiveLink href="#sobre">A POUSADA</ActiveLink>
               </MenuItem>
 
               <MenuItem>
