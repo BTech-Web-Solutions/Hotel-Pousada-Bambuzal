@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "../components/Button";
+import TheButton from "../components/Button";
 import Typography from "@mui/material/Typography";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -109,11 +109,12 @@ export default function About() {
               sx={{
                 fontSize: {
                   xs: "2rem",
-                  sm: "2rem",
+                  sm: "3rem",
                   md: "2.3rem",
                   lg: "3rem",
                 },
                 marginBottom: "1rem",
+                fontWeight: "700",
               }}
             >
               A Pousada
@@ -124,7 +125,7 @@ export default function About() {
               sx={{
                 fontSize: {
                   xs: "1rem",
-                  sm: "1rem",
+                  sm: "2rem",
                   md: "1.5rem",
                   lg: "2rem",
                 },
@@ -208,7 +209,7 @@ export default function About() {
               sx={{
                 fontSize: {
                   xs: "1rem",
-                  sm: "1rem",
+                  sm: "2rem",
                   md: "1.5rem",
                   lg: "2rem",
                 },
@@ -219,7 +220,7 @@ export default function About() {
             </Typography>
 
             <Box>
-              <Button title="Saiba Mais" />
+              <TheButton title="Saiba Mais" />
             </Box>
           </Box>
         </Grid>

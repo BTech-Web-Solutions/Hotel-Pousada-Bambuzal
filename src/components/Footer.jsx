@@ -6,7 +6,8 @@ import logo from "../images/logo.png";
 import facebookIcon from "../images/Icons/Facebook.png";
 import instagramIcon from "../images/Icons/Instagram.png";
 import ActiveLink from "./ActiveLink";
-import Button from "./Button";
+import TheButton from "./Button";
+import { Typography } from "@mui/material";
 
 const Footer = () => {
   return (
@@ -23,8 +24,8 @@ const Footer = () => {
             xl: "20%",
           },
           width: {
-            xs: "20%",
-            sm: "20%",
+            xs: "70%",
+            sm: "35%",
             md: "20%",
             lg: "20%",
             xl: "20%",
@@ -38,18 +39,30 @@ const Footer = () => {
           style={{
             height: "20%",
             width: "100%",
+            marginBottom: "1rem",
           }}
         />
 
-        <ActiveLink href="/">INÍCIO</ActiveLink>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "1rem",
+          }}
+        >
+          <ActiveLink href="/">INÍCIO</ActiveLink>
 
-        <ActiveLink href="/sobre">A POUSADA</ActiveLink>
+          <ActiveLink href="/sobre">A POUSADA</ActiveLink>
 
-        <ActiveLink href="/acomodacoes">ACOMODAÇÕES</ActiveLink>
+          <ActiveLink href="/acomodacoes">ACOMODAÇÕES</ActiveLink>
 
-        <ActiveLink href="/galeria">GALERIA</ActiveLink>
+          <ActiveLink href="/galeria">GALERIA</ActiveLink>
 
-        <ActiveLink href="/contato">CONTATO</ActiveLink>
+          <ActiveLink href="/contato">CONTATO</ActiveLink>
+        </Box>
       </Box>
 
       {/* space2 */}
@@ -68,14 +81,23 @@ const Footer = () => {
       >
         <h1 className="title">Localização</h1>
 
-        <p>
+        <Typography
+          variant="p"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: "1rem",
+          }}
+        >
           ESTRADA DO SANA
           <br />
           Nº 2000 <br />
           SANA, MACAÉ - RJ
-        </p>
+        </Typography>
 
-        <Button title="Ver no Mapa" />
+        <TheButton title="Ver no Mapa" />
       </Box>
 
       {/* space3 */}
@@ -205,11 +227,9 @@ const StyledFooter = styled.footer`
 
   @media screen and (max-width: 1024px) {
     /*styles here*/
-
-    .test {
-      display: flex;
-      flex-direction: column;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   @media screen and (max-width: 992px) {

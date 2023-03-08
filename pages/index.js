@@ -5,8 +5,8 @@ import Navbar from '../src/components/Navbar';
 import Typography from '@mui/material/Typography';
 import Carrousel from '../src/components/Carrousel';
 import styled from 'styled-components';
-import { backdropClasses, Box } from '@mui/material';
-import Button from '../src/components/Button';
+import { Box } from '@mui/material';
+import TheButton from '../src/components/Button';
 import About from '../src/components/About';
 import Footer from '../src/components/Footer';
 
@@ -65,8 +65,8 @@ export default function Index() {
                 fontWeight: '100',
                 fontSize: {
                   xs: '0.8rem',
+                  sm: '2rem',
                   md: '2rem',
-                  sm: '1rem',
                   lg: '3rem',
                 },
                 marginTop: {
@@ -101,7 +101,7 @@ export default function Index() {
             >
               
               <Link href="https://book.securebookings.net/roomrate?id=c4dd3ad1-0057-1672770166-46f7-a98b-44ec5a1f6793&lang=br">
-                <Button title='Reserve Agora' />
+                <TheButton title='Reserve Agora' />
               </Link>
             </Box>
 
