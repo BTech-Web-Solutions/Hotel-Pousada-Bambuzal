@@ -127,21 +127,24 @@ const index = () => {
               <CardMedia
                 sx={{ borderRadius: "1rem" }}
                 component="img"
-                alt="Suíte Simples"
+                alt="Chalé Triplo"
                 height="140"
-                image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/SuiteSimples/1.jpg?raw=true"
-                title="Suíte Simples"
+                image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ChaleTriplo/1.jpg?raw=true"
+                title="Chalé Triplo"
               />
               <CardContent sx={{ bgcolor: "#1A1A1A", color: "white" }}>
                 <Typography gutterBottom variant="h4" component="h2">
-                  Suíte Simples
+                  Chalé Triplo
                 </Typography>
                 <Typography variant="body2" color="white" component="p">
-                  Suítes com Vista para o rio, uma ótima opção para se ouvir as
-                  águas do rio Sana. <br />
+                  Chalé composto por garagem privativa, varanda com rede onde se
+                  pode desfrutar de uma paisagem deslumbrante das montanhas,
+                  piscinas e do Rio Sana. <br />
                   <br />
                   <b>Configuração do Quarto:</b> <br />
                   1 Cama de Casal <br />
+                  1 Cama de Solteiro <br />
+                  1 Mesa redonda de dois Lugares <br />
                   <b>Tamanho do Quarto:</b> <br /> 20m²
                 </Typography>
               </CardContent>
