@@ -131,7 +131,7 @@ const Footer = () => {
         <h1 className="title ">Contatos</h1>
 
         <p>
-          {`(22) 9 8811-2500`} <br />
+          {`(22) 9 8811-2400`} <br />
           {`(22) 2793-2400`} <br />
           {`hotelpousadabambuzal@gmail.com`} <br />
         </p>
