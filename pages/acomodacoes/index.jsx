@@ -138,8 +138,8 @@ const index = () => {
                 </Typography>
                 <Typography variant="body2" color="white" component="p">
                   Chalé composto por garagem privativa, varanda com rede onde se
-                  pode desfrutar de uma paisagem deslumbrante das montanhas,
-                  piscinas e do Rio Sana. <br />
+                  pode desfrutar de uma paisagem deslumbrante. Além de um amplo
+                  espaço interno. <br />
                   <br />
                   <b>Configuração do Quarto:</b> <br />
                   1 Cama de Casal <br />
