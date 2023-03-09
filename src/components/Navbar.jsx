@@ -85,7 +85,7 @@ function Navbar() {
               </MenuItem>
 
               <MenuItem>
-                <ActiveLink href="#sobre">A POUSADA</ActiveLink>
+                <ActiveLink href="/#sobre">A POUSADA</ActiveLink>
               </MenuItem>
 
               <MenuItem>
@@ -110,7 +110,7 @@ function Navbar() {
           >
             <ActiveLink href="/">INÍCIO</ActiveLink>
 
-            <ActiveLink href="#sobre">A POUSADA</ActiveLink>
+            <ActiveLink href="/#sobre">A POUSADA</ActiveLink>
 
             <ActiveLink href="/acomodacoes">ACOMODAÇÕES</ActiveLink>
 
