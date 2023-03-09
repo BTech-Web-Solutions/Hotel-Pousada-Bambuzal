@@ -83,10 +83,10 @@ const index = () => {
               <CardMedia
                 sx={{ borderRadius: "1rem" }}
                 component="img"
-                alt="Suíte Simples"
+                alt="Chalé Duplo"
                 height="140"
-                image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/SuiteSimples/1.jpg?raw=true"
-                title="Suíte Simples"
+                image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ChaleDuplo/1.jpg?raw=true"
+                title="Chalé Duplo"
               />
               <CardContent sx={{ bgcolor: "#1A1A1A", color: "white" }}>
                 <Typography gutterBottom variant="h4" component="h2">
@@ -98,6 +98,7 @@ const index = () => {
                   <br />
                   <b>Configuração do Quarto:</b> <br />
                   1 Cama de Casal <br />
+                  1 Mesa redonda de dois Lugares <br />
                   <b>Tamanho do Quarto:</b> <br /> 20m²
                 </Typography>
               </CardContent>
