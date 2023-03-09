@@ -172,21 +172,23 @@ const index = () => {
               <CardMedia
                 sx={{ borderRadius: "1rem" }}
                 component="img"
-                alt="Suíte Simples"
+                alt="Chalé Família"
                 height="140"
-                image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/SuiteSimples/1.jpg?raw=true"
-                title="Suíte Simples"
+                image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ChaleFamilia/1.jpg?raw=true"
+                title="Chalé Família"
               />
               <CardContent sx={{ bgcolor: "#1A1A1A", color: "white" }}>
                 <Typography gutterBottom variant="h4" component="h2">
-                  Suíte Simples
+                  Chalé Família
                 </Typography>
                 <Typography variant="body2" color="white" component="p">
-                  Suítes com Vista para o rio, uma ótima opção para se ouvir as
-                  águas do rio Sana. <br />
+                  Temos opções para quem ama viajar em família e que querem
+                  ficar juntinhos. Com dois quartos, nossos chalés família são
+                  perfeitos para acomodar todos com conforto. <br />
                   <br />
                   <b>Configuração do Quarto:</b> <br />
                   1 Cama de Casal <br />
+                  2 Camas de Solteiro <br />
                   <b>Tamanho do Quarto:</b> <br /> 20m²
                 </Typography>
               </CardContent>
