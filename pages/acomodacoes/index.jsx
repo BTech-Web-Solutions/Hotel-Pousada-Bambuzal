@@ -90,11 +90,12 @@ const index = () => {
               />
               <CardContent sx={{ bgcolor: "#1A1A1A", color: "white" }}>
                 <Typography gutterBottom variant="h4" component="h2">
-                  Suíte Simples
+                  Chalé Duplo
                 </Typography>
                 <Typography variant="body2" color="white" component="p">
-                  Suítes com Vista para o rio, uma ótima opção para se ouvir as
-                  águas do rio Sana. <br />
+                  chalés são compostos por garagem privativa, varando com rede
+                  onde se pode desfrutar de uma paisagem deslumbrante das
+                  montanhas, piscinas e do Rio Sana. <br />
                   <br />
                   <b>Configuração do Quarto:</b> <br />
                   1 Cama de Casal <br />
