@@ -26,9 +26,10 @@ function Navbar() {
     <AppBar
       sx={{
         background: "#181818",
-        padding: "1rem 0",
+        padding: "1.1rem 0",
+        top: -1,
       }}
-      position="static"
+      position="sticky"
     >
       <Container>
         <Toolbar disableGutters>
