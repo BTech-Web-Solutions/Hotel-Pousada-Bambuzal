@@ -47,10 +47,22 @@ export default function LobbyGallery() {
           '& .MuiDialog-paper': {
             p: 0,
             m: 0,
-            maxWidth: '80%',
+            maxWidth: {
+              xs: '80%',
+              sm: '80%',
+              md: '80%',
+              lg: '80%',
+              xl: '50%',
+            },
             maxHeight: 'auto',
             height: 'auto',
-            width: '80%',
+            width: {
+              xs: '100%',
+              sm: '100%',
+              md: '100%',
+              lg: '100%',
+              xl: '50%',
+            },
           },
         }}
       >
