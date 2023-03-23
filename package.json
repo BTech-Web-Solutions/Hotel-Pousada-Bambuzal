@@ -14,10 +14,8 @@
     "@emotion/react": "latest",
     "@emotion/server": "latest",
     "@emotion/styled": "latest",
-    "@material-ui/core": "^4.12.4",
-    "@mui/icons-material": "latest",
+    "@mui/icons-material": "^5.11.11",
     "@mui/material": "latest",
-    "@mui/styles": "^5.11.12",
     "@next/font": "latest",
     "bootstrap": "^5.2.3",
     "next": "latest",
@@ -29,6 +27,7 @@
   },
   "devDependencies": {
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "prettier": "^2.8.6"
   }
 }
