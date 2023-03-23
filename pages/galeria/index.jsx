@@ -79,6 +79,8 @@ const index = () => {
 
           <LobbyGallery />
 
+          <hr />
+
         </Box>
       </Box>
 

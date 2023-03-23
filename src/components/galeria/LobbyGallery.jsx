@@ -1,6 +1,9 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
@@ -11,36 +14,51 @@ function srcset(image, size, rows = 1, cols = 1) {
 }
 
 export default function LobbyGallery() {
+  const [selectedImage, setSelectedImage] = React.useState(null);
+
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
+
+  const handleModalClose = () => {
+    setSelectedImage(null);
+  };
+
   return (
-    <ImageList
-      sx={{ width: "100%", height: 500 }}
-      variant="quilted"
-      cols={4}
-      rowHeight={121}
-    >
-      {itemData.map((item) => (
-        <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-          <img
-            {...srcset(item.img, 121, item.rows, item.cols)}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
+    <>
+      <ImageList sx={{ width: '100%', height: 500 }} variant="quilted" cols={4} rowHeight={121}>
+        {itemData.map((item) => (
+          <ImageListItem key={item.img} cols={item.cols || 2} rows={item.rows || 1}>
+            <img
+              {...srcset(item.img, 121, item.rows, item.cols)}
+              alt={item.title}
+              loading="lazy"
+              style={{ cursor: 'pointer' }}
+              onClick={() => handleImageClick(item.img)}
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+
+      <Dialog open={Boolean(selectedImage)} onClose={handleModalClose}>
+        <DialogContent>
+          <img src={selectedImage} style={{ maxWidth: '100%' }} />
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
 
 const itemData = [
   {
+    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+    title: 'Burger',
+  },
+  {
     img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
     title: 'Breakfast',
     rows: 2,
     cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
   },
   {
     img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
@@ -88,6 +106,6 @@ const itemData = [
   {
     img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
     title: 'Bike',
-    cols: 2,
+    cols: 4,
   },
 ];
