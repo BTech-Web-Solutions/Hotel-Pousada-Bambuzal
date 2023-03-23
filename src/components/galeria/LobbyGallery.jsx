@@ -40,7 +40,20 @@ export default function LobbyGallery() {
         ))}
       </ImageList>
 
-      <Dialog open={Boolean(selectedImage)} onClose={handleModalClose}>
+      <Dialog
+        open={Boolean(selectedImage)}
+        onClose={handleModalClose}
+        sx={{
+          '& .MuiDialog-paper': {
+            p: 0,
+            m: 0,
+            maxWidth: '80%',
+            maxHeight: 'auto',
+            height: 'auto',
+            width: '80%',
+          },
+        }}
+      >
         <DialogContent>
           <img src={selectedImage} style={{ maxWidth: '100%' }} />
         </DialogContent>
