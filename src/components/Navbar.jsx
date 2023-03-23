@@ -10,6 +10,7 @@ import MenuItem from "@mui/material/MenuItem";
 import logo from "../images/logo.png";
 import Image from "next/image";
 import ActiveLink from "./ActiveLink";
+import { Link } from "@mui/material";
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -34,11 +35,13 @@ function Navbar() {
       <Container>
         <Toolbar disableGutters>
           <Box sx={{ height: 54 }}>
-            <Image
-              src={logo}
-              alt="Logo"
-              style={{ height: "100%", width: "100%" }}
-            />
+            <Link href="/">
+              <Image
+                src={logo}
+                alt="Logo"
+                style={{ height: "100%", width: "100%" }}
+              />
+            </Link>
           </Box>
 
           <Box

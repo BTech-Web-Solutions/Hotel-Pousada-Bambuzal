@@ -195,7 +195,7 @@ const StyledFooter = styled.footer`
   background-color: #181818;
   color: white;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around;  
 
   .title {
     color: #eb5322;
