@@ -12,7 +12,7 @@ import Image from "next/image";
 import ActiveLink from "./ActiveLink";
 import { Link } from "@mui/material";
 
-function Navbar() {
+function Navbar({ position }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -30,7 +30,7 @@ function Navbar() {
         padding: "1.1rem 0",
         top: -1,
       }}
-      position="sticky"
+      position={position ? position : "sticky"}
     >
       <Container>
         <Toolbar disableGutters>
