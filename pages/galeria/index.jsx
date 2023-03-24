@@ -7,6 +7,9 @@ import Suites from "../../src/components/galeria/Suites";
 import ChalesDuplos from "../../src/components/galeria/ChalesDuplos";
 import ChalesTriplos from "../../src/components/galeria/ChalesTriplos";
 import ChalesFamilia from "../../src/components/galeria/ChalesFamilia";
+import Piscina from "../../src/components/galeria/Piscina";
+import Ofuro from "../../src/components/galeria/Ofuro";
+import Restaurante from "../../src/components/galeria/Restaurante";
 
 const index = () => {
   return (
@@ -66,6 +69,12 @@ const index = () => {
         <ChalesTriplos />
 
         <ChalesFamilia />
+
+        <Ofuro />
+
+        <Piscina />
+
+        <Restaurante />
       </Box>
 
       <Footer />
