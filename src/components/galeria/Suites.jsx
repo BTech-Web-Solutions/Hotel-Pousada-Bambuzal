@@ -14,7 +14,7 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-export default function LobbyGallery() {
+export default function Suites() {
   const [selectedImage, setSelectedImage] = React.useState(null);
 
   const handleImageClick = (image) => {
@@ -28,7 +28,7 @@ export default function LobbyGallery() {
   return (
     <>
       <Box>
-        <Typography variant="h4">Lobby do Hotel</Typography>
+        <Typography variant="h4">Suítes</Typography>
 
         <Typography
           variant="p"
@@ -44,10 +44,11 @@ export default function LobbyGallery() {
             },
           }}
         >
-          Este é o nosso lobby, onde você será recebido por nossa equipe
-          simpática e prestativa assim que chegar. Aqui, você pode relaxar em
-          confortáveis poltronas, ou tomar um café enquanto espera pelo seu
-          check-in.
+          Nossas suítes, dispõem de uma paisagem única, direcionada para o Rio
+          Sana que te proporcionará uma noite com o som do correr das águas e o
+          despertar com o canto dos pássaros. Composta por colchões magnéticos
+          com infravermelho, ar condicionado frigobar, TV a cabo e ventilador de
+          teto, além de um banho quentinho com água direto da nascente.
         </Typography>
       </Box>
 
@@ -104,7 +105,6 @@ export default function LobbyGallery() {
           <img src={selectedImage} style={{ maxWidth: "100%" }} />
         </DialogContent>
       </Dialog>
-
       <hr />
     </>
   );

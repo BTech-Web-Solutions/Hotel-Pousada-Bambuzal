@@ -14,7 +14,7 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-export default function LobbyGallery() {
+export default function ChalesFamilia() {
   const [selectedImage, setSelectedImage] = React.useState(null);
 
   const handleImageClick = (image) => {
@@ -28,7 +28,7 @@ export default function LobbyGallery() {
   return (
     <>
       <Box>
-        <Typography variant="h4">Lobby do Hotel</Typography>
+        <Typography variant="h4">Chalés Família</Typography>
 
         <Typography
           variant="p"
@@ -44,10 +44,11 @@ export default function LobbyGallery() {
             },
           }}
         >
-          Este é o nosso lobby, onde você será recebido por nossa equipe
-          simpática e prestativa assim que chegar. Aqui, você pode relaxar em
-          confortáveis poltronas, ou tomar um café enquanto espera pelo seu
-          check-in.
+          Temos opções para quem ama viajar em família e que querem ficar
+          juntinhos. Com dois quartos, nossos chalés família são perfeitos para
+          acomodar todos com conforto. Ambos possuem ar condicionado, tv a cabo
+          e colchões magnéticos com infravermelho e garagem independente. Além
+          de uma vista para o jardim e Rio sana diretamente da varanda.
         </Typography>
       </Box>
 
@@ -104,7 +105,6 @@ export default function LobbyGallery() {
           <img src={selectedImage} style={{ maxWidth: "100%" }} />
         </DialogContent>
       </Dialog>
-
       <hr />
     </>
   );

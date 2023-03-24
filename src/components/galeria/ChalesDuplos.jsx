@@ -14,7 +14,7 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-export default function LobbyGallery() {
+export default function ChalesDuplos() {
   const [selectedImage, setSelectedImage] = React.useState(null);
 
   const handleImageClick = (image) => {
@@ -28,7 +28,7 @@ export default function LobbyGallery() {
   return (
     <>
       <Box>
-        <Typography variant="h4">Lobby do Hotel</Typography>
+        <Typography variant="h4">ChalesDuplos</Typography>
 
         <Typography
           variant="p"
@@ -44,10 +44,13 @@ export default function LobbyGallery() {
             },
           }}
         >
-          Este é o nosso lobby, onde você será recebido por nossa equipe
-          simpática e prestativa assim que chegar. Aqui, você pode relaxar em
-          confortáveis poltronas, ou tomar um café enquanto espera pelo seu
-          check-in.
+          Nosso chalés são compostos por garagem privativa, varando com rede
+          onde se pode desfrutar de uma paisagem deslumbrante das montanhas,
+          piscinas e do Rio Sana. Amplo espaço interno com camas tamanho queen,
+          colchões magnéticos com infravermelho que proporcionará uma noite de
+          sono perfeita, TV a cabo com 32', frigobar, ar condicionado e o
+          chuveiro com água de nascentes sendo aquecido com energia solar
+          contribuindo com sustentabilidade do planeta.
         </Typography>
       </Box>
 
@@ -104,7 +107,6 @@ export default function LobbyGallery() {
           <img src={selectedImage} style={{ maxWidth: "100%" }} />
         </DialogContent>
       </Dialog>
-
       <hr />
     </>
   );

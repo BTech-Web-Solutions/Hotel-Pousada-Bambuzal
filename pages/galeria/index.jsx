@@ -1,8 +1,12 @@
-import { Box, Divider, Typography } from '@mui/material';
-import Footer from '../../src/components/Footer';
-import React from 'react';
-import Navbar from '../../src/components/Navbar';
-import LobbyGallery from '../../src/components/galeria/LobbyGallery';
+import { Box, Divider, Typography } from "@mui/material";
+import Footer from "../../src/components/Footer";
+import React from "react";
+import Navbar from "../../src/components/Navbar";
+import LobbyGallery from "../../src/components/galeria/LobbyGallery";
+import Suites from "../../src/components/galeria/Suites";
+import ChalesDuplos from "../../src/components/galeria/ChalesDuplos";
+import ChalesTriplos from "../../src/components/galeria/ChalesTriplos";
+import ChalesFamilia from "../../src/components/galeria/ChalesFamilia";
 
 const index = () => {
   return (
@@ -19,7 +23,6 @@ const index = () => {
             lg: "1rem 5rem",
             xl: "1rem 5rem",
           },
-
         }}
       >
         <Typography
@@ -28,7 +31,6 @@ const index = () => {
             display: "flex",
             justifyContent: "center",
           }}
-
         >
           Galeria de fotos do Hotel Pousada Bambuzal
         </Typography>
@@ -48,40 +50,22 @@ const index = () => {
             },
           }}
         >
-          Bem-vindo à nossa galeria de fotos do Hotel Pousada Bambuzal! Aqui, você encontrará uma seleção de imagens que mostram nossos chalés, suítes, áreas de lazer e outras instalações. Esperamos que essas fotos possam lhe dar uma ideia melhor de como é se hospedar conosco e ajudá-lo a planejar sua próxima viagem.
+          Bem-vindo à nossa galeria de fotos do Hotel Pousada Bambuzal! Aqui,
+          você encontrará uma seleção de imagens que mostram nossos chalés,
+          suítes, áreas de lazer e outras instalações. Esperamos que essas fotos
+          possam lhe dar uma ideia melhor de como é se hospedar conosco e
+          ajudá-lo a planejar sua próxima viagem.
         </Typography>
 
-        <hr />
+        <LobbyGallery />
 
-        <Box>
-          <Typography
-            variant="h4"
-          >
-            Lobby do Hotel
-          </Typography>
+        <Suites />
 
-          <Typography
-            variant="p"
-            sx={{
-              display: "flex",
-              margin: "1rem 0",
-              fontSize: {
-                xs: "1rem",
-                sm: "1rem",
-                md: "1.2rem",
-                lg: "1.5rem",
-                xl: "1.5rem",
-              },
-            }}
-          >
-            Este é o nosso lobby, onde você será recebido por nossa equipe simpática e prestativa assim que chegar. Aqui, você pode relaxar em confortáveis poltronas, ou tomar um café enquanto espera pelo seu check-in.
-          </Typography>
+        <ChalesDuplos />
 
-          <LobbyGallery />
+        <ChalesTriplos />
 
-          <hr />
-
-        </Box>
+        <ChalesFamilia />
       </Box>
 
       <Footer />
