@@ -28,27 +28,16 @@ export default function Suites() {
   return (
     <>
       <Box>
-        <Typography variant="h4">Suítes</Typography>
-
         <Typography
-          variant="p"
           sx={{
+            marginBottom: "2rem",
             display: "flex",
-            margin: "1rem 0",
-            fontSize: {
-              xs: "1rem",
-              sm: "1rem",
-              md: "1.2rem",
-              lg: "1.5rem",
-              xl: "1.5rem",
-            },
+            justifyContent: "center",
+            alignItems: "center",
           }}
+          variant="h4"
         >
-          Nossas suítes, dispõem de uma paisagem única, direcionada para o Rio
-          Sana que te proporcionará uma noite com o som do correr das águas e o
-          despertar com o canto dos pássaros. Composta por colchões magnéticos
-          com infravermelho, ar condicionado frigobar, TV a cabo e ventilador de
-          teto, além de um banho quentinho com água direto da nascente.
+          Suítes
         </Typography>
       </Box>
 

@@ -28,27 +28,16 @@ export default function ChalesFamilia() {
   return (
     <>
       <Box>
-        <Typography variant="h4">Chalés Família</Typography>
-
         <Typography
-          variant="p"
+          variant="h4"
           sx={{
+            marginBottom: "2rem",
             display: "flex",
-            margin: "1rem 0",
-            fontSize: {
-              xs: "1rem",
-              sm: "1rem",
-              md: "1.2rem",
-              lg: "1.5rem",
-              xl: "1.5rem",
-            },
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          Temos opções para quem ama viajar em família e que querem ficar
-          juntinhos. Com dois quartos, nossos chalés família são perfeitos para
-          acomodar todos com conforto. Ambos possuem ar condicionado, tv a cabo
-          e colchões magnéticos com infravermelho e garagem independente. Além
-          de uma vista para o jardim e Rio sana diretamente da varanda.
+          Chalés Família
         </Typography>
       </Box>
 

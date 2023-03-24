@@ -28,29 +28,16 @@ export default function ChalesDuplos() {
   return (
     <>
       <Box>
-        <Typography variant="h4">ChalesDuplos</Typography>
-
         <Typography
-          variant="p"
           sx={{
+            marginBottom: "2rem",
             display: "flex",
-            margin: "1rem 0",
-            fontSize: {
-              xs: "1rem",
-              sm: "1rem",
-              md: "1.2rem",
-              lg: "1.5rem",
-              xl: "1.5rem",
-            },
+            justifyContent: "center",
+            alignItems: "center",
           }}
+          variant="h4"
         >
-          Nosso chalés são compostos por garagem privativa, varando com rede
-          onde se pode desfrutar de uma paisagem deslumbrante das montanhas,
-          piscinas e do Rio Sana. Amplo espaço interno com camas tamanho queen,
-          colchões magnéticos com infravermelho que proporcionará uma noite de
-          sono perfeita, TV a cabo com 32', frigobar, ar condicionado e o
-          chuveiro com água de nascentes sendo aquecido com energia solar
-          contribuindo com sustentabilidade do planeta.
+          Chales Duplos
         </Typography>
       </Box>
 
