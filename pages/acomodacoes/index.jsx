@@ -118,6 +118,7 @@ const index = () => {
               maxWidth: "345px",
               color: "white",
               backgroundColor: "#1a1a1a",
+              border: "2px solid #000",
               padding: "2rem",
               margin: "2rem",
               borderRadius: "1rem",
