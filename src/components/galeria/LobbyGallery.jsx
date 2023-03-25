@@ -112,7 +112,7 @@ export default function LobbyGallery() {
 
 const itemData = [
   {
-    img: "https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/1.png?raw=true",
+    img: "https://media.githubusercontent.com/media/brodrigues0ll/Hotel-Pousada-Bambuzal/main/src/images/IMG-GIT-LFS/IMG-20230114-WA0020.jpg",
     title: "Burger",
   },
   {
