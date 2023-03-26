@@ -7,7 +7,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
-import logo from "../images/logo.png";
+import bambuLogo from "../images/logo.png";
 import Image from "next/image";
 import ActiveLink from "./ActiveLink";
 import { Link } from "@mui/material";
@@ -37,7 +37,7 @@ function Navbar({ position }) {
           <Box sx={{ height: 54 }}>
             <Link href="/">
               <Image
-                src={logo}
+                src={bambuLogo}
                 alt="Logo"
                 style={{ height: "100%", width: "100%" }}
               />

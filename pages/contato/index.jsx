@@ -12,7 +12,6 @@ import whatsapp from "../../src/images/Icons/whatsapp.svg";
 import mail from "../../src/images/Icons/mail.svg";
 import facebook from "../../src/images/Icons/facebook.svg";
 import instagram from "../../src/images/Icons/instagram.svg";
-import { width } from "@mui/system";
 
 const index = () => {
   return (

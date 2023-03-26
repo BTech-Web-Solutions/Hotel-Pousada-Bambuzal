@@ -3,9 +3,9 @@ import Link from "next/link";
 import styled from "styled-components";
 import Box from "@mui/material/Box";
 import Image from "next/image";
-import logo from "../images/logo.png";
-import facebookIcon from "../images/Icons/Facebook.png";
-import instagramIcon from "../images/Icons/Instagram.png";
+import bambuLogo from "../images/logo.png"
+import facebookIcon from "../images/Icons/facebook.svg";
+import instagramIcon from "../images/Icons/instagram.svg"
 import ActiveLink from "./ActiveLink";
 import TheButton from "./Button";
 import { Typography } from "@mui/material";
@@ -35,7 +35,7 @@ const Footer = () => {
         }}
       >
         <Image
-          src={logo}
+          src={bambuLogo}
           alt="Logo"
           style={{
             height: "20%",
