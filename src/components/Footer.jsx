@@ -3,9 +3,9 @@ import Link from "next/link";
 import styled from "styled-components";
 import Box from "@mui/material/Box";
 import Image from "next/image";
-import bambuLogo from "../images/logo.png"
+import bambuLogo from "../images/logo.png";
 import facebookIcon from "../images/Icons/facebook.svg";
-import instagramIcon from "../images/Icons/instagram.svg"
+import instagramIcon from "../images/Icons/instagram.svg";
 import ActiveLink from "./ActiveLink";
 import TheButton from "./Button";
 import { Typography } from "@mui/material";
@@ -107,6 +107,7 @@ const Footer = () => {
         <Link
           style={{ textDecoration: "none" }}
           href="https://goo.gl/maps/vFgyaLqkfeZghtUR7"
+          target="_blank"
         >
           <TheButton title="Ver no Mapa" />
         </Link>
@@ -195,7 +196,7 @@ const StyledFooter = styled.footer`
   background-color: #181818;
   color: white;
   display: flex;
-  justify-content: space-around;  
+  justify-content: space-around;
 
   .title {
     color: #eb5322;
