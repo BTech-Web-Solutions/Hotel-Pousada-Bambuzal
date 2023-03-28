@@ -53,15 +53,8 @@ const index = () => {
               xs: "0",
               sm: "0",
               md: "0",
-              lg: "-3%",
+              lg: "0",
               xl: "7%",
-            },
-            marginTop: {
-              xs: "0",
-              sm: "0",
-              md: "0",
-              lg: "8rem",
-              xl: "6rem",
             },
             height: {
               xs: "",
@@ -73,9 +66,9 @@ const index = () => {
             width: {
               xs: "100%",
               sm: "100%",
-              md: "51%",
-              lg: "51%",
-              xl: "51%",
+              md: "50%",
+              lg: "50%",
+              xl: "30%",
             },
             padding: {
               xs: "0",
@@ -185,10 +178,10 @@ const index = () => {
                 xl: "15%",
               },
               zIndex: "1",
-              margin: {
-                xs: "2rem",
-                sm: "2rem",
-                md: "2rem",
+              marginLeft: {
+                xs: "0",
+                sm: "0",
+                md: "0",
                 lg: "4rem",
                 xl: "2rem",
               },
@@ -198,6 +191,13 @@ const index = () => {
                 md: "start",
                 lg: "start",
                 xl: "start",
+              },
+              margin: {
+                xs: "2rem",
+                sm: "2rem",
+                md: "2rem",
+                lg: "0",
+                xl: "0",
               },
             }}
           >
