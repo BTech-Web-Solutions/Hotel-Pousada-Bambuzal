@@ -205,6 +205,7 @@ const index = () => {
               variant="h4"
               sx={{
                 color: "#fff",
+                padding: "0.5rem",
               }}
             >
               Nos siga nas redes sociais
