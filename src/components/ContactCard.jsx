@@ -6,7 +6,7 @@ const ContactCard = ({ src, alt, title, p }) => {
   return (
     <Box
       sx={{
-        border: "4px solid #000",
+        border: "3px solid #000",
         boxShadow: "5px 2px 30px -8px rgba(0,0,0,0.75)",
         bgcolor: "#181818",
         width: {

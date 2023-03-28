@@ -40,8 +40,8 @@ const index = () => {
           item
           xs={15}
           sm={10}
-          md={7}
-          lg={7}
+          md={6}
+          lg={6}
           xl={5}
           sx={{
             position: {
@@ -186,7 +186,13 @@ const index = () => {
               lg: "5%",
               xl: "10%",
             },
-            width: "100vw",
+            width: {
+              xs: "90%",
+              sm: "75%",
+              md: "80%",
+              lg: "100%",
+              xl: "100%",
+            },
           }}
         >
           <Box
@@ -206,7 +212,7 @@ const index = () => {
           >
             <Box
               sx={{
-                border: "4px solid #000",
+                border: "3px solid #000",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "",
