@@ -122,7 +122,7 @@ const index = () => {
                 sx={{
                   color: "#fff",
                   padding: "1rem",
-                  margin: "2rem",
+                  marginTop: "2rem",
                   textAlign: "center",
                 }}
               >
