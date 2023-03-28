@@ -223,7 +223,7 @@ const index = () => {
 
                 color: "#fff",
                 padding: {
-                  xs: "8rem 5rem",
+                  xs: "8rem 2rem",
                   sm: "8rem 5rem",
                   md: "8rem",
                   lg: "8rem",
