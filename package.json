@@ -18,11 +18,14 @@
     "@mui/material": "latest",
     "@next/font": "latest",
     "bootstrap": "^5.2.3",
+    "dotenv": "^16.0.3",
     "next": "latest",
+    "nodemailer": "^6.9.1",
     "prop-types": "latest",
     "react": "latest",
     "react-bootstrap": "^2.7.0",
     "react-dom": "latest",
+    "sendmail": "^1.6.1",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

@@ -1,9 +1,10 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-export default function TheButton({ title }) {
+export default function TheButton({ title, onClick }) {
   return (
     <Button
+      onClick={onClick}
       variant="contained"
       color="primary"
       disableElevation

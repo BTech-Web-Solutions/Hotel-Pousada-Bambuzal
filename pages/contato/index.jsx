@@ -1,10 +1,11 @@
 import { Box, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../src/components/Navbar";
 import ContactCard from "../../src/components/ContactCard";
 import Image from "next/image";
 import Link from "next/link";
 import ContactInput from "../../src/components/ContactInput";
+import { sendEmail } from "../../src/utils/api";
 
 import location from "../../src/images/Icons/location.svg";
 import telephone from "../../src/images/Icons/telephone.svg";
@@ -15,6 +16,28 @@ import instagram from "../../src/images/Icons/instagram.svg";
 import TheButton from "../../src/components/Button";
 
 const index = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await sendEmail({ name, email, message });
+
+      setName("");
+      setEmail("");
+      setMessage("");
+
+      alert("E-mail enviado com sucesso!");
+    } catch (error) {
+      console.error(error);
+
+      alert("Erro ao enviar e-mail");
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -260,9 +283,19 @@ const index = () => {
                 Entre em contato conosco
               </Typography>
 
-              <ContactInput id="nome" label="Nome" variant="outlined" />
+              <ContactInput
+                id="nome"
+                label="Nome"
+                variant="outlined"
+                onChange={(e) => setName(e.target.value)}
+              />
 
-              <ContactInput id="email" label="Email" variant="outlined" />
+              <ContactInput
+                id="email"
+                label="Email"
+                variant="outlined"
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
               <ContactInput id="telefone" label="Telefone" variant="outlined" />
 
@@ -271,9 +304,15 @@ const index = () => {
                 label="Mensagem"
                 variant="outlined"
                 rows={6}
+                onChange={(e) => setMessage(e.target.value)}
               />
 
-              <TheButton title="Enviar" />
+              <TheButton
+                title="Enviar"
+                onClick={() => {
+                  sendEmail();
+                }}
+              />
             </Box>
           </Box>
         </Grid>
