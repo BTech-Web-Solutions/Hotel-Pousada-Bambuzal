@@ -133,7 +133,6 @@ const Footer = () => {
 
         <p>
           {`(22) 9 8811-2400`} <br />
-          {`(22) 2793-2400`} <br />
           {`hotelpousadabambuzal@gmail.com`} <br />
         </p>
       </Box>
