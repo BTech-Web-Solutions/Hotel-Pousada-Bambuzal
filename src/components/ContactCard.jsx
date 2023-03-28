@@ -8,14 +8,27 @@ const ContactCard = ({ src, alt, title, p }) => {
       sx={{
         border: "2px solid #000",
         bgcolor: "#181818",
-        width: "16rem",
-        height: "16rem",
+        width: {
+          xs: "15rem",
+          sm: "15rem",
+          md: "15rem",
+          lg: "16rem",
+          xl: "16rem",
+        },
+        height: {
+          xs: "15rem",
+          sm: "15rem",
+          md: "15rem",
+          lg: "16rem",
+          xl: "16rem",
+        },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         color: "#fff",
         padding: "1rem",
+        // flexWrap: "wrap",
       }}
     >
       <Image style={{ height: "50px" }} src={src} alt={alt} />
@@ -23,7 +36,19 @@ const ContactCard = ({ src, alt, title, p }) => {
         {title}
       </Typography>
 
-      <Typography sx={{ textAlign: "center" }} variant="p">
+      <Typography
+        sx={{
+          textAlign: "center",
+          fontSize: {
+            xs: "0.9rem",
+            sm: "0.9rem",
+            md: "0.9rem",
+            lg: "1rem",
+            xl: "1rem",
+          },
+        }}
+        variant="p"
+      >
         {p}
       </Typography>
     </Box>

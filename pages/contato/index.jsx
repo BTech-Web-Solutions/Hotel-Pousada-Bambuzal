@@ -21,255 +21,343 @@ const index = () => {
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
-          alignItems: {
-            xs: "center",
-            sm: "center",
-            md: "flex-start",
-            lg: "flex-start",
-            xl: "flex-start",
+          flexDirection: {
+            xs: "column-reverse",
+            sm: "column-reverse",
+            md: "column",
+            lg: "column",
+            xl: "column",
           },
-          justifyContent: "center",
-          // bgcolor: "#8080801f",
-          marginLeft: {
-            xs: "0",
-            sm: "0",
-            md: "0",
-            lg: "0",
-            xl: "7%",
-          },
-          height: "89vh",
-          width: {
-            xs: "100%",
-            sm: "100%",
-            md: "50%",
-            lg: "50%",
-            xl: "30%",
-          },
-          padding: {
-            xs: "0",
-            sm: "0",
-            md: "1rem",
-            lg: "1rem",
-            xl: "2rem",
-          },
-          position: "absolute",
-          zIndex: "1",
         }}
       >
         <Box
           sx={{
+            // bgcolor: "red",
             display: "flex",
-            flexWrap: "wrap",
-            gap: {
-              xs: "0",
-              sm: "0",
-              md: "0rem",
-              lg: "0.5rem",
-              xl: "1rem",
+            flexDirection: "column",
+            alignItems: {
+              xs: "center",
+              sm: "center",
+              md: "flex-start",
+              lg: "flex-start",
+              xl: "flex-start",
+            },
+            justifyContent: {
+              xs: "center",
+              sm: "center",
+              md: "center",
+              lg: "center",
+              xl: "center",
             },
             marginLeft: {
               xs: "0",
               sm: "0",
-              md: "2rem",
-              lg: "4rem",
-              xl: "2rem",
-            },
-          }}
-        >
-          <ContactCard
-            src={location}
-            alt="Icone-de-Localização"
-            title="Nossa Localização"
-            p="ESTRADA DO SANA Nº 2000 SANA, MACAÉ - RJ"
-          />
-
-          <ContactCard
-            src={telephone}
-            alt="Icone-de-Telefone"
-            title="Número de Telefone"
-            p="(22) 9 8811-2400"
-          />
-
-          <ContactCard
-            src={whatsapp}
-            alt="Icone-de-Whatsapp"
-            title="Chame no Whatsapp"
-            p="(22) 9 8811-2400"
-          />
-
-          <ContactCard
-            src={mail}
-            alt="Icone-de-Email"
-            title="Envie um Email"
-            p="hotelpousadabambuzal@gmail.com"
-          />
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            // bgcolor: "#8080801f",
-            width: {
-              xs: "100%",
-              sm: "100%",
-              md: "60%",
-              lg: "70%",
-              xl: "70%",
+              md: "0",
+              lg: "0",
+              xl: "7%",
             },
             height: {
-              xs: "100%",
-              sm: "100%",
-              md: "100%",
-              lg: "15%",
-              xl: "15%",
+              xs: "",
+              sm: "",
+              md: "",
+              lg: "89vh",
+              xl: "89vh",
             },
-            zIndex: "1",
-            marginLeft: {
-              xs: "0",
-              sm: "0",
-              md: "2rem",
-              lg: "4rem",
-              xl: "2rem",
-            },
-          }}
-        >
-          <Typography
-            variant="h4"
-            sx={{
-              color: "#fff",
-            }}
-          >
-            Nos siga nas redes sociais
-          </Typography>
-
-          <Box
-            sx={{
-              display: "flex",
-              width: "50%",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <Link
-              href="https://www.facebook.com/HotelPousadaBambuzal"
-              target="_blank"
-            >
-              <Box
-                sx={{
-                  bgcolor: "#101010",
-                  padding: "0.5rem",
-                  borderRadius: "50%",
-                }}
-              >
-                <Image
-                  style={{ height: "30px", width: "30px" }}
-                  src={facebook}
-                  alt="Icone-de-Facebook"
-                />
-              </Box>
-            </Link>
-
-            <Link href="https://www.instagram.com/hpbambuzal/" target="_blank">
-              <Box
-                sx={{
-                  bgcolor: "#101010",
-                  padding: "0.5rem",
-                  borderRadius: "50%",
-                }}
-              >
-                <Image
-                  style={{ height: "30px", width: "30px" }}
-                  src={instagram}
-                  alt="Icone-de-Instagram"
-                />
-              </Box>
-            </Link>
-          </Box>
-        </Box>
-      </Box>
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: {
-            xs: "center",
-            sm: "center",
-            md: "flex-end",
-            lg: "flex-end",
-            xl: "flex-end",
-          },
-          justifyContent: "center",
-          // bgcolor: "#505050",
-          height: "85vh",
-          padding: "2rem",
-          marginRight: {
-            xs: "0",
-            sm: "0",
-            md: "0",
-            lg: "0",
-            xl: "12%",
-          },
-        }}
-      >
-        <Box
-          sx={{
-            border: "2px solid #000",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "",
-            justifyContent: "space-evenly",
-            bgcolor: "#181818",
             width: {
               xs: "100%",
-              sm: "60%",
+              sm: "100%",
               md: "50%",
-              lg: "60%",
-              xl: "50%",
+              lg: "50%",
+              xl: "30%",
             },
-            color: "#fff",
-            padding: "8rem",
+            padding: {
+              xs: "0",
+              sm: "0",
+              md: "1rem",
+              lg: "1rem",
+              xl: "2rem",
+            },
+            position: {
+              xs: "",
+              sm: "",
+              md: "absolute",
+              lg: "absolute",
+            },
+            zIndex: "1",
           }}
         >
-          <Typography
-            variant="h3"
+          <Box
             sx={{
-              marginBottom: "2rem",
-              marginTop: "-5rem",
+              // bgcolor: "red",
               display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontWeight: "bold",
-              textAlign: "center",
-              fontSize: {
-                xs: "1.8rem",
-                sm: "2.5rem",
-                md: "2.5rem",
-                lg: "2.9rem",
-                xl: "2.5rem",
+              flexWrap: "wrap",
+              gap: {
+                xs: "1rem",
+                sm: "1rem",
+                md: "1rem",
+                lg: "1rem",
+                xl: "1rem",
+              },
+              marginLeft: {
+                xs: "0",
+                sm: "0",
+                md: "2rem",
+                lg: "4rem",
+                xl: "2rem",
+              },
+              justifyContent: "space-evenly",
+              marginTop: {
+                xs: "1rem",
+                sm: "1rem",
+                md: "0",
+                lg: "0",
+                xl: "0",
+              },
+              padding: {
+                xs: "0",
+                sm: "0 4rem",
+                md: "0",
+                lg: "0",
               },
             }}
           >
-            Entre em contato conosco
-          </Typography>
+            <ContactCard
+              src={location}
+              alt="Icone-de-Localização"
+              title="Nossa Localização"
+              p="ESTRADA DO SANA Nº 2000 SANA, MACAÉ - RJ"
+            />
 
-          <ContactInput id="nome" label="Nome" variant="outlined" />
+            <ContactCard
+              src={telephone}
+              alt="Icone-de-Telefone"
+              title="Número de Telefone"
+              p="(22) 9 8811-2400"
+            />
 
-          <ContactInput id="email" label="Email" variant="outlined" />
+            <ContactCard
+              src={whatsapp}
+              alt="Icone-de-Whatsapp"
+              title="Chame no Whatsapp"
+              p="(22) 9 8811-2400"
+            />
 
-          <ContactInput id="telefone" label="Telefone" variant="outlined" />
+            <ContactCard
+              src={mail}
+              alt="Icone-de-Email"
+              title="Envie um Email"
+              p="hotelpousadabambuzal@gmail.com"
+            />
+          </Box>
 
-          <ContactInput
-            id="mensagem"
-            label="Mensagem"
-            variant="outlined"
-            rows={6}
-          />
+          <Box
+            sx={{
+              // bgcolor: "red",
+              display: {
+                xs: "flex",
+                sm: "flex",
+                md: "flex",
+                lg: "flex",
+                xl: "flex",
+              },
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+              width: {
+                xs: "100%",
+                sm: "100%",
+                md: "60%",
+                lg: "70%",
+                xl: "70%",
+              },
+              height: {
+                xs: "100%",
+                sm: "100%",
+                md: "100%",
+                lg: "15%",
+                xl: "15%",
+              },
+              zIndex: "1",
+              marginLeft: {
+                xs: "0",
+                sm: "0",
+                md: "0",
+                lg: "4rem",
+                xl: "2rem",
+              },
+              textAlign: {
+                xs: "center",
+                sm: "start",
+                md: "start",
+                lg: "start",
+                xl: "start",
+              },
+              margin: {
+                xs: "2rem",
+                sm: "2rem",
+                md: "2rem",
+                lg: "0",
+                xl: "0",
+              },
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                color: "#fff",
+              }}
+            >
+              Nos siga nas redes sociais
+            </Typography>
 
-          <TheButton title="Enviar" />
+            <Box
+              sx={{
+                display: "flex",
+                width: "50%",
+                justifyContent: "space-evenly",
+              }}
+            >
+              <Link
+                href="https://www.facebook.com/HotelPousadaBambuzal"
+                target="_blank"
+              >
+                <Box
+                  sx={{
+                    bgcolor: "#101010",
+                    padding: "0.5rem",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <Image
+                    style={{ height: "30px", width: "30px" }}
+                    src={facebook}
+                    alt="Icone-de-Facebook"
+                  />
+                </Box>
+              </Link>
+
+              <Link
+                href="https://www.instagram.com/hpbambuzal/"
+                target="_blank"
+              >
+                <Box
+                  sx={{
+                    bgcolor: "#101010",
+                    padding: "0.5rem",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <Image
+                    style={{ height: "30px", width: "30px" }}
+                    src={instagram}
+                    alt="Icone-de-Instagram"
+                  />
+                </Box>
+              </Link>
+            </Box>
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            // bgcolor: "red",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: {
+              xs: "center",
+              sm: "center",
+              md: "flex-end",
+              lg: "flex-end",
+              xl: "flex-end",
+            },
+            justifyContent: "center",
+
+            // height: "85vh",
+            padding: {
+              xs: "0",
+              sm: "0",
+              md: "0",
+              lg: "2rem",
+              xl: "2rem",
+            },
+            marginRight: {
+              xs: "1%",
+              sm: "0",
+              md: "0",
+              lg: "0",
+              xl: "12%",
+            },
+            margin: {
+              xs: "1rem 2rem",
+              sm: "1rem 2rem",
+              md: "0",
+              lg: "0",
+              xl: "0",
+            },
+          }}
+        >
+          <Box
+            sx={{
+              border: "2px solid #000",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "",
+              justifyContent: "space-evenly",
+              bgcolor: "#181818",
+              width: {
+                xs: "100%",
+                sm: "60%",
+                md: "50%",
+                lg: "60%",
+                xl: "50%",
+              },
+              color: "#fff",
+              padding: {
+                xs: "8rem 1.5rem",
+                sm: "8rem 1.5rem",
+                md: "8rem",
+                lg: "8rem",
+                xl: "8rem",
+              },
+            }}
+          >
+            <Typography
+              variant="h3"
+              sx={{
+                marginBottom: "2rem",
+                marginTop: "-5rem",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontWeight: "bold",
+                textAlign: "center",
+                fontSize: {
+                  xs: "1.8rem",
+                  sm: "2.5rem",
+                  md: "2.5rem",
+                  lg: "2.9rem",
+                  xl: "2.5rem",
+                },
+              }}
+            >
+              Entre em contato conosco
+            </Typography>
+
+            <ContactInput id="nome" label="Nome" variant="outlined" />
+
+            <ContactInput id="email" label="Email" variant="outlined" />
+
+            <ContactInput id="telefone" label="Telefone" variant="outlined" />
+
+            <ContactInput
+              id="mensagem"
+              label="Mensagem"
+              variant="outlined"
+              rows={6}
+            />
+
+            <TheButton title="Enviar" />
+          </Box>
         </Box>
       </Box>
     </>
