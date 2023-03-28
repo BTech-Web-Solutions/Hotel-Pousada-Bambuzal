@@ -31,7 +31,7 @@ const ContactCard = ({ src, alt, title, p }) => {
         // flexWrap: "wrap",
       }}
     >
-      <Image style={{ height: "50px" }} src={src} alt={alt} />
+      <Image style={{ height: "50px", width: "50px" }} src={src} alt={alt} />
       <Typography sx={{ margin: "0.5rem", textAlign: "center" }} variant="h5">
         {title}
       </Typography>
