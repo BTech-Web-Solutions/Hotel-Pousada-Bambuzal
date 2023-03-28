@@ -1,17 +1,9 @@
 import { Box, TextField } from "@mui/material";
 import * as React from "react";
 
-export default function ContactInput({
-  id,
-  label,
-  variant,
-  rows,
-  onChange,
-  value,
-}) {
+export default function ContactInput({ id, label, variant, rows, onChange }) {
   return (
     <TextField
-      value={value}
       onChange={onChange}
       id={id}
       label={label}

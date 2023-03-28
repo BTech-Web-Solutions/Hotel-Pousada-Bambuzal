@@ -284,7 +284,6 @@ const index = () => {
               </Typography>
 
               <ContactInput
-                value={name}
                 id="nome"
                 label="Nome"
                 variant="outlined"
@@ -292,7 +291,6 @@ const index = () => {
               />
 
               <ContactInput
-                value={email}
                 id="email"
                 label="Email"
                 variant="outlined"
@@ -302,7 +300,6 @@ const index = () => {
               <ContactInput id="telefone" label="Telefone" variant="outlined" />
 
               <ContactInput
-                value={message}
                 id="mensagem"
                 label="Mensagem"
                 variant="outlined"
