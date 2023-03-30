@@ -65,10 +65,81 @@ const index = () => {
             sx={{
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center",
+              justifyContent: "space-evenly",
               alignItems: "center",
             }}
           >
+            <Typography
+              variant="h4"
+              sx={{
+                color: "#fff",
+                padding: "1rem",
+                textAlign: "center",
+                marginLeft: {
+                  xs: "0",
+                  sm: "-1.3rem",
+                  md: "-3rem",
+                  lg: "0",
+                  xl: "-5rem",
+                },
+              }}
+            >
+              Nos siga nas redes sociais
+            </Typography>
+
+            <Box
+              sx={{
+                display: "flex",
+                width: "50%",
+                justifyContent: "space-evenly",
+                marginBottom: "3rem",
+                marginLeft: {
+                  xs: "0",
+                  sm: "-1.3rem",
+                  md: "-3rem",
+                  lg: "0",
+                  xl: "-5rem",
+                },
+              }}
+            >
+              <Link
+                href="https://www.facebook.com/HotelPousadaBambuzal"
+                target="_blank"
+              >
+                <Box
+                  sx={{
+                    bgcolor: "#101010",
+                    padding: "0.5rem",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <Image
+                    style={{ height: "30px", width: "30px" }}
+                    src={facebook}
+                    alt="Icone-de-Facebook"
+                  />
+                </Box>
+              </Link>
+
+              <Link
+                href="https://www.instagram.com/hpbambuzal/"
+                target="_blank"
+              >
+                <Box
+                  sx={{
+                    bgcolor: "#101010",
+                    padding: "0.5rem",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <Image
+                    style={{ height: "30px", width: "30px" }}
+                    src={instagram}
+                    alt="Icone-de-Instagram"
+                  />
+                </Box>
+              </Link>
+            </Box>
             <Grid
               container
               rowSpacing={2}
@@ -117,63 +188,6 @@ const index = () => {
                   p="hotelpousadabambuzal@gmail.com"
                 />
               </Grid>
-              <Typography
-                variant="h4"
-                sx={{
-                  color: "#fff",
-                  padding: "1rem",
-                  marginTop: "2rem",
-                  textAlign: "center",
-                }}
-              >
-                Nos siga nas redes sociais
-              </Typography>
-
-              <Box
-                sx={{
-                  display: "flex",
-                  width: "50%",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <Link
-                  href="https://www.facebook.com/HotelPousadaBambuzal"
-                  target="_blank"
-                >
-                  <Box
-                    sx={{
-                      bgcolor: "#101010",
-                      padding: "0.5rem",
-                      borderRadius: "50%",
-                    }}
-                  >
-                    <Image
-                      style={{ height: "30px", width: "30px" }}
-                      src={facebook}
-                      alt="Icone-de-Facebook"
-                    />
-                  </Box>
-                </Link>
-
-                <Link
-                  href="https://www.instagram.com/hpbambuzal/"
-                  target="_blank"
-                >
-                  <Box
-                    sx={{
-                      bgcolor: "#101010",
-                      padding: "0.5rem",
-                      borderRadius: "50%",
-                    }}
-                  >
-                    <Image
-                      style={{ height: "30px", width: "30px" }}
-                      src={instagram}
-                      alt="Icone-de-Instagram"
-                    />
-                  </Box>
-                </Link>
-              </Box>
             </Grid>
           </Box>
         </Grid>
