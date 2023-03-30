@@ -11,7 +11,6 @@ import bambuLogo from "../images/logo.png";
 import Image from "next/image";
 import ActiveLink from "./ActiveLink";
 import { Link } from "@mui/material";
-import { memo } from "react";
 
 function Navbar({ position }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -128,4 +127,4 @@ function Navbar({ position }) {
     </AppBar>
   );
 }
-export default memo(Navbar);
+export default Navbar;
