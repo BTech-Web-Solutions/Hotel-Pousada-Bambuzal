@@ -5,8 +5,14 @@ import styled from "styled-components";
 const Carrousel = () => {
   return (
     <StyledCarrousel>
-      <Carousel pause={false}>
-        <Carousel.Item interval={5000}>
+      <Carousel
+        pause={false}
+        indicators={false}
+        controls={false}
+        fade={true}
+        interval={5000}
+      >
+        <Carousel.Item>
           <div
             style={{
               color: "white",
@@ -24,7 +30,7 @@ const Carrousel = () => {
           />
         </Carousel.Item>
 
-        <Carousel.Item interval={5000}>
+        <Carousel.Item>
           <div
             style={{
               color: "white",
@@ -41,7 +47,7 @@ const Carrousel = () => {
           />
         </Carousel.Item>
 
-        <Carousel.Item interval={5000}>
+        <Carousel.Item>
           <div
             style={{
               color: "white",
@@ -58,7 +64,7 @@ const Carrousel = () => {
           />
         </Carousel.Item>
 
-        <Carousel.Item interval={5000}>
+        <Carousel.Item>
           <div
             style={{
               color: "white",
@@ -97,5 +103,59 @@ const StyledCarrousel = styled.div`
 
   .carousel-indicators {
     display: none;
+  }
+  @media (max-width: 480px) {
+    img {
+      width: 170vw;
+      height: 80vh;
+    }
+  }
+
+  /* Dispositivos móveis em paisagem */
+  @media (min-width: 481px) and (max-width: 767px) {
+    img {
+      width: 170vw;
+      height: 80vh;
+    }
+  }
+
+  /* Tablets em retrato */
+  @media (min-width: 768px) and (max-width: 991px) {
+    img {
+      width: 120vw;
+      height: 84vh;
+    }
+  }
+
+  /* Tablets em paisagem e telas menores de desktop */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    img {
+      width: 120vw;
+      height: 80vh;
+    }
+  }
+
+  /* Telas maiores de desktop */
+  @media (min-width: 1200px) and (max-width: 1399px) {
+    /* Inserir regras de estilo aqui */
+    img {
+      width: 120vw;
+      height: 80vh;
+    }
+  }
+
+  /* Monitores maiores de alta resolução */
+  @media (min-width: 1400px) and (max-width: 1599px) {
+    /* Inserir regras de estilo aqui */
+  }
+
+  /* Monitores ainda maiores de alta resolução */
+  @media (min-width: 1600px) and (max-width: 1919px) {
+    /* Inserir regras de estilo aqui */
+  }
+
+  /* Monitores ainda maiores de alta resolução */
+  @media (min-width: 1920px) and (max-width: 2559px) {
+    /* Inserir regras de estilo aqui */
   }
 `;
