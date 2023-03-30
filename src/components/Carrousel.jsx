@@ -11,6 +11,7 @@ const Carrousel = () => {
         controls={false}
         fade={true}
         interval={5000}
+        className="carrousel"
       >
         <Carousel.Item>
           <div
@@ -88,6 +89,11 @@ const Carrousel = () => {
 export default Carrousel;
 
 const StyledCarrousel = styled.div`
+  .carousel {
+    overflow-y: hidden;
+    width: 100vw;
+  }
+
   h3,
   p,
   span,
@@ -107,8 +113,9 @@ const StyledCarrousel = styled.div`
 
   @media (max-width: 480px) {
     img {
-      width: 170vw;
+      width: 180vw;
       height: 80vh;
+      margin-left: -8rem;
     }
   }
 
