@@ -104,9 +104,10 @@ const StyledCarrousel = styled.div`
   .carousel-indicators {
     display: none;
   }
+
   @media (max-width: 480px) {
     img {
-      width: 170vw;
+      width: 100vw;
       height: 80vh;
     }
   }
