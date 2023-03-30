@@ -20,7 +20,7 @@ export default function TheButton({ title }) {
           lg: "8px 50px",
           xl: "8px 50px",
         },
-        fontWeight: "400",
+        fontWeight: "600",
         fontSize: {
           xs: "1.rem",
           sm: "1rem",
@@ -39,8 +39,8 @@ export default function TheButton({ title }) {
           xl: "100%",
         },
         height: {
-          xs: "7vh",
-          sm: "7vh",
+          xs: "6vh",
+          sm: "6vh",
           md: "100%",
           lg: "100%",
           xl: "100%",
