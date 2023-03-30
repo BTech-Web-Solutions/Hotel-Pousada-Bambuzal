@@ -1,12 +1,18 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import styled from "styled-components";
+import {
+  CarouselSlideOne,
+  CarouselSlideTwo,
+  CarouselSlideThree,
+  CarouselSlideFour,
+} from "../utils/funcs/CarouselRenderWindowSize";
 
 const Carrousel = () => {
   return (
     <StyledCarrousel>
       <Carousel pause={false}>
-        <Carousel.Item interval={5000}>
+        <Carousel.Item interval={1000}>
           <div
             style={{
               color: "white",
@@ -18,13 +24,10 @@ const Carrousel = () => {
             }}
           />
 
-          <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/1.png?raw=true"
-            alt="First slide"
-          />
+          <img src={CarouselSlideOne()} alt="First slide" />
         </Carousel.Item>
 
-        <Carousel.Item interval={5000}>
+        <Carousel.Item interval={1000}>
           <div
             style={{
               color: "white",
@@ -35,13 +38,10 @@ const Carrousel = () => {
               height: "100%",
             }}
           />
-          <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/2.png?raw=true"
-            alt="Second slide"
-          />
+          <img src={CarouselSlideTwo()} alt="Second slide" />
         </Carousel.Item>
 
-        <Carousel.Item interval={5000}>
+        <Carousel.Item interval={1000}>
           <div
             style={{
               color: "white",
@@ -52,13 +52,10 @@ const Carrousel = () => {
               height: "100%",
             }}
           />
-          <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/3.png?raw=true"
-            alt="Third slide"
-          />
+          <img src={CarouselSlideThree()} alt="Third slide" />
         </Carousel.Item>
 
-        <Carousel.Item interval={5000}>
+        <Carousel.Item interval={1000}>
           <div
             style={{
               color: "white",
@@ -69,10 +66,7 @@ const Carrousel = () => {
               height: "100%",
             }}
           />
-          <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/4.png?raw=true"
-            alt="First slide"
-          />
+          <img src={CarouselSlideFour()} alt="First slide" />
         </Carousel.Item>
       </Carousel>
     </StyledCarrousel>
