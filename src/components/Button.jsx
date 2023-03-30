@@ -20,9 +20,9 @@ export default function TheButton({ title }) {
           lg: "8px 50px",
           xl: "8px 50px",
         },
-        fontWeight: "600",
+        fontWeight: "400",
         fontSize: {
-          xs: "1.rem",
+          xs: "0.7rem",
           sm: "1rem",
           md: "1rem",
           lg: "1rem",
@@ -31,23 +31,21 @@ export default function TheButton({ title }) {
         ":hover": {
           bgcolor: "#eb5422",
         },
-        width: {
-          xs: "70vw",
-          sm: "70vw",
-          md: "100%",
-          lg: "100%",
-          xl: "100%",
-        },
-        height: {
-          xs: "6vh",
-          sm: "6vh",
-          md: "100%",
-          lg: "100%",
-          xl: "100%",
-        },
       }}
     >
       {title}
     </Button>
   );
 }
+
+// background-color: #eb5422c8;
+// color: white;
+// border: none;
+// border-radius: 50px;
+// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+// padding: 8px 50px;
+// font-weight: 100;
+// font-size: 1.5rem;
+// :hover {
+//   background-color: #eb5422;
+// }

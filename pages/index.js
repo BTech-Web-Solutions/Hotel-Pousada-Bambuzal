@@ -14,19 +14,23 @@ const theme = createTheme({});
 
 export default function Index() {
   return (
-    <div
-      style={{
-        maxWidth: "1600px",
-      }}
-    >
+    <Box>
       <ThemeProvider theme={theme}>
         <Navbar />
 
-        <MainDiv>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Box
             sx={{
               position: "absolute",
               zIndex: "5",
+              maxWidth: "1300px",
               width: {
                 xs: "90%",
                 sm: "90%",
@@ -34,6 +38,19 @@ export default function Index() {
                 lg: "80%",
                 xl: "80%",
               },
+              height: {
+                xs: "60%",
+                sm: "60%",
+                md: "60%",
+                lg: "60%",
+                xl: "60%",
+              },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: {
+                xs: "space-evenly",
+              },
+              // bgcolor: "#fff",
             }}
           >
             <Typography
@@ -74,6 +91,10 @@ export default function Index() {
                 },
                 width: {
                   xs: "100%",
+                  sm: "100%",
+                  md: "80%",
+                  lg: "80%",
+                  xl: "80%",
                 },
               }}
             >
@@ -103,19 +124,12 @@ export default function Index() {
           </Box>
 
           <Carrousel />
-        </MainDiv>
+        </Box>
 
         <About />
 
         <Footer />
       </ThemeProvider>
-    </div>
+    </Box>
   );
 }
-
-const MainDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
