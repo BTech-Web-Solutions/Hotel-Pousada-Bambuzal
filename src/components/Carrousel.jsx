@@ -102,10 +102,6 @@ const StyledCarrousel = styled.div`
     margin: auto;
   }
 
-  .carousel-indicators {
-    display: none;
-  }
-
   @media (max-width: 480px) {
     img {
       width: 180vw;
@@ -160,6 +156,10 @@ const StyledCarrousel = styled.div`
     img {
       width: 120vw;
       height: 80vh;
+    }
+    .carousel {
+      overflow-y: hidden;
+      width: 100vw;
     }
   }
 
