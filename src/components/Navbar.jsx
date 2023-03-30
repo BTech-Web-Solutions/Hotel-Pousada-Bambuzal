@@ -78,8 +78,7 @@ function Navbar({ position }) {
               sx={{
                 display: { xs: "block", md: "none" },
                 ul: {
-                  background: "#272e38",
-                  color: "#fff",
+                  background: "#181818",
                   textDecoration: "none",
                 },
               }}
