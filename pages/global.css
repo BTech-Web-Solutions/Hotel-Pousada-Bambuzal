@@ -15,8 +15,11 @@ body {
   background-color: #202020;
   height: 100vh;
   border: '1px solid red';
+  width: 100vw;
   max-width: 1600px;
   margin: 0 auto;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
 
 }
 

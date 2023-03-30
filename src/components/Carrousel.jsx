@@ -107,7 +107,7 @@ const StyledCarrousel = styled.div`
 
   @media (max-width: 480px) {
     img {
-      width: 100vw;
+      width: 170vw;
       height: 80vh;
     }
   }
