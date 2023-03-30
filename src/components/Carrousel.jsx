@@ -89,11 +89,6 @@ const Carrousel = () => {
 export default Carrousel;
 
 const StyledCarrousel = styled.div`
-  .carousel {
-    overflow-y: hidden;
-    width: 100vw;
-  }
-
   h3,
   p,
   span,
@@ -117,6 +112,10 @@ const StyledCarrousel = styled.div`
       height: 80vh;
       margin-left: -8rem;
     }
+    .carousel {
+      overflow-y: hidden;
+      width: 100vw;
+    }
   }
 
   /* Dispositivos móveis em paisagem */
@@ -124,6 +123,10 @@ const StyledCarrousel = styled.div`
     img {
       width: 170vw;
       height: 80vh;
+    }
+    .carousel {
+      overflow-y: hidden;
+      width: 100vw;
     }
   }
 
@@ -133,6 +136,10 @@ const StyledCarrousel = styled.div`
       width: 120vw;
       height: 84vh;
     }
+    .carousel {
+      overflow-y: hidden;
+      width: 100vw;
+    }
   }
 
   /* Tablets em paisagem e telas menores de desktop */
@@ -140,6 +147,10 @@ const StyledCarrousel = styled.div`
     img {
       width: 120vw;
       height: 80vh;
+    }
+    .carousel {
+      overflow-y: hidden;
+      width: 100vw;
     }
   }
 
