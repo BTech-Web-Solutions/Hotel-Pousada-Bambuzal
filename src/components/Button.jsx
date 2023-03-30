@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-export default function TheButton({ title }) {
+export default function TheButton({ title, width, fontSize }) {
   return (
     <Button
       variant="contained"
@@ -15,22 +15,17 @@ export default function TheButton({ title }) {
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.4)",
         padding: {
           xs: "8px 15px",
-          sm: "8px 15px",
-          md: "8px 15px",
+          sm: "8px 28px",
+          md: "8px 28px",
           lg: "8px 50px",
           xl: "8px 50px",
         },
         fontWeight: "400",
-        fontSize: {
-          xs: "0.7rem",
-          sm: "1rem",
-          md: "1rem",
-          lg: "1rem",
-          xl: "1.5rem",
-        },
+        fontSize: { ...fontSize },
         ":hover": {
           bgcolor: "#eb5422",
         },
+        width: { ...width },
       }}
     >
       {title}

@@ -62,7 +62,7 @@ export default function Index() {
                 fontWeight: "700",
                 fontSize: {
                   xs: "3rem",
-                  sm: "3rem",
+                  sm: "5rem",
                   md: "4rem",
                   lg: "5rem",
                 },
@@ -79,7 +79,7 @@ export default function Index() {
                 fontWeight: "300",
                 fontSize: {
                   xs: "1.5rem",
-                  sm: "2rem",
+                  sm: "3rem",
                   md: "2rem",
                   lg: "3rem",
                 },
@@ -118,7 +118,23 @@ export default function Index() {
                 style={{ textDecoration: "none" }}
                 href="https://book.securebookings.net/roomrate?id=c4dd3ad1-0057-1672770166-46f7-a98b-44ec5a1f6793&lang=br"
               >
-                <TheButton title="Reserve Agora" />
+                <TheButton
+                  width={{
+                    xs: "60vw",
+                    sm: "100%",
+                    md: "100%",
+                    lg: "100%",
+                    xl: "100%",
+                  }}
+                  fontSize={{
+                    xs: "1rem",
+                    sm: "1.8rem",
+                    md: "1.5rem",
+                    lg: "1.5rem",
+                    xl: "1.5rem",
+                  }}
+                  title="Reserve Agora"
+                />
               </Link>
             </Box>
           </Box>
