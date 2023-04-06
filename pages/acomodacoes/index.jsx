@@ -21,10 +21,6 @@ const index = () => {
           title="Suíte Simples"
           desc="Suítes com Vista para o rio, uma ótima opção para se ouvir as
           águas do rio Sana."
-          configTitle="Configuração do Quarto:"
-          configDesc1="1 Cama de Casal"
-          sizeTitle="Tamanho do Quarto:"
-          sizeDesc="20m²"
           linkTo="1"
         />
 
@@ -34,11 +30,6 @@ const index = () => {
           desc="Chalé composto por garagem privativa, varanda com rede onde se
           pode desfrutar de uma paisagem deslumbrante das montanhas,
           piscinas e do Rio Sana."
-          configTitle="Configuração do Quarto:"
-          configDesc1="1 Cama de Casal"
-          configDesc2="1 mesa redonda de dois Lugares"
-          sizeTitle="Tamanho do Quarto:"
-          sizeDesc="20m²"
           linkTo="2"
         />
 
@@ -48,12 +39,6 @@ const index = () => {
           desc="Chalé composto por garagem privativa, varanda com rede onde se
           pode desfrutar de uma paisagem deslumbrante. Além de um amplo
           espaço interno."
-          configTitle="Configuração do Quarto:"
-          configDesc1="1 Cama de Casal"
-          configDesc2="1 Cama de Solteiro"
-          configDesc3="1 mesa redonda de dois Lugares"
-          sizeTitle="Tamanho do Quarto:"
-          sizeDesc="20m²"
           linkTo="3"
         />
 
@@ -63,11 +48,6 @@ const index = () => {
           desc="Temos opções para quem ama viajar em família e que querem
           ficar juntinhos. Com dois quartos, nossos chalés família são
           perfeitos para acomodar todos com conforto."
-          configTitle="Configuração do Quarto:"
-          configDesc1="1 Cama de Casal"
-          configDesc2="2 Camas de Solteiro"
-          sizeTitle="Tamanho do Quarto:"
-          sizeDesc="20m²"
           linkTo="4"
         />
       </Box>

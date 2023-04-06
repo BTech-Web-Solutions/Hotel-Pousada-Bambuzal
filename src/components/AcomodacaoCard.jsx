@@ -11,19 +11,7 @@ import {
 import Link from "next/link";
 import React from "react";
 
-const AcomodacaoCard = ({
-  image,
-  title,
-  desc,
-  configTitle,
-  configDesc1,
-  configDesc2,
-  configDesc3,
-  configDesc4,
-  sizeTitle,
-  sizeDesc,
-  linkTo,
-}) => {
+const AcomodacaoCard = ({ image, title, desc, linkTo }) => {
   return (
     <Box>
       <Card
@@ -51,14 +39,7 @@ const AcomodacaoCard = ({
               {title}
             </Typography>
             <Typography variant="body2" color="white" component="p">
-              {desc} <br />
-              <br />
-              <b>{configTitle}</b> <br />
-              {configDesc1 ? configDesc1 : null} <br />
-              {configDesc2 ? configDesc2 : null} <br />
-              {configDesc3 ? configDesc3 : null} <br />
-              {configDesc4 ? configDesc4 : null} <br />
-              <b>{sizeTitle}</b> <br /> {sizeDesc}
+              {desc}
             </Typography>
           </CardContent>
         </CardActionArea>
