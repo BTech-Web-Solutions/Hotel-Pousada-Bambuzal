@@ -30,7 +30,7 @@ const CircularProgress = () => (
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '100vh',
+      height: '99vh',
 
     }}
   >
