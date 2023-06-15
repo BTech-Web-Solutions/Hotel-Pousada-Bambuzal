@@ -2,8 +2,12 @@ import { Typography, Container, Box, Slider, Slide } from "@mui/material";
 import React from "react";
 import Navbar from "../../../src/components/Navbar";
 import Footer from "../../../src/components/Footer";
-import Image from "next/image";
+import ImageSlider from "../../../src/components/ImageSlider";
+
 import chaleDuplo1 from "../../../src/images/ChaleDuplo/1.jpg";
+import chaleDuplo2 from "../../../src/images/ChaleTriplo/1.jpg";
+
+const images = [chaleDuplo1, chaleDuplo2];
 
 const index = () => {
   return (
@@ -13,6 +17,14 @@ const index = () => {
         sx={{
           marginTop: "3rem",
           marginBottom: "3rem",
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+            lg: "row",
+            xl: "row",
+          },
         }}
       >
         <Box
@@ -26,6 +38,15 @@ const index = () => {
               xl: "row",
             },
             gap: "5rem",
+
+            width: {
+              xs: "100%",
+              sm: "100%",
+              md: "70%",
+              lg: "80%",
+              xl: "80%",
+            },
+            // border: "1px solid #fff",
           }}
         >
           <Box
@@ -38,7 +59,7 @@ const index = () => {
           >
             <Typography variant="h3">Chalé Duplo</Typography>
 
-            <Typography variant="body1">
+            <Typography variant="body1" sx={{}}>
               Nossos chalés são compostos por garagem privativa, varando com
               rede onde se pode desfrutar de uma paisagem deslumbrante das
               montanhas, piscinas e do Rio Sana. Amplo espaço interno com camas
@@ -49,15 +70,9 @@ const index = () => {
               planeta.
             </Typography>
           </Box>
-
-          <Image
-            src={chaleDuplo1}
-            alt="Test"
-            sizes="(min-width: 100px) 100vw,"
-            width={600}
-            height={400}
-          />
         </Box>
+
+        <ImageSlider images={images} />
       </Container>
       <Footer />
     </>
