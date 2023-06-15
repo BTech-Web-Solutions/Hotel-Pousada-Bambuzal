@@ -8,7 +8,7 @@ const index = () => {
       <Navbar />
 
       <Box>
-        <Typography variant="h1">Suíte Simples</Typography>
+        <Typography variant="h1">Chalé Família</Typography>
       </Box>
     </>
   );
