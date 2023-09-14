@@ -4,10 +4,12 @@ import Navbar from "../../../src/components/Navbar";
 import Footer from "../../../src/components/Footer";
 import ImageSlider from "../../../src/components/ImageSlider";
 
-import chaleDuplo1 from "../../../src/images/ChaleDuplo/1.jpg";
-import chaleDuplo2 from "../../../src/images/ChaleTriplo/1.jpg";
+import photo1 from "../../../src/images/AcomodPages/ChaleDuplo/1.jpg";
+import photo2 from "../../../src/images/AcomodPages/ChaleDuplo/2.jpg";
+import photo3 from "../../../src/images/AcomodPages/ChaleDuplo/3.jpg";
+import photo4 from "../../../src/images/AcomodPages/ChaleDuplo/4.jpg";
 
-const images = [chaleDuplo1, chaleDuplo2];
+const images = [photo1, photo2, photo4, photo3];
 
 const index = () => {
   return (
@@ -46,7 +48,6 @@ const index = () => {
               lg: "80%",
               xl: "80%",
             },
-            // border: "1px solid #fff",
           }}
         >
           <Box
@@ -59,7 +60,12 @@ const index = () => {
           >
             <Typography variant="h3">Chalé Duplo</Typography>
 
-            <Typography variant="body1" sx={{}}>
+            <Typography
+              variant="body1"
+              sx={{
+                marginBottom: "1rem",
+              }}
+            >
               Nossos chalés são compostos por garagem privativa, varando com
               rede onde se pode desfrutar de uma paisagem deslumbrante das
               montanhas, piscinas e do Rio Sana. Amplo espaço interno com camas

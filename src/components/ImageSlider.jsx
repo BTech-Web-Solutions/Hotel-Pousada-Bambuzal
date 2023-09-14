@@ -34,6 +34,7 @@ const ImageSlider = ({ images }) => {
           lg: "0 0 0 auto",
           xl: "0 0 0 auto",
         },
+        borderRadius: "1.2rem",
       }}
     />
   );
