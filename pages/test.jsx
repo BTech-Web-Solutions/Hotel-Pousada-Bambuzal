@@ -29,7 +29,7 @@ const test = () => {
       const docRef = doc(database, "users", id);
 
       await updateDoc(docRef, {
-        name: "teste",
+        name: "Trocou o Nome",
       });
     } catch (error) {
       console.log(error);
