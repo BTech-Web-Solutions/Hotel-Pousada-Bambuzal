@@ -208,7 +208,13 @@ body {
 }
 
 .login__submit:hover {
-  background-color: #ee5928c8;
+  background-color: #cf4d22c8;
+}
+
+.login__submit:active {
+  background-color: #a53012c8;
+  color: #cecece;
+  transition: background-color 0.3s;
 }
 
 .login__forgot {
