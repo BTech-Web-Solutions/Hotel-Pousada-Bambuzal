@@ -9,15 +9,15 @@ export default function index() {
         <form action="" className="form-login">
           <ul className="login-nav">
             <li className="login-nav__item active">
-              <a href="#">Sign In</a>
+              <a href="#">LogIn</a>
             </li>
           </ul>
           <label htmlFor="login-input-user" className="login__label">
-            Username
+            Email
           </label>
           <input id="login-input-user" className="login__input" type="text" />
           <label htmlFor="login-input-password" className="login__label">
-            Password
+            Senha
           </label>
           <input
             id="login-input-password"
@@ -30,10 +30,10 @@ export default function index() {
               type="checkbox"
               className="login__input--checkbox"
             />
-            Keep me Signed in
+            Mantenha conectado
           </label>
           <button className="login__submit" disabled>
-            Sign in
+            Entrar
           </button>
         </form>
         {/* <a href="#" className="login__forgot">
