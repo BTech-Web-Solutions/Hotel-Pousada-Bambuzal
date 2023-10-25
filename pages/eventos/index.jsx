@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { setCookie, getCookie, deleteCookie } from "../../src/hooks/useCookies";
 
 export default function Events() {
   const router = useRouter();
@@ -18,7 +19,7 @@ export default function Events() {
       return response.ok;
     };
 
-    const token = localStorage.getItem("token");
+    const token = getCookie("token");
 
     const checkAndRedirect = async () => {
       if (!token || !(await checkTokenValidity(token))) {
@@ -36,7 +37,7 @@ export default function Events() {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    deleteCookie("token");
     router.push("/eventos/admin");
   };
 
