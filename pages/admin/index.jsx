@@ -1,7 +1,7 @@
 import React, { useState, useEffect, use } from "react";
-import Navbar from "../../../src/components/Navbar";
+import Navbar from "../../src/components/Navbar";
 import { useRouter } from "next/router";
-import { setCookie, getCookie } from "../../../src/hooks/useCookies";
+import { setCookie, getCookie } from "../../src/hooks/useCookies";
 
 export default function index() {
   const [email, setEmail] = useState("");
@@ -27,7 +27,7 @@ export default function index() {
 
       setCookie("token", token, 14);
 
-      router.push("/eventos");
+      router.push("/admin/dashboard");
     } else {
       setIncorrectLogin(true);
     }
@@ -50,7 +50,7 @@ export default function index() {
 
     const checkAndRedirect = async () => {
       if (token && (await checkTokenValidity(token))) {
-        router.push("/eventos");
+        router.push("/admin/dashboard");
       }
     };
 

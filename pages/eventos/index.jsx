@@ -23,7 +23,7 @@ export default function Events() {
 
     const checkAndRedirect = async () => {
       if (!token || !(await checkTokenValidity(token))) {
-        router.push("/eventos/admin");
+        router.push("/admin");
       } else {
         setIsValidToken(true); // Define a variável isValidToken como verdadeira se o token for válido.
       }
@@ -38,7 +38,7 @@ export default function Events() {
 
   const handleLogout = () => {
     deleteCookie("token");
-    router.push("/eventos/admin");
+    router.push("/admin");
   };
 
   return (
