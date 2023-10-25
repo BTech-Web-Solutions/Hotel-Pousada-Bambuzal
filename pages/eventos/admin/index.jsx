@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../../src/components/Navbar";
 import { useRouter } from "next/router";
-import jwt from "jsonwebtoken";
 
 export default function index() {
   const [email, setEmail] = useState("");
