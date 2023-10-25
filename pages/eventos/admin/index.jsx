@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 export default function index() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [incorrectLogin, setIncorrectLogin] = useState(false);
 
   const router = useRouter();
 
@@ -25,6 +26,8 @@ export default function index() {
       router.push("/eventos");
 
       localStorage.setItem("token", token);
+    } else {
+      setIncorrectLogin(true);
     }
   };
 
@@ -84,9 +87,9 @@ export default function index() {
           />
           {/* <label htmlFor="login-sign-up" className="login__label--checkbox">
             <input
-              id="login-sign-up"
-              type="checkbox"
-              className="login__input--checkbox"
+            id="login-sign-up"
+            type="checkbox"
+            className="login__input--checkbox"
             />
             Mantenha conectado
           </label> */}
@@ -94,6 +97,9 @@ export default function index() {
             Entrar
           </button>
         </form>
+        {incorrectLogin && (
+          <p className="login__incorrect">Email ou senha incorretos.</p>
+        )}
         {/* <a href="#" className="login__forgot">
           Forgot Password?
         </a> */}

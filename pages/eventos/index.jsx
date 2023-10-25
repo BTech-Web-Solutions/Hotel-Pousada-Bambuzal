@@ -35,5 +35,20 @@ export default function Events() {
     return null; // Não renderiza nada se o token não for válido (ou se a verificação ainda não foi concluída).
   }
 
-  return <h1>Eventos</h1>;
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    router.push("/eventos/admin");
+  };
+
+  return (
+    <>
+      <h1>Eventos</h1>
+      <button
+        onClick={handleLogout}
+        style={{ marginTop: "1rem", padding: "0.5rem 1rem" }}
+      >
+        LogOut
+      </button>
+    </>
+  );
 }
