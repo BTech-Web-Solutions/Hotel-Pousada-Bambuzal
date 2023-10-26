@@ -4,13 +4,23 @@ import { getCookie } from "../../src/hooks/useCookies";
 import useTokenValidation from "../../src/hooks/useTokenValidation";
 import events from "../../pages/api/events.json";
 import { Box } from "@mui/material";
+import { getDoc, doc } from "firebase/firestore";
+import { database } from "/firebase/firebaseConfig";
 
 const Dashboard = () => {
   const [isValidToken, setIsValidToken] = useState(false);
+  const [loggedUser, setLoggedUser] = useState();
+
   const token = getCookie("token");
   const router = useRouter();
 
-  useTokenValidation(token, router, setIsValidToken);
+  useTokenValidation(
+    token,
+    router,
+    setIsValidToken,
+    setLoggedUser,
+    isValidToken
+  );
 
   if (!isValidToken) {
     return null;
@@ -79,7 +89,7 @@ const Dashboard = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  B
+                  {loggedUser?.name[0]}
                 </Box>
                 <Box
                   sx={{
@@ -94,14 +104,16 @@ const Dashboard = () => {
                       fontWeight: "bold",
                     }}
                   >
-                    Bernardo Rodrigues
+                    {loggedUser?.name} {loggedUser?.surname}
                   </Box>
                   <Box
                     sx={{
                       fontSize: "0.8rem",
                     }}
                   >
-                    Admin
+                    {loggedUser?.roles && loggedUser.roles.includes("admin")
+                      ? "Administrador"
+                      : "Usuário"}
                   </Box>
                 </Box>
               </Box>

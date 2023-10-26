@@ -14,7 +14,7 @@ export const register = async (body) => {
     const querySnapshot = await getDocs(collection(database, "users"));
     const users = querySnapshot.docs.map((doc) => doc.data());
     const existEmail = users.find((user) => user.email === body.email);
-    if (existEmail) throw new Error("Email already exist");
+    if (existEmail) throw new Error("Email already exists");
 
     for (const field in requiredFields) {
       if (!body[field]) throw new Error(requiredFields[field]);
@@ -24,7 +24,9 @@ export const register = async (body) => {
     const salt = await bcrypt.genSalt(10);
     body.password = await bcrypt.hash(body.password, salt);
 
-    const newUser = await addDoc(collection(database, "users"), body);
+    const newUserRef = await addDoc(collection(database, "users"), body);
+    const newUser = { id: newUserRef.id, ...body };
+
     return newUser;
   } catch (err) {
     throw new Error(err.message);
@@ -34,7 +36,10 @@ export const register = async (body) => {
 export const login = async (body) => {
   try {
     const querySnapshot = await getDocs(collection(database, "users"));
-    const users = querySnapshot.docs.map((doc) => doc.data());
+    const users = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
     const user = users.find((user) => user.email === body.email);
     if (!user) throw new Error("User not found");
 
@@ -47,6 +52,7 @@ export const login = async (body) => {
         name: user.name,
         surname: user.surname,
         email: user.email,
+        roles: user.roles,
       },
       process.env.JWT_SECRET
     );
