@@ -3,64 +3,80 @@ import Navbar from "../../src/components/Navbar";
 import { useRouter } from "next/router";
 import { database } from "/firebase/firebaseConfig";
 import { doc, getDoc, setDoc } from "firebase/firestore";
+import { setCookie, getCookie } from "../../src/hooks/useCookies";
 
-export default function index() {
+export default function Index() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [incorrectLogin, setIncorrectLogin] = useState(false);
+  const [token, setToken] = useState(null); // Estado para armazenar o token
 
   const router = useRouter();
 
-  // Caso não tenha feito o primeiro login ainda, essa função é chamada pelo botão de login
+  // Função assíncrona para fazer login
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:3000/api/user/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    try {
+      const response = await fetch("http://localhost:3000/api/user/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-    if (response.ok) {
-      const { token } = await response.json();
-      const decodedToken = token ? JSON.parse(atob(token.split(".")[1])) : null;
-      const userDocRef = doc(database, "users", decodedToken.id);
-      const userDocSnapshot = await getDoc(userDocRef);
+      if (response.ok) {
+        const { token } = await response.json();
+        const decodedToken = token
+          ? JSON.parse(atob(token.split(".")[1]))
+          : null;
+        const userDocRef = doc(database, "users", decodedToken.id);
+        setCookie("dbId", userDocRef.id, 14);
+        const userDocSnapshot = await getDoc(userDocRef);
 
-      if (userDocSnapshot.exists()) {
-        await setDoc(userDocRef, { token }, { merge: true });
-        router.push("/admin/dashboard");
-      } else {
-        setIncorrectLogin(true);
+        if (userDocSnapshot.exists()) {
+          await setDoc(userDocRef, { token }, { merge: true });
+          setToken(token); // Armazena o token no estado
+          router.push("/admin/dashboard");
+        } else {
+          setIncorrectLogin(true);
+        }
       }
+    } catch (error) {
+      console.error("Erro no login:", error);
     }
   };
 
-  // useEffect(() => {
-  //   const checkTokenValidity = async (token) => {
-  //     const response = await fetch("http://localhost:3000/api/user/validate", {
-  //       method: "POST",
-  //       body: JSON.stringify({ token }),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
+  const getTokenFromDB = async () => {
+    const id = getCookie("dbId");
+    const docRef = doc(database, "users", id);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data().token;
+  };
 
-  //     return response.ok;
-  //   };
+  useEffect(() => {
+    const checkTokenValidity = async (token) => {
+      const response = await fetch("http://localhost:3000/api/user/validate", {
+        method: "POST",
+        body: JSON.stringify({ token }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-  //   const token = getCookie("token");
+      return response.ok;
+    };
 
-  //   const checkAndRedirect = async () => {
-  //     if (token && (await checkTokenValidity(token))) {
-  //       router.push("/admin/dashboard");
-  //     }
-  //   };
+    const checkAndRedirect = async () => {
+      const token = await getTokenFromDB();
+      if (token && (await checkTokenValidity(token))) {
+        router.push("/admin/dashboard");
+      }
+    };
 
-  //   checkAndRedirect();
-  // }, []);
+    checkAndRedirect();
+  }, []);
 
   return (
     <div>
