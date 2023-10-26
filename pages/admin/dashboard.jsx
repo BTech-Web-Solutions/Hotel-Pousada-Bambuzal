@@ -43,11 +43,22 @@ const Dashboard = () => {
       const token = await getTokenFromDB();
       if (!token) {
         router.push("/admin");
+      } else {
+        const isValid = await checkTokenValidity(token);
+        if (!isValid) {
+          router.push("/admin");
+        } else {
+          setIsValidToken(true);
+        }
       }
     };
 
     checkAndRedirect();
   }, []);
+
+  if (!isValidToken) {
+    return null;
+  }
 
   return (
     <>
