@@ -1,7 +1,8 @@
-import React, { useState, useEffect, use } from "react";
-import Navbar from "../../../src/components/Navbar";
+import React, { useState, useEffect } from "react";
+import Navbar from "../../src/components/Navbar";
 import { useRouter } from "next/router";
-import { setCookie, getCookie } from "../../../src/hooks/useCookies";
+import { database } from "/firebase/firebaseConfig";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 export default function index() {
   const [email, setEmail] = useState("");
@@ -24,38 +25,42 @@ export default function index() {
 
     if (response.ok) {
       const { token } = await response.json();
+      const decodedToken = token ? JSON.parse(atob(token.split(".")[1])) : null;
+      const userDocRef = doc(database, "users", decodedToken.id);
+      const userDocSnapshot = await getDoc(userDocRef);
 
-      setCookie("token", token, 14);
-
-      router.push("/eventos");
-    } else {
-      setIncorrectLogin(true);
+      if (userDocSnapshot.exists()) {
+        await setDoc(userDocRef, { token }, { merge: true });
+        router.push("/admin/dashboard");
+      } else {
+        setIncorrectLogin(true);
+      }
     }
   };
 
-  useEffect(() => {
-    const checkTokenValidity = async (token) => {
-      const response = await fetch("http://localhost:3000/api/user/validate", {
-        method: "POST",
-        body: JSON.stringify({ token }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+  // useEffect(() => {
+  //   const checkTokenValidity = async (token) => {
+  //     const response = await fetch("http://localhost:3000/api/user/validate", {
+  //       method: "POST",
+  //       body: JSON.stringify({ token }),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
 
-      return response.ok;
-    };
+  //     return response.ok;
+  //   };
 
-    const token = getCookie("token");
+  //   const token = getCookie("token");
 
-    const checkAndRedirect = async () => {
-      if (token && (await checkTokenValidity(token))) {
-        router.push("/eventos");
-      }
-    };
+  //   const checkAndRedirect = async () => {
+  //     if (token && (await checkTokenValidity(token))) {
+  //       router.push("/admin/dashboard");
+  //     }
+  //   };
 
-    checkAndRedirect();
-  }, []);
+  //   checkAndRedirect();
+  // }, []);
 
   return (
     <div>
