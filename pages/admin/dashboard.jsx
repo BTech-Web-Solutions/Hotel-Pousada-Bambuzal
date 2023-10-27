@@ -103,7 +103,7 @@ const Dashboard = () => {
           <Box
             component={"section"}
             sx={{
-              width: "100%",
+              width: "101%",
               height: "12%",
               color: "#fff",
               bgcolor: "#eb5322",
@@ -177,24 +177,24 @@ const Dashboard = () => {
               style={{
                 padding: "0.5rem 1rem",
                 borderRadius: "10px",
-                backgroundColor: "#eb5322",
-                border: "2px solid #fff",
+                backgroundColor: "#fff",
+                border: "2px solid #000",
                 cursor: "pointer",
-                color: "#000",
+                color: "#eb5322",
                 fontWeight: "bold",
                 fontSize: "1.2rem",
               }}
               onMouseOver={(e) => {
-                e.target.style.backgroundColor = "#fff";
-                e.target.style.color = "#eb5322";
-              }}
-              onMouseOut={(e) => {
                 e.target.style.backgroundColor = "#eb5322";
                 e.target.style.color = "#000";
               }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = "#fff";
+                e.target.style.color = "#eb5322";
+              }}
               onClick={handleLogOut}
             >
-              LogOut
+              Sair
             </button>
           </Box>
         </Box>
