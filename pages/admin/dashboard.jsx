@@ -6,13 +6,12 @@ import { Box } from "@mui/material";
 import db from "../../pages/api/db.json";
 
 import { database } from "/firebase/firebaseConfig";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc, deleteField } from "firebase/firestore";
 
 const Dashboard = () => {
   const [isValidToken, setIsValidToken] = useState(false);
   const [loggedUser, setLoggedUser] = useState();
 
-  const token = getCookie("token");
   const router = useRouter();
 
   // if (!isValidToken) {
@@ -60,6 +59,25 @@ const Dashboard = () => {
     return null;
   }
 
+  const getLoggedUser = async () => {
+    const token = await getTokenFromDB();
+    if (!token) return;
+    const loggedUser = token ? JSON.parse(atob(token.split(".")[1])) : null;
+    const docRef = doc(database, "users", loggedUser.id);
+    const docSnap = await getDoc(docRef);
+    const user = docSnap.data();
+    setLoggedUser(user);
+  };
+  getLoggedUser();
+
+  const handleLogOut = async () => {
+    const token = await getTokenFromDB();
+    const id = getCookie("dbId");
+    const docRef = doc(database, "users", id);
+    await setDoc(docRef, { token: deleteField() }, { merge: true });
+    router.push("/admin");
+  };
+
   return (
     <>
       <Box
@@ -91,6 +109,9 @@ const Dashboard = () => {
               bgcolor: "#eb5322",
               borderRadius: "0 0.5rem 0 0",
               display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "0 1rem",
             }}
           >
             <Box
@@ -152,6 +173,29 @@ const Dashboard = () => {
                 </Box>
               </Box>
             </Box>
+            <button
+              style={{
+                padding: "0.5rem 1rem",
+                borderRadius: "10px",
+                backgroundColor: "#eb5322",
+                border: "2px solid #fff",
+                cursor: "pointer",
+                color: "#000",
+                fontWeight: "bold",
+                fontSize: "1.2rem",
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = "#fff";
+                e.target.style.color = "#eb5322";
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = "#eb5322";
+                e.target.style.color = "#000";
+              }}
+              onClick={handleLogOut}
+            >
+              LogOut
+            </button>
           </Box>
         </Box>
       </Box>
