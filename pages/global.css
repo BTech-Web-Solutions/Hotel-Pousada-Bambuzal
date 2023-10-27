@@ -49,8 +49,9 @@ body {
   margin: 4rem auto 0;
   padding: 5rem 4rem 0 4rem;
   width: 100%;
-  max-width: 525px;
-  min-height: 680px;
+  max-width: 500px;
+  min-height: 600px;
+
   background-image: url(https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ImageList/6.jpg);
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
   background-size: cover;
