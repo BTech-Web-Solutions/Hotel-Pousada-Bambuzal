@@ -5,12 +5,15 @@ import Navbar from "../src/components/Navbar";
 import Typography from "@mui/material/Typography";
 import Carrousel from "../src/components/Carrousel";
 import styled from "styled-components";
-import { Box } from "@mui/material";
+import { Accordion, AccordionSummary, Box } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import AccordionDetails from "@mui/material/AccordionDetails";
 import TheButton from "../src/components/Button";
 import About from "../src/components/About";
 import Footer from "../src/components/Footer";
+import theme from "../src/theme";
 
-const theme = createTheme({});
+import events from "./api/events.json";
 
 export default function Index() {
   return (
@@ -143,6 +146,116 @@ export default function Index() {
         </Box>
 
         <About />
+
+        <Box
+          sx={{
+            bgcolor: "secondary.main",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            color: "white",
+            padding: {
+              xs: "2rem",
+              sm: "2rem",
+              md: "2rem",
+              lg: "3rem",
+              xl: "3rem",
+            },
+            gap: "1rem",
+          }}
+        >
+          <Typography variant="h3">Eventos</Typography>
+          <Typography variant="h5">
+            Aqui se econtra o quadro de todos os eventos que acontecem durante o
+            ano no nosso lugarzinho! 💝{" "}
+          </Typography>
+
+          <br />
+
+          <Box
+            sx={{
+              // bgcolor: "red",
+              display: "flex",
+              flexDirection: {
+                xs: "column",
+                sm: "column",
+                md: "column",
+                lg: "row",
+                xl: "row",
+              },
+              justifyContent: "space-evenly",
+              alignItems: "flex-start",
+
+              flexWrap: "wrap",
+            }}
+          >
+            {events.map((event) => (
+              <Accordion
+                key={event.id}
+                sx={{
+                  width: {
+                    xs: "100%",
+                    sm: "100%",
+                    md: "100%",
+                    lg: "45%",
+                    xl: "45%",
+                  },
+                  bgcolor: "#212121",
+                  color: "white",
+                  marginBottom: "1rem",
+                  borderRadius: "0.5rem",
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: {
+                        xs: "1rem",
+                        sm: "1.5rem",
+                        md: "1.5rem",
+                        lg: "1.5rem",
+                        xl: "1.5rem",
+                      },
+                      fontWeight: "300",
+                    }}
+                  >
+                    {event.title} <b>no dia</b>{" "}
+                    {event.date.split("-").reverse().join("/")}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography
+                    sx={{
+                      fontWeight: "300",
+                      fontSize: {
+                        xs: "1rem",
+                        sm: "1.5rem",
+                        md: "1.5rem",
+                        lg: "1.5rem",
+                        xl: "1.5rem",
+                      },
+                    }}
+                  >
+                    As{" "}
+                    {
+                      //time formated to PT-BR 24h
+                      event.time.split(":")[0] +
+                        ":" +
+                        event.time.split(":")[1] +
+                        "h"
+                    }
+                    <br /> {event.description}
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </Box>
+        </Box>
+
+        <br />
+        <br />
 
         <Footer />
       </ThemeProvider>

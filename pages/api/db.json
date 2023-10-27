@@ -1,0 +1,85 @@
+[
+  {
+    "users": [
+      {
+        "id": 1,
+        "name": "Name",
+        "surname": "Surname",
+        "email": "testregister@gmail.com",
+        "roles": ["user"]
+      }
+    ],
+    "events": [
+      {
+        "id": 1,
+        "title": "Conferência de Tecnologia",
+        "date": "2023-11-15",
+        "time": "9:00",
+        "description": "Uma conferência de tecnologia de ponta que abordará as últimas tendências em inteligência artificial, blockchain e realidade virtual. Este evento reúne especialistas líderes da indústria para compartilhar suas experiências e conhecimentos. É uma oportunidade única para se manter atualizado sobre as inovações tecnológicas."
+      },
+      {
+        "id": 2,
+        "title": "Exposição de Arte Moderna",
+        "date": "2023-12-02",
+        "time": "10:00",
+        "description": "Uma exposição de arte contemporânea que apresenta obras de artistas locais e internacionais. Esta exposição busca explorar a fusão de diferentes estilos e culturas artísticas, oferecendo uma visão única da criatividade humana. Venha apreciar a beleza e a expressão artística de diversas formas."
+      },
+      {
+        "id": 3,
+        "title": "Concerto de Rock",
+        "date": "2024-01-20",
+        "time": "20:00",
+        "description": "Um emocionante concerto de rock que promete uma experiência musical intensa. Bandas de renome internacional e local se unirão para proporcionar uma noite de música eletrizante. Prepare-se para ouvir os clássicos do rock e as novas músicas que estão definindo o gênero."
+      },
+      {
+        "id": 4,
+        "title": "Semana da Moda",
+        "date": "2024-03-10",
+        "time": "14:00",
+        "description": "A Semana da Moda é um evento imperdível para os amantes da moda. Designers de moda de todo o mundo apresentarão suas últimas coleções, revelando tendências inovadoras e estilos arrojados. Além dos desfiles de moda, haverá palestras inspiradoras sobre o mundo da moda e oportunidades para fazer compras exclusivas."
+      },
+      {
+        "id": 5,
+        "title": "Festival Gastronômico Internacional",
+        "date": "2024-05-05",
+        "time": "11:00",
+        "description": "Um festival gastronômico que celebra a diversidade culinária do mundo. Os melhores chefs de diferentes países se reunirão para oferecer uma variedade de pratos deliciosos. Desfrute de uma jornada culinária que levará seu paladar a novos patamares."
+      },
+      {
+        "id": 6,
+        "title": "Corrida de Carros Antigos",
+        "date": "2024-07-17",
+        "time": "13:30",
+        "description": "Uma emocionante corrida de carros antigos que traz de volta a nostalgia dos veículos clássicos. Os carros restaurados e as lendas automobilísticas competirão em uma pista desafiadora. Os entusiastas de automóveis não podem perder esta corrida histórica."
+      },
+      {
+        "id": 7,
+        "title": "Feira de Livros e Autores",
+        "date": "2024-09-28",
+        "time": "10:00",
+        "description": "Uma feira literária que reúne autores renomados e amantes da leitura. Explore uma vasta coleção de livros, participe de sessões de autógrafos e ouça autores discutirem seus trabalhos. Esta feira é um paraíso para os amantes da literatura."
+      },
+      {
+        "id": 8,
+        "title": "Exposição de Fotografia",
+        "date": "2024-11-12",
+        "time": "11:30",
+        "description": "Uma exposição de fotografia que apresenta obras de fotógrafos talentosos. Explore uma variedade de estilos e temas que capturam a imaginação e a beleza do mundo por meio da lente da câmera."
+      },
+      {
+        "id": 9,
+        "title": "Conferência de Sustentabilidade",
+        "date": "2024-12-05",
+        "time": "9:30",
+        "description": "Uma conferência dedicada à sustentabilidade e ao meio ambiente. Especialistas líderes discutirão os desafios e oportunidades de tornar o mundo mais sustentável. Junte-se a nós para aprender e debater sobre as questões que afetam nosso planeta."
+      },
+      {
+        "id": 10,
+        "title": "Desfile de Moda Urbana",
+        "date": "2025-02-15",
+        "time": "15:00",
+        "description": "Um desfile de moda urbana que destaca as tendências mais recentes em roupas e estilo de rua. Designers e modelos talentosos mostrarão como a moda pode ser uma forma de expressão artística nas ruas da cidade."
+      }
+    ]
+  }
+]
