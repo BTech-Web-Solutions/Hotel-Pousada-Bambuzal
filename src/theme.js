@@ -1,10 +1,6 @@
 import { Roboto } from "@next/font/google";
 import { createTheme } from "@mui/material/styles";
-<<<<<<< HEAD
-import { red } from "@mui/material/colors";
-=======
 import { red, grey } from "@mui/material/colors";
->>>>>>> db-and-auth
 
 export const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -17,18 +13,11 @@ export const roboto = Roboto({
 const theme = createTheme({
   palette: {
     primary: {
-<<<<<<< HEAD
-      main: "#556cd6",
-    },
-    secondary: {
-      main: "#19857b",
-=======
       main: "#212121",
       text: "#fff",
     },
     secondary: {
       main: "#181818",
->>>>>>> db-and-auth
     },
     error: {
       main: red.A400,
