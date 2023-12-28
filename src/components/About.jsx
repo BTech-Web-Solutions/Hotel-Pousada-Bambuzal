@@ -10,6 +10,10 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Container, Grid } from "@mui/material";
 
+import image1 from "../../src/images/ImageList/1.jpg";
+import image7 from "../../src/images/ImageList/7.jpg";
+import Image from "next/image";
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -66,8 +70,6 @@ export default function About() {
       >
         <Grid item xs={7}>
           <Box
-            component="img"
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/1.jpg?raw=true"
             sx={{
               width: {
                 xs: "180%",
@@ -78,7 +80,13 @@ export default function About() {
               },
               borderRadius: "20px",
             }}
-          />
+          >
+            <Image
+              src={image1}
+              alt="landscape"
+              style={{ borderRadius: "20px" }}
+            />
+          </Box>
         </Grid>
         <Grid
           item
@@ -169,8 +177,6 @@ export default function About() {
       >
         <Grid item xs={7}>
           <Box
-            component="img"
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/7.jpg?raw=true"
             sx={{
               width: {
                 xs: "180%",
@@ -179,9 +185,14 @@ export default function About() {
                 lg: "90%",
                 xl: "90%",
               },
-              borderRadius: "20px",
             }}
-          />
+          >
+            <Image
+              src={image7}
+              alt="landscape"
+              style={{ borderRadius: "20px" }}
+            />
+          </Box>
         </Grid>
         <Grid
           item

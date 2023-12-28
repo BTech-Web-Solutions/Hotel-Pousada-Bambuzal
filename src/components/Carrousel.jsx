@@ -1,6 +1,12 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import styled from "styled-components";
+import Image from "next/image";
+
+import image1 from "../../src/images/Carrossel/1.png";
+import image2 from "../../src/images/Carrossel/2.png";
+import image3 from "../../src/images/Carrossel/3.png";
+import image4 from "../../src/images/Carrossel/4.png";
 
 const Carrousel = () => {
   return (
@@ -25,10 +31,7 @@ const Carrousel = () => {
             }}
           />
 
-          <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/1.png?raw=true"
-            alt="First slide"
-          />
+          <Image src={image1} alt="First slide" />
         </Carousel.Item>
 
         <Carousel.Item>
@@ -42,10 +45,7 @@ const Carrousel = () => {
               height: "100%",
             }}
           />
-          <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/2.png?raw=true"
-            alt="Second slide"
-          />
+          <Image src={image2} alt="Second slide" />
         </Carousel.Item>
 
         <Carousel.Item>
@@ -59,10 +59,7 @@ const Carrousel = () => {
               height: "100%",
             }}
           />
-          <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/3.png?raw=true"
-            alt="Third slide"
-          />
+          <Image src={image3} alt="Third slide" />
         </Carousel.Item>
 
         <Carousel.Item>
@@ -76,10 +73,7 @@ const Carrousel = () => {
               height: "100%",
             }}
           />
-          <img
-            src="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/Carrossel/4.png?raw=true"
-            alt="First slide"
-          />
+          <Image src={image4} alt="First slide" />
         </Carousel.Item>
       </Carousel>
     </StyledCarrousel>

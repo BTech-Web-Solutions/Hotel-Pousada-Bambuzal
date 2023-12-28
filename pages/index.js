@@ -4,7 +4,6 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Navbar from "../src/components/Navbar";
 import Typography from "@mui/material/Typography";
 import Carrousel from "../src/components/Carrousel";
-
 import { Accordion, AccordionSummary, Box } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
