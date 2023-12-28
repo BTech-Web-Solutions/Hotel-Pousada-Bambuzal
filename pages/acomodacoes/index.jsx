@@ -4,10 +4,29 @@ import Footer from "../../src/components/Footer";
 import AcomodacaoCard from "../../src/components/AcomodacaoCard";
 import { Box } from "@mui/material";
 
-import SuiteSimplesBG from "../../src/images/SuiteSimples/1.jpg";
-import ChaleDuploBG from "../../src/images/ChaleDuplo/1.jpg";
-import ChaleTriploBG from "../../src/images/ChaleTriplo/1.jpg";
-import ChaleFamiliaBG from "../../src/images/ChaleFamilia/1.jpg";
+const images = () => {
+  const SuiteSimplesBG = new URL(
+    "../../src/images/SuiteSimples/1.jpg",
+    import.meta.url
+  );
+
+  const ChaleDuploBG = new URL(
+    "../../src/images/ChaleDuplo/1.jpg",
+    import.meta.url
+  );
+
+  const ChaleTriploBG = new URL(
+    "../../src/images/ChaleTriplo/1.jpg",
+    import.meta.url
+  );
+
+  const ChaleFamiliaBG = new URL(
+    "../../src/images/ChaleFamilia/1.jpg",
+    import.meta.url
+  );
+
+  return { SuiteSimplesBG, ChaleDuploBG, ChaleTriploBG, ChaleFamiliaBG };
+};
 
 const index = () => {
   return (
@@ -22,7 +41,7 @@ const index = () => {
         }}
       >
         <AcomodacaoCard
-          image="https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/5012d1dc8326958cd79ff6cf51fe76b7877b884d/src/images/ChaleDuplo/chale_duplo.jpg"
+          image={images().SuiteSimplesBG}
           title="Suíte Simples"
           desc="Suítes com Vista para o rio, uma ótima opção para se ouvir as
           águas do rio Sana."
@@ -30,7 +49,7 @@ const index = () => {
         />
 
         <AcomodacaoCard
-          image=""
+          image={images().ChaleDuploBG}
           title="Chalé Duplo"
           desc="Chalé composto por garagem privativa, varanda com rede onde se
           pode desfrutar de uma paisagem deslumbrante das montanhas,
@@ -39,7 +58,7 @@ const index = () => {
         />
 
         <AcomodacaoCard
-          image=""
+          image={images().ChaleTriploBG}
           title="Chalé Triplo"
           desc="Chalé composto por garagem privativa, varanda com rede onde se
           pode desfrutar de uma paisagem deslumbrante. Além de um amplo
@@ -48,7 +67,7 @@ const index = () => {
         />
 
         <AcomodacaoCard
-          image=""
+          image={images().ChaleFamiliaBG}
           title="Chalé Família"
           desc="Temos opções para quem ama viajar em família e que querem
           ficar juntinhos. Com dois quartos, nossos chalés família são
