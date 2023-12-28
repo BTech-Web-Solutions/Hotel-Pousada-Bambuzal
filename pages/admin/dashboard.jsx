@@ -72,7 +72,7 @@ const Dashboard = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {loggedUser?.name[0]}
+                  U
                 </Box>
                 <Box
                   sx={{
