@@ -1,31 +1,12 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import TheButton from "../components/Button";
 import Typography from "@mui/material/Typography";
-
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import image1 from "../../src/images/ImageList/1.jpg";
 import image7 from "../../src/images/ImageList/7.jpg";
 import Image from "next/image";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 export default function About() {
   return (
@@ -84,7 +65,7 @@ export default function About() {
             <Image
               src={image1}
               alt="landscape"
-              style={{ borderRadius: "20px" }}
+              style={{ borderRadius: "20px", width: "100%", height: "100%" }}
             />
           </Box>
         </Grid>
@@ -190,7 +171,7 @@ export default function About() {
             <Image
               src={image7}
               alt="landscape"
-              style={{ borderRadius: "20px" }}
+              style={{ borderRadius: "20px", width: "100%", height: "100%" }}
             />
           </Box>
         </Grid>
@@ -238,43 +219,4 @@ export default function About() {
       </Grid>
     </Box>
   );
-}
-
-// https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/1.jpg?raw=true
-// https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/7.jpg?raw=true
-
-{
-  /* <Grid
-          item
-          xs={4}
-        >
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              minHeight: '400px',
-              justifyContent: 'center'
-            }}
-          >
-            <Typography
-              color='white'
-              fontSize={40}
-            >
-              Perfeito para quem busca tranquilidade e contato com a natureza.
-            </Typography>
-
-          </Box>
-        </Grid>
-
-        <Gridd
-          item
-          sx={{
-            marginTop: '-80px'
-          }}
-        >
-          <Box
-            component='img'
-            src='https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ImageList/7.jpg?raw=true'
-          />
-        </Gridd> */
 }

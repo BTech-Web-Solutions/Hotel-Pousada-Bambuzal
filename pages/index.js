@@ -203,68 +203,72 @@ export default function Index() {
               flexWrap: "wrap",
             }}
           >
-            {events.map((event) => (
-              <Accordion
-                key={event.id}
-                sx={{
-                  width: {
-                    xs: "100%",
-                    sm: "100%",
-                    md: "100%",
-                    lg: "45%",
-                    xl: "45%",
-                  },
-                  bgcolor: "#212121",
-                  color: "white",
-                  marginBottom: "1rem",
-                  borderRadius: "0.5rem",
-                }}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
+            {events ? (
+              events.map((event) => (
+                <Accordion
+                  key={event.id}
+                  sx={{
+                    width: {
+                      xs: "100%",
+                      sm: "100%",
+                      md: "100%",
+                      lg: "45%",
+                      xl: "45%",
+                    },
+                    bgcolor: "#212121",
+                    color: "white",
+                    marginBottom: "1rem",
+                    borderRadius: "0.5rem",
+                  }}
                 >
-                  <Typography
-                    sx={{
-                      fontSize: {
-                        xs: "1rem",
-                        sm: "1.5rem",
-                        md: "1.5rem",
-                        lg: "1.5rem",
-                        xl: "1.5rem",
-                      },
-                      fontWeight: "300",
-                    }}
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
                   >
-                    {event.title} <b>no dia</b>{" "}
-                    {event.date.split("-").reverse().join("/")}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography
-                    sx={{
-                      fontWeight: "300",
-                      fontSize: {
-                        xs: "1rem",
-                        sm: "1.5rem",
-                        md: "1.5rem",
-                        lg: "1.5rem",
-                        xl: "1.5rem",
-                      },
-                    }}
-                  >
-                    As{" "}
-                    {
-                      //time formated to PT-BR 24h
-                      event.time.split(":")[0] +
-                        ":" +
-                        event.time.split(":")[1] +
-                        "h"
-                    }
-                    <br /> {event.description}
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            ))}
+                    <Typography
+                      sx={{
+                        fontSize: {
+                          xs: "1rem",
+                          sm: "1.5rem",
+                          md: "1.5rem",
+                          lg: "1.5rem",
+                          xl: "1.5rem",
+                        },
+                        fontWeight: "300",
+                      }}
+                    >
+                      {event.title} <b>no dia</b>{" "}
+                      {event.date.split("-").reverse().join("/")}
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography
+                      sx={{
+                        fontWeight: "300",
+                        fontSize: {
+                          xs: "1rem",
+                          sm: "1.5rem",
+                          md: "1.5rem",
+                          lg: "1.5rem",
+                          xl: "1.5rem",
+                        },
+                      }}
+                    >
+                      As{" "}
+                      {
+                        //time formated to PT-BR 24h
+                        event.time.split(":")[0] +
+                          ":" +
+                          event.time.split(":")[1] +
+                          "h"
+                      }
+                      <br /> {event.description}
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              ))
+            ) : (
+              <h1>Carregando...</h1>
+            )}
           </Box>
         </Box>
 
