@@ -22,7 +22,7 @@ const index = () => {
         }}
       >
         <AcomodacaoCard
-          image=""
+          image="#"
           title="Suíte Simples"
           desc="Suítes com Vista para o rio, uma ótima opção para se ouvir as
           águas do rio Sana."
