@@ -22,7 +22,7 @@ const index = () => {
         }}
       >
         <AcomodacaoCard
-          image="https://github.com/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/blob/5012d1dc8326958cd79ff6cf51fe76b7877b884d/src/images/ChaleDuplo/chale_duplo.jpg"
+          image="https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/5012d1dc8326958cd79ff6cf51fe76b7877b884d/src/images/ChaleDuplo/chale_duplo.jpg"
           title="Suíte Simples"
           desc="Suítes com Vista para o rio, uma ótima opção para se ouvir as
           águas do rio Sana."
