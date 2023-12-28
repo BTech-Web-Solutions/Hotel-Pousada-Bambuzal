@@ -87,16 +87,14 @@ const Dashboard = () => {
                       fontWeight: "bold",
                     }}
                   >
-                    {loggedUser?.name} {loggedUser?.surname}
+                    Usuário Teste
                   </Box>
                   <Box
                     sx={{
                       fontSize: "0.8rem",
                     }}
                   >
-                    {loggedUser?.roles && loggedUser.roles.includes("admin")
-                      ? "Administrador"
-                      : "Usuário"}
+                    Administrador
                   </Box>
                 </Box>
               </Box>
