@@ -1,82 +1,10 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getCookie } from "../../src/hooks/useCookies";
-import useTokenValidation from "../../src/hooks/useTokenValidation";
 import { Box } from "@mui/material";
-import db from "../../pages/api/db.json";
-
-import { database } from "/firebase/firebaseConfig";
-import { doc, getDoc, setDoc, deleteField } from "firebase/firestore";
 
 const Dashboard = () => {
-  const [isValidToken, setIsValidToken] = useState(false);
-  const [loggedUser, setLoggedUser] = useState();
-
   const router = useRouter();
-
-  // if (!isValidToken) {
-  //   return null;
-  // }
-
-  const getTokenFromDB = async () => {
-    const id = getCookie("dbId");
-    const docRef = doc(database, "users", id);
-    const docSnap = await getDoc(docRef);
-    return docSnap.data().token;
-  };
-
-  useEffect(() => {
-    const checkTokenValidity = async (token) => {
-      const response = await fetch("http://localhost:3000/api/user/validate", {
-        method: "POST",
-        body: JSON.stringify({ token }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      return response.ok;
-    };
-
-    const checkAndRedirect = async () => {
-      const token = await getTokenFromDB();
-      if (!token) {
-        router.push("/admin");
-      } else {
-        const isValid = await checkTokenValidity(token);
-        if (!isValid) {
-          router.push("/admin");
-        } else {
-          setIsValidToken(true);
-        }
-      }
-    };
-
-    checkAndRedirect();
-  }, []);
-
-  if (!isValidToken) {
-    return null;
-  }
-
-  const getLoggedUser = async () => {
-    const token = await getTokenFromDB();
-    if (!token) return;
-    const loggedUser = token ? JSON.parse(atob(token.split(".")[1])) : null;
-    const docRef = doc(database, "users", loggedUser.id);
-    const docSnap = await getDoc(docRef);
-    const user = docSnap.data();
-    setLoggedUser(user);
-  };
-  getLoggedUser();
-
-  const handleLogOut = async () => {
-    const token = await getTokenFromDB();
-    const id = getCookie("dbId");
-    const docRef = doc(database, "users", id);
-    await setDoc(docRef, { token: deleteField() }, { merge: true });
-    router.push("/admin");
-  };
 
   return (
     <>
@@ -192,7 +120,6 @@ const Dashboard = () => {
                 e.target.style.backgroundColor = "#fff";
                 e.target.style.color = "#eb5322";
               }}
-              onClick={handleLogOut}
             >
               Sair
             </button>

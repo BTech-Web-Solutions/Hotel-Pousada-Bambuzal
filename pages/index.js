@@ -1,10 +1,10 @@
-import * as React from "react";
+import { React, useState, useEffect } from "react";
 import Link from "next/link";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Navbar from "../src/components/Navbar";
 import Typography from "@mui/material/Typography";
 import Carrousel from "../src/components/Carrousel";
-import styled from "styled-components";
+
 import { Accordion, AccordionSummary, Box } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -13,9 +13,24 @@ import About from "../src/components/About";
 import Footer from "../src/components/Footer";
 import theme from "../src/theme";
 
-import events from "./api/events.json";
-
 export default function Index() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    fetch(`${apiUrl}/events`, {
+      method: "GET",
+      headers: {
+        Authorization: apiKey,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setEvents(data);
+      });
+  }, []);
+
   return (
     <Box>
       <ThemeProvider theme={theme}>
