@@ -101,34 +101,33 @@ export default function Piscina() {
 
 const itemData = [
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Piscina/piscina.jpg",
+    img: new URL("/src/images/Piscina/piscina.jpg", import.meta.url),
     title: "Piscina 1",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Piscina/piscina_2.jpg",
+    img: new URL("/src/images/Piscina/piscina_2.jpg", import.meta.url),
     title: "Piscina 2",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Piscina/piscina_3.jpg",
+    img: new URL("/src/images/Piscina/piscina_3.jpg", import.meta.url),
     title: "Piscina 3",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Piscina/piscina_4.jpg",
+    img: new URL("/src/images/Piscina/piscina_4.jpg", import.meta.url),
     title: "Piscina 4",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Piscina/piscina_6.jpg",
+    img: new URL("/src/images/Piscina/piscina_6.jpg", import.meta.url),
     title: "Piscina 5",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Piscina/piscina_7.jpg",
+    img: new URL("/src/images/Piscina/piscina_7.jpg", import.meta.url),
     title: "Piscina 6",
-    author: "@arwinneil",
     rows: 2,
     cols: 2,
-  }
+  },
 ];

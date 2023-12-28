@@ -101,41 +101,59 @@ export default function ChalesFamilia() {
 
 const itemData = [
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleFamilia/1.jpg",
+    img: new URL("/src/images/ChaleFamilia/1.jpg", import.meta.url),
     title: "Chale Familia",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleFamilia/chale_familia.jpg",
+    img: new URL("/src/images/ChaleFamilia/chale_familia.jpg", import.meta.url),
     title: "Chale Familia 1",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleFamilia/chale_familia_2.jpg",
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_2.jpg",
+      import.meta.url
+    ),
     title: "Chale Familia 2",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleFamilia/chale_familia_3.jpg",
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_3.jpg",
+      import.meta.url
+    ),
     title: "Chale Familia 3",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleFamilia/chale_familia_4.jpg",
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_4.jpg",
+      import.meta.url
+    ),
     title: "Chale Familia 4",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleFamilia/chale_familia_5.jpg",
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_5.jpg",
+      import.meta.url
+    ),
     title: "Chale Familia 5",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleFamilia/chale_familia_6.jpg",
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_6.jpg",
+      import.meta.url
+    ),
     title: "Chale Familia 6",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleFamilia/chale_familia_7.jpg",
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_7.jpg",
+      import.meta.url
+    ),
     title: "Chale Familia 7",
-  }
+  },
 ];

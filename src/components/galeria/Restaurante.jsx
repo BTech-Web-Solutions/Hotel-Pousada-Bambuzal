@@ -101,22 +101,22 @@ export default function Restaurante() {
 
 const itemData = [
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Restaurante/restaurante.jpg",
+    img: new URL("/src/images/Restaurante/restaurante.jpg", import.meta.url),
     title: "Restaurante 1",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Restaurante/restaurante_2.jpg",
+    img: new URL("/src/images/Restaurante/restaurante_2.jpg", import.meta.url),
     title: "Restaurante 2",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Restaurante/restaurante_3.jpg",
+    img: new URL("/src/images/Restaurante/restaurante_3.jpg", import.meta.url),
     title: "Restaurante 3",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Restaurante/restaurante_4.jpg",
+    img: new URL("/src/images/Restaurante/restaurante_4.jpg", import.meta.url),
     title: "Restaurante 4",
     cols: 2,
-  }
+  },
 ];

@@ -101,34 +101,34 @@ export default function ChalesTriplos() {
 
 const itemData = [
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleTriplo/1.jpg",
+    img: new URL("/src/images/ChaleTriplo/1.jpg", import.meta.url),
     title: "Chale Triplo",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleTriplo/chale_triplo.jpg",
+    img: new URL("/src/images/ChaleTriplo/chale_triplo.jpg", import.meta.url),
     title: "Chale Triplo 1",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleTriplo/chale_triplo_2.jpg",
+    img: new URL("/src/images/ChaleTriplo/chale_triplo_2.jpg", import.meta.url),
     title: "Chale Triplo 2",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleTriplo/chale_triplo_3.jpg",
+    img: new URL("/src/images/ChaleTriplo/chale_triplo_3.jpg", import.meta.url),
     title: "Chale Triplo 3",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleTriplo/chale_triplo_4.jpg",
+    img: new URL("/src/images/ChaleTriplo/chale_triplo_4.jpg", import.meta.url),
     title: "Chale Triplo 4",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleTriplo/chale_triplo_5.jpg",
+    img: new URL("/src/images/ChaleTriplo/chale_triplo_5.jpg", import.meta.url),
     title: "Chale Triplo 5",
     author: "@arwinneil",
     rows: 2,
     cols: 2,
-  }
+  },
 ];
