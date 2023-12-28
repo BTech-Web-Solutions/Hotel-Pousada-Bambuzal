@@ -52,7 +52,7 @@ body {
   max-width: 500px;
   min-height: 600px;
 
-  background-image: url(https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ImageList/6.jpg);
+  background-image: url("../src/images/ImageList/6.jpg");
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
   background-size: cover;
   background-position: bottom;
