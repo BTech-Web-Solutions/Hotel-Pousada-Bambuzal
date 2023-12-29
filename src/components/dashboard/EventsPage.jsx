@@ -51,6 +51,7 @@ const EventsPage = () => {
               flexWrap: "wrap",
               width: "20rem",
               height: "20rem",
+              boxShadow: "2px 5px 10px #000",
 
               "&:hover": {
                 bgcolor: "#3333",
