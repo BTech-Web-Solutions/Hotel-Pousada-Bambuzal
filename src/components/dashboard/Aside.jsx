@@ -180,6 +180,14 @@ const Aside = ({ setDashboardRoute, dashboardRoute }) => {
       </Box>
 
       <Section
+        title="Inicio"
+        onClick={() => {
+          setDashboardRoute("dashboard");
+        }}
+        className={dashboardRoute === "dashboard" ? "active" : ""}
+      />
+
+      <Section
         title="Usuários"
         onClick={() => {
           setDashboardRoute("users");
