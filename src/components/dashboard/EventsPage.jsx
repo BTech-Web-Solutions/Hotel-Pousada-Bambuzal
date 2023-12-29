@@ -49,8 +49,8 @@ const EventsPage = () => {
               padding: "1rem",
               marginBottom: "1rem",
               flexWrap: "wrap",
-              width: "20rem",
-              height: "20rem",
+              width: "15rem",
+              height: "15rem",
               boxShadow: "2px 5px 10px #000",
 
               "&:hover": {
@@ -58,19 +58,28 @@ const EventsPage = () => {
               },
             }}
           >
-            <h1>Titulo:</h1>
-            <h3>{event.title}</h3>
+            <h3
+              style={{
+                textAlign: "center",
+              }}
+            >
+              {event.title}
+            </h3>
             <br />
             <div
               style={{
                 display: "flex",
-                gap: "1rem",
+                justifyContent: "space-around",
               }}
             >
-              <h6>Data:</h6>
-              <p>{event.date}</p>
-              <h6>Hora:</h6>
-              <p>{event.time}</p>
+              <div>
+                <h6>Data:</h6>
+                <p>{event.date}</p>
+              </div>
+              <div>
+                <h6>Hora:</h6>
+                <p>{event.time}</p>
+              </div>
             </div>
           </Box>
         ))}
