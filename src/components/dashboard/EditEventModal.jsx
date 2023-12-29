@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import ModalInput from "./ModalInput";
 import moment from "moment";
 
@@ -183,6 +183,52 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
               setMensagem(e.target.value);
             }}
           />
+
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-around",
+              marginTop: "2rem",
+            }}
+          >
+            <Button
+              sx={{
+                padding: "0.5rem 1rem",
+                borderRadius: "999px",
+                border: "2px solid #ff003a",
+                color: "#fff",
+                fontSize: "1.2rem",
+                cursor: "pointer",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                  backgroundColor: "#ff003a",
+                  border: "none",
+                },
+              }}
+              onClick={() => {
+                setEditEvent(false);
+              }}
+            >
+              CANCELAR
+            </Button>
+            <Button
+              sx={{
+                padding: "0.5rem 1rem",
+                borderRadius: "999px",
+                border: "2px solid #eb5310",
+                color: "#fff",
+                fontSize: "1.2rem",
+                cursor: "pointer",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                  backgroundColor: "#eb5100",
+                  border: "none",
+                },
+              }}
+            >
+              SALVAR
+            </Button>
+          </Box>
         </Box>
       </Box>
     </>
