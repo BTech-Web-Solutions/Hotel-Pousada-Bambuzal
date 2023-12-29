@@ -1,10 +1,68 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { getCookie } from "../../src/hooks/useCookies";
+import { setCookie, getCookie, deleteCookie } from "../../src/hooks/useCookies";
 import { Box } from "@mui/material";
 
+const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
+const apiURL = process.env.NEXT_PUBLIC_API_URL;
+
 const Dashboard = () => {
+  const [isValidToken, setIsValidToken] = useState(false);
+
   const router = useRouter();
+
+  useEffect(() => {
+    const cookie = getCookie("admEmail");
+    if (cookie === "" || cookie === null) {
+      router.push("/admin");
+    } else {
+      const fetchApi = async () => {
+        const result = await fetch(`${apiURL}/admin/token-validate`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: apiKey,
+          },
+          body: JSON.stringify({
+            admEmail: getCookie("admEmail"),
+          }),
+        });
+
+        const data = await result.json();
+
+        if (data.message === "Invalid credentials") {
+          setCookie("admEmail", "");
+          router.push("/admin");
+        }
+      };
+      fetchApi();
+      setIsValidToken(true);
+    }
+  }, []);
+
+  const handleLogout = async () => {
+    const result = await fetch(`${apiURL}/admin/logout`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: apiKey,
+      },
+      body: JSON.stringify({
+        admEmail: getCookie("admEmail"),
+      }),
+    });
+
+    const data = await result.json();
+
+    if (data.message === "User logged out!") {
+      deleteCookie("admEmail");
+      router.push("/admin");
+    }
+  };
+
+  if (!isValidToken) {
+    return null;
+  }
 
   return (
     <>
@@ -118,6 +176,7 @@ const Dashboard = () => {
                 e.target.style.backgroundColor = "#fff";
                 e.target.style.color = "#eb5322";
               }}
+              onClick={handleLogout}
             >
               Sair
             </button>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../src/components/Navbar";
 import { useRouter } from "next/router";
-import { setCookie, getCookie } from "../../src/hooks/useCookies";
+import { setCookie, getCookie, deleteCookie } from "../../src/hooks/useCookies";
 
 export default function Index() {
   const [email, setEmail] = useState("");
@@ -9,6 +9,68 @@ export default function Index() {
   const [incorrectLogin, setIncorrectLogin] = useState(false);
 
   const router = useRouter();
+
+  const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
+  const apiURL = process.env.NEXT_PUBLIC_API_URL;
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const result = await fetch(`${apiURL}/admin/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: apiKey,
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
+
+    const data = await result.json();
+    console.log(data);
+
+    if (data.message === "Invalid credentials") {
+      setIncorrectLogin(true);
+    }
+    if (data.message === "User logged in!") {
+      setCookie("admEmail", email);
+      router.push("/admin/dashboard");
+    }
+  };
+
+  useEffect(() => {
+    const fetchApi = async () => {
+      const cookie = getCookie("admEmail");
+
+      if (cookie) {
+        const result = await fetch(`${apiURL}/admin/token-validate`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: apiKey,
+          },
+          body: JSON.stringify({
+            admEmail: cookie,
+          }),
+        });
+
+        const data = await result.json();
+        console.log(data.message);
+
+        if (data.message === "Invalid credentials") {
+          deleteCookie("admEmail");
+          router.push("/admin");
+        }
+        if (data.message === "Token is valid!") {
+          router.push("/admin/dashboard");
+        }
+      }
+    };
+
+    fetchApi();
+  }, []);
 
   return (
     <div>
@@ -48,7 +110,9 @@ export default function Index() {
             />
             Mantenha conectado
           </label> */}
-          <button className="login__submit">Entrar</button>
+          <button className="login__submit" onClick={handleLogin}>
+            Entrar
+          </button>
         </form>
         {incorrectLogin && (
           <p className="login__incorrect">Email ou senha incorretos.</p>
