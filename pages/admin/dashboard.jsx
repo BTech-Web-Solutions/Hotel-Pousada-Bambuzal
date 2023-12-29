@@ -54,9 +54,14 @@ const Dashboard = () => {
 
     const data = await result.json();
 
+    console.log("Logout response:", data);
+
     if (data.message === "User logged out!") {
       deleteCookie("admEmail");
+      console.log("Cookie deleted");
       router.push("/admin");
+    } else {
+      console.log("Logout failed");
     }
   };
 
