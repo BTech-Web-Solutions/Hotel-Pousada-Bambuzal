@@ -31,7 +31,7 @@ const Dashboard = () => {
         const data = await result.json();
 
         if (data.message === "Invalid credentials") {
-          setCookie("admEmail", "");
+          deleteCookie("admEmail");
           router.push("/admin");
         }
       };
@@ -58,8 +58,8 @@ const Dashboard = () => {
 
     if (data.message === "User logged out!") {
       deleteCookie("admEmail");
-      console.log("Cookie deleted");
       router.push("/admin");
+      deleteCookie("admEmail");
     } else {
       console.log("Logout failed");
     }
