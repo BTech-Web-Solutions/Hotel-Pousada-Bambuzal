@@ -29,11 +29,18 @@ export default function Index() {
     });
 
     const data = await result.json();
-    console.log(data);
 
     if (data.message === "Invalid credentials") {
       setIncorrectLogin(true);
     }
+
+    if (
+      data.message ===
+      "Can't add new command when connection is in closed state"
+    ) {
+      alert("Há algo errado com a API!");
+    }
+
     if (data.message === "User logged in!") {
       setCookie("admEmail", email);
       router.push("/admin/dashboard");

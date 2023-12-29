@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { setCookie, getCookie, deleteCookie } from "../../src/hooks/useCookies";
+import { getCookie, deleteCookie } from "../../src/hooks/useCookies";
 import { Box } from "@mui/material";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
+const apiURLLocal = process.env.NEXT_PUBLIC_API_URL_LOCAL;
 
 const Dashboard = () => {
   const [isValidToken, setIsValidToken] = useState(false);
+  const [loggedUser, setLoggedUser] = useState({});
 
   const router = useRouter();
 
-  useEffect(() => {
+  const checkToken = async () => {
     const cookie = getCookie("admEmail");
     if (cookie === "" || cookie === null) {
       router.push("/admin");
@@ -38,6 +40,37 @@ const Dashboard = () => {
       fetchApi();
       setIsValidToken(true);
     }
+  };
+
+  const getUserByEmail = async () => {
+    const admEmail = getCookie("admEmail");
+    if (!admEmail) {
+      alert("Você não está logado!");
+      return;
+    }
+
+    try {
+      const result = await fetch(`${apiURLLocal}/admin/user-by-email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: apiKey,
+        },
+        body: JSON.stringify({
+          admEmail: admEmail,
+        }),
+      });
+
+      const data = await result.json();
+      setLoggedUser(data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    checkToken();
+    getUserByEmail();
   }, []);
 
   const handleLogout = async () => {
@@ -135,7 +168,7 @@ const Dashboard = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  U
+                  {loggedUser.name ? loggedUser.name[0] : ""}
                 </Box>
                 <Box
                   sx={{
@@ -150,14 +183,15 @@ const Dashboard = () => {
                       fontWeight: "bold",
                     }}
                   >
-                    Usuário Teste
+                    {loggedUser ? loggedUser.name : "Usuário"}{" "}
+                    {loggedUser ? loggedUser.surname : "Teste"}
                   </Box>
                   <Box
                     sx={{
-                      fontSize: "0.8rem",
+                      fontSize: "1rem",
                     }}
                   >
-                    Administrador
+                    {loggedUser.role}
                   </Box>
                 </Box>
               </Box>
