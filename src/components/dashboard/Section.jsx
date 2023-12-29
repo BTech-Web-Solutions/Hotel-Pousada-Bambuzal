@@ -1,18 +1,12 @@
-import React from "react";
-import { Paper, Typography } from "@mui/material";
+import React, { useEffect } from "react";
+import { Box, Paper, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 
-const Section = ({ title, href }) => {
+const Section = ({ title, onClick, className }) => {
   const router = useRouter();
-  const isActive = router.pathname === href;
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    router.push(href);
-  };
 
   return (
-    <Paper
+    <Box
       sx={{
         color: "#fff",
         padding: "1rem",
@@ -33,12 +27,11 @@ const Section = ({ title, href }) => {
           backgroundColor: "#8888",
         },
       }}
-      elevation={3}
-      className={isActive ? "active" : ""}
-      onClick={handleClick}
+      onClick={onClick}
+      className={className}
     >
       <Typography variant="h5">{title}</Typography>
-    </Paper>
+    </Box>
   );
 };
 

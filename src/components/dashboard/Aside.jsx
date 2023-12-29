@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+// Aside.jsx
+import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
-import { getCookie, deleteCookie } from "../../../src/hooks/useCookies";
 import Section from "../../../src/components/dashboard/Section";
+import { useRouter } from "next/router";
+import { getCookie, deleteCookie } from "../../../src/hooks/useCookies";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
 const apiURLLocal = process.env.NEXT_PUBLIC_API_URL_LOCAL;
 
-const Aside = () => {
+const Aside = ({ setDashboardRoute, dashboardRoute }) => {
   const [loggedUser, setLoggedUser] = useState({});
+  const router = useRouter();
 
   const handleLogout = async () => {
     const result = await fetch(`${apiURL}/admin/logout`, {
@@ -69,7 +72,7 @@ const Aside = () => {
     <Box
       component={"aside"}
       sx={{
-        width: "30%",
+        width: "30%", // Adjust this value as needed
         height: "100vh",
         backgroundColor: "secondary.main",
         display: "flex",
@@ -175,8 +178,22 @@ const Aside = () => {
           Sair
         </button>
       </Box>
-      <Section title="Usuários" href="/admin/dashboard/users" />
-      <Section title="Eventos" href="/admin/dashboard/events" />
+
+      <Section
+        title="Usuários"
+        onClick={() => {
+          setDashboardRoute("users");
+        }}
+        className={dashboardRoute === "users" ? "active" : ""}
+      />
+
+      <Section
+        title="Eventos"
+        onClick={() => {
+          setDashboardRoute("events");
+        }}
+        className={dashboardRoute === "events" ? "active" : ""}
+      />
     </Box>
   );
 };
