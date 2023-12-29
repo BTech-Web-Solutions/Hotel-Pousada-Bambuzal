@@ -34,7 +34,13 @@ const EventsPage = () => {
           width: "70%",
           display: "flex",
           flexWrap: "wrap",
-          gap: "1rem",
+          gap: {
+            xs: "1rem",
+            sm: "1.5rem",
+            md: "2rem 1rem",
+            lg: "2rem 2rem",
+            xl: "2rem 6.1rem",
+          },
           padding: "2.5rem 3rem",
 
           "&::-webkit-scrollbar": {

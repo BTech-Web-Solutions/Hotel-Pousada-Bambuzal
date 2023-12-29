@@ -12,6 +12,12 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
   const [mensagem, setMensagem] = useState(selectedEvent.description);
   const [eventId, setEventId] = useState(selectedEvent.id);
 
+  const calculateApproxLines = (text) => {
+    const maxCharsPerLine = 45.5;
+    const numChars = text.length;
+    return Math.ceil(numChars / maxCharsPerLine);
+  };
+
   return (
     <>
       <Box
@@ -27,17 +33,38 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
           justifyContent: "center",
           alignItems: "center",
         }}
+        // Adiciona o evento de clique para fechar o modal
+        onClick={(e) => {
+          // Verifica se o fundo escuro do modal foi clicado
+          if (e.target === e.currentTarget) {
+            setEditEvent(false);
+          }
+        }}
       >
         <Box
           sx={{
-            width: { xs: "90%", md: "35%", lg: "40%", xl: "23%" },
-            height: { xs: "90%", md: "35%", lg: "80%", xl: "85%" },
+            width: {
+              xs: "90%",
+              sm: "80%",
+              md: "50%",
+              lg: "40%",
+              xl: "35rem",
+            },
+            height: {
+              xs: "90%",
+              sm: "80%",
+              md: "80%",
+              lg: "80%",
+              xl: "80%",
+            },
             border: "2px solid #eb5310",
             backgroundColor: "#222e",
             borderRadius: "1rem",
             padding: "2rem",
             position: "relative",
+            cursor: "auto",
           }}
+          onClick={(e) => e.stopPropagation()}
         >
           <Box
             sx={{
@@ -150,7 +177,7 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
           <ModalInput
             id="mensagem"
             variant="outlined"
-            rows={10}
+            rows={calculateApproxLines(mensagem)}
             value={mensagem}
             onChange={(e) => {
               setMensagem(e.target.value);
