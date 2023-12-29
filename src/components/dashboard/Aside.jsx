@@ -46,7 +46,7 @@ const Aside = ({ setDashboardRoute, dashboardRoute }) => {
     }
 
     try {
-      const result = await fetch(`${apiURLLocal}/admin/user-by-email`, {
+      const result = await fetch(`${apiURL}/admin/user-by-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
