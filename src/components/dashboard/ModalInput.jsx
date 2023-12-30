@@ -1,7 +1,15 @@
 import { Box, TextField } from "@mui/material";
 import * as React from "react";
 
-export default function ModalInput({ id, label, variant, rows, type, value }) {
+export default function ModalInput({
+  id,
+  label,
+  variant,
+  rows,
+  type,
+  value,
+  onChange,
+}) {
   return (
     <TextField
       value={value}
@@ -10,6 +18,7 @@ export default function ModalInput({ id, label, variant, rows, type, value }) {
       label={label}
       variant={variant}
       multiline={id === "mensagem" ? true : false}
+      onChange={onChange}
       rows={rows ? rows : 1}
       sx={{
         width: "100%",
