@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Button } from "@mui/material";
 import ModalInput from "./ModalInput";
 import moment from "moment";
+import checkTokenBefore from "../../checkTokenBefore";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -26,7 +27,7 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
     setEditEvent(false);
   };
 
-  const handleSave = async () => {
+  const handlePreEdit = async () => {
     try {
       const result = await fetch(`${apiURL}/events/edit/${eventId}`, {
         method: "PUT",
@@ -48,8 +49,23 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
           : "Erro ao atualizar evento!"
       );
       setEditEvent(false);
+    } catch (error) {}
+  };
+
+  const handleSave = async () => {
+    try {
+      // Chama a função assíncrona checkTokenBefore e aguarda a resposta
+      const isTokenValid = await checkTokenBefore();
+
+      if (isTokenValid) {
+        // Se o token for válido, continue com a lógica de salvamento
+        await handlePreEdit();
+      } else {
+        // Se o token não for válido, exiba uma mensagem ao usuário
+        alert("Você não tem permissão para editar eventos!");
+      }
     } catch (error) {
-      console.log(error.message);
+      console.error("Erro ao verificar token:", error);
     }
   };
 
