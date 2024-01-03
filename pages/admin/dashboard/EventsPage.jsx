@@ -39,7 +39,7 @@ const EventsPage = () => {
         sx={{
           width: "70%",
           position: "relative",
-          // border: "1px solid #fff",
+
           overflowY: "hidden",
           height: "calc(100vh)",
         }}
@@ -47,7 +47,6 @@ const EventsPage = () => {
         {/* EVENT CARDS */}
         <Box
           sx={{
-            border: "1px solid #fff",
             height: "calc(100vh - 1rem)",
             overflowY: "scroll",
             display: "flex",
@@ -207,7 +206,6 @@ const EventsPage = () => {
             display: "flex",
             justifyContent: "flex-end",
             paddingRight: "1rem",
-            // border: "1px solid #fff",
           }}
         >
           {/* PLUS SIGNAL SVG*/}
