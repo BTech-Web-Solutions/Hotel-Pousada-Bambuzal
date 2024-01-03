@@ -4,6 +4,7 @@ import moment from "moment";
 import EditEventModal from "../../../src/components/dashboard/EditEventModal";
 import editEventIcon from "../../../src/images/Icons/editEvent.svg";
 import Image from "next/image";
+import AddEventModal from "../../../src/components/dashboard/AddEventModal";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -12,6 +13,7 @@ const EventsPage = () => {
   const [events, setEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [editEvent, setEditEvent] = useState(false);
+  const [addEvent, setAddEvent] = useState(false);
 
   const modalEditEvent = (event) => {
     setSelectedEvent(event);
@@ -70,6 +72,10 @@ const EventsPage = () => {
             "&::-webkit-scrollbar-thumb": {
               bgcolor: "#eb5310",
               borderRadius: "999px",
+
+              "&:hover": {
+                bgcolor: "#eb2110",
+              },
             },
           }}
         >
@@ -222,6 +228,7 @@ const EventsPage = () => {
                 bgcolor: "#eb5310",
               },
             }}
+            onClick={() => setAddEvent(true)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -240,6 +247,7 @@ const EventsPage = () => {
       </Box>
 
       <Box>
+        {addEvent && <AddEventModal setAddEvent={setAddEvent} />}
         {editEvent && (
           <EditEventModal
             setEditEvent={setEditEvent}

@@ -7,58 +7,52 @@ import checkTokenBefore from "../../checkTokenBefore";
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
-const EditEventModal = ({ selectedEvent, setEditEvent }) => {
-  const [nome, setNome] = useState(selectedEvent.title);
-  const [dia, setDia] = useState(selectedEvent.date);
-  const [hora, setHora] = useState(
-    moment(selectedEvent.time, "HH:mm").format("HH:mm")
-  );
-  const [mensagem, setMensagem] = useState(selectedEvent.description);
-  const [eventId, setEventId] = useState(selectedEvent.id);
+const AddEventModal = ({ setAddEvent }) => {
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleCancel = () => {
-    setEditEvent(false);
+    setAddEvent(false);
   };
 
-  const handlePreEdit = async () => {
+  const handleCreate = async () => {
     try {
-      const result = await fetch(`${apiURL}/events/edit/${eventId}`, {
-        method: "PUT",
+      const result = await fetch(`${apiURL}/events/create`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: apiKey,
         },
         body: JSON.stringify({
-          title: nome,
-          date: dia,
-          time: hora,
-          description: mensagem,
+          title: title,
+          date: moment(date, "YYYY-MM-DD").format("YYYY-MM-DD"),
+          time: moment(time, "HH:mm").format("HH:mm"),
+          description: description,
         }),
       });
       const data = await result.json();
       alert(
-        data.message === "Event updated!"
-          ? "Evento atualizado com sucesso!"
-          : "Erro ao atualizar evento!"
+        data.message === "Event created successfully"
+          ? "Evento criado com sucesso!"
+          : "Erro ao criar evento!"
       );
-      setEditEvent(false);
-    } catch (error) {}
+      setAddEvent(false);
+    } catch (error) {
+      console.error("Error creating event:", error);
+    }
   };
 
-  const handleSave = async () => {
+  const checkAndCreate = async () => {
     try {
-      // Chama a função assíncrona checkTokenBefore e aguarda a resposta
       const isTokenValid = await checkTokenBefore();
 
       if (isTokenValid) {
-        // Se o token for válido, continue com a lógica de salvamento
-        await handlePreEdit();
-      } else {
-        // Se o token não for válido, exiba uma mensagem ao usuário
-        alert("Você não tem permissão para editar eventos!");
+        handleCreate();
       }
     } catch (error) {
-      console.error("Erro ao verificar token:", error);
+      console.error("Error checking token:", error);
     }
   };
 
@@ -78,7 +72,7 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
       }}
       onClick={(e) => {
         if (e.target === e.currentTarget) {
-          setEditEvent(false);
+          setAddEvent(false);
         }
       }}
     >
@@ -144,24 +138,16 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
             marginBottom: "-5px",
           }}
         >
-          Editando Evento
+          Criando Novo Evento
         </h1>
-        <p
-          style={{
-            marginBottom: "2rem",
-            marginLeft: "2px",
-          }}
-        >
-          ID: {eventId}
-        </p>
         <h3>Título:</h3>
         <ModalInput
-          id="nome"
+          id="title"
           variant="outlined"
           onChange={(e) => {
-            setNome(e.target.value);
+            setTitle(e.target.value);
           }}
-          value={nome}
+          value={title}
         />
         <Box
           sx={{
@@ -185,13 +171,13 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
           >
             <h3>Data:</h3>
             <ModalInput
-              id="data"
+              id="date"
               label=""
               variant="outlined"
               type="Date"
-              value={dia}
               onChange={(e) => {
-                setDia(e.target.value);
+                setDate(e.target.value);
+                console.log(date);
               }}
             />
           </div>
@@ -204,13 +190,13 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
           >
             <h3>Horário:</h3>
             <ModalInput
-              id="hora"
+              id="time"
               label=""
               variant="outlined"
               type="Time"
-              value={hora}
               onChange={(e) => {
-                setHora(e.target.value);
+                setTime(e.target.value);
+                console.log(time);
               }}
             />
           </div>
@@ -220,9 +206,8 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
           id="mensagem"
           variant="outlined"
           rows={5}
-          value={mensagem}
           onChange={(e) => {
-            setMensagem(e.target.value);
+            setDescription(e.target.value);
           }}
           sx={{
             overflowY: "scroll",
@@ -270,10 +255,10 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
             }}
             onClick={(e) => {
               e.preventDefault();
-              handleSave();
+              checkAndCreate();
             }}
           >
-            SALVAR
+            CRIAR
           </Button>
         </Box>
       </Box>
@@ -281,4 +266,4 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
   );
 };
 
-export default EditEventModal;
+export default AddEventModal;

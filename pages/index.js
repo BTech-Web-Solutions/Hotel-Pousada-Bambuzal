@@ -203,7 +203,9 @@ export default function Index() {
               flexWrap: "wrap",
             }}
           >
-            {events ? (
+            {events.length === 0 ? (
+              <h1>Não há eventos no momento!!</h1>
+            ) : (
               events.map((event) => (
                 <Accordion
                   key={event.id}
@@ -266,8 +268,6 @@ export default function Index() {
                   </AccordionDetails>
                 </Accordion>
               ))
-            ) : (
-              <h1>Carregando...</h1>
             )}
           </Box>
         </Box>
