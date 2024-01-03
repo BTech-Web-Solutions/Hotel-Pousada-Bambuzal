@@ -256,3 +256,16 @@ body {
 .login__forgot:hover {
   color: rgb(17, 97, 237);
 }
+
+/* ESTILO PARA O INPUT DE MENSAGEM NO MODAL DE EDITAR EVENTP */
+.MuiInputBase-multiline {
+  ::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #eb5422;
+    border-radius: 999px;
+  }
+}

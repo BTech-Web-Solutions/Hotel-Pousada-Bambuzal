@@ -38,42 +38,40 @@ const EventsPage = () => {
       <Box
         sx={{
           width: "70%",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: {
-            xs: "1rem",
-            sm: "1.5rem",
-            md: "2rem 1rem",
-            lg: "2rem 2rem",
-            xl: "2rem 6.1rem",
-          },
-          padding: "2.5rem 3rem",
-          "&::-webkit-scrollbar": {
-            width: "0.5rem",
-            bgcolor: "#3333",
-            borderRadius: "999px",
-          },
-          "&::-webkit-scrollbar-thumb": {
-            bgcolor: "#eb5310",
-            borderRadius: "999px",
-          },
           position: "relative",
-          border: "1px solid #fff",
+          // border: "1px solid #fff",
+          overflowY: "hidden",
+          height: "calc(100vh)",
         }}
       >
         {/* EVENT CARDS */}
         <Box
           sx={{
+            border: "1px solid #fff",
+            height: "calc(100vh - 1rem)",
             overflowY: "scroll",
-            height: "100%",
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
             alignItems: "center",
-            gap: "1rem",
-            width: "100%",
-            marginBottom: "1rem",
-            height: "100%",
+            padding: "3rem 0",
+
+            gap: {
+              xs: "1rem",
+              sm: "1.5rem",
+              md: "2rem 1rem",
+              lg: "2rem 2rem",
+              xl: "2rem 6.1rem",
+            },
+            "&::-webkit-scrollbar": {
+              width: "0.5rem",
+              bgcolor: "#3333",
+              borderRadius: "999px",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              bgcolor: "#eb5310",
+              borderRadius: "999px",
+            },
           }}
         >
           {events.map((event) => (
@@ -204,12 +202,43 @@ const EventsPage = () => {
         <div
           style={{
             width: "100%",
-            height: "1rem",
             position: "absolute",
-            border: "1px solid #fff",
-            bottom: "0",
+            bottom: "2rem",
+            display: "flex",
+            justifyContent: "flex-end",
+            paddingRight: "1rem",
+            // border: "1px solid #fff",
           }}
-        ></div>
+        >
+          {/* PLUS SIGNAL SVG*/}
+          <Button
+            sx={{
+              position: "relative",
+              right: "0",
+              bgcolor: "#eb5310",
+              borderRadius: "999px",
+
+              "&:hover": {
+                opacity: "0.8",
+                scale: "1.1",
+                bgcolor: "#eb5310",
+              },
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={40}
+              height={50}
+              fill="#fff"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M8 1 C8.55228 1 9 1.44772 9 2 L9 7 L14 7 C14.5523 7 15 7.44772 15 8 C15 8.55228 14.5523 9 14 9 L9 9 L9 14 C9 14.5523 8.55228 15 8 15 C7.44772 15 7 14.5523 7 14 L7 9 L2 9 C1.44772 9 1 8.55228 1 8 C1 7.44772 1.44772 7 2 7 L7 7 L7 2 C7 1.44772 7.44772 1 8 1 Z"
+              />
+            </svg>
+          </Button>
+        </div>
       </Box>
 
       <Box>

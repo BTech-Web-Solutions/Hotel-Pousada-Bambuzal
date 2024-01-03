@@ -100,8 +100,8 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
           height: {
             xs: "90%",
             sm: "80%",
-            md: "80%",
-            lg: "80%",
+            md: "100%",
+            lg: "90%",
             xl: "80%",
           },
           border: "2px solid #eb5310",
@@ -110,6 +110,9 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
           padding: "2rem",
           position: "relative",
           cursor: "auto",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-around",
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -222,10 +225,13 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
         <ModalInput
           id="mensagem"
           variant="outlined"
-          rows={calculateApproxLines(mensagem)}
+          rows={5}
           value={mensagem}
           onChange={(e) => {
             setMensagem(e.target.value);
+          }}
+          sx={{
+            overflowY: "scroll",
           }}
         />
 
