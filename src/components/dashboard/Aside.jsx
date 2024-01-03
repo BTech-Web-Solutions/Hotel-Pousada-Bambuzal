@@ -7,9 +7,8 @@ import { getCookie, deleteCookie } from "../../../src/hooks/useCookies";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
-const apiURLLocal = process.env.NEXT_PUBLIC_API_URL_LOCAL;
 
-const Aside = ({ setDashboardRoute, dashboardRoute }) => {
+const Aside = () => {
   const [loggedUser, setLoggedUser] = useState({});
   const router = useRouter();
 
@@ -62,6 +61,10 @@ const Aside = ({ setDashboardRoute, dashboardRoute }) => {
     } catch (error) {
       console.log(error.message);
     }
+  };
+
+  const handleRoute = (route) => {
+    router.push(`/admin/dashboard?page=${route}`);
   };
 
   useEffect(() => {
@@ -178,29 +181,25 @@ const Aside = ({ setDashboardRoute, dashboardRoute }) => {
           Sair
         </button>
       </Box>
-
       <Section
         title="Inicio"
-        onClick={() => {
-          setDashboardRoute("dashboard");
-        }}
-        className={dashboardRoute === "dashboard" ? "active" : ""}
+        onClick={() => router.push("dashboard")}
+        className={
+          router.pathname === "/admin/dashboard" &&
+          Object.keys(router.query).length === 0
+            ? "active"
+            : ""
+        }
       />
-
       <Section
         title="Usuários"
-        onClick={() => {
-          setDashboardRoute("users");
-        }}
-        className={dashboardRoute === "users" ? "active" : ""}
+        onClick={() => handleRoute("users")}
+        className={router.query.page === "users" ? "active" : ""}
       />
-
       <Section
         title="Eventos"
-        onClick={() => {
-          setDashboardRoute("events");
-        }}
-        className={dashboardRoute === "events" ? "active" : ""}
+        onClick={() => handleRoute("events")}
+        className={router.query.page === "events" ? "active" : ""}
       />
     </Box>
   );

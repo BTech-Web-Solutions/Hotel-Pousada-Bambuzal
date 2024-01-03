@@ -3,7 +3,6 @@ import router from "next/router";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
-const apiURLLocal = process.env.NEXT_PUBLIC_API_URL_LOCAL;
 
 const checkTokenBefore = async () => {
   const cookie = getCookie("admEmail");
@@ -34,7 +33,7 @@ const checkTokenBefore = async () => {
       }
 
       // Verificação de Role
-      const roleResult = await fetch(`${apiURLLocal}/admin/check-role`, {
+      const roleResult = await fetch(`${apiURL}/admin/check-role`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

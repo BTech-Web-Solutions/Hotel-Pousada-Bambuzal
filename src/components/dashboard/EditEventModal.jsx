@@ -6,7 +6,6 @@ import checkTokenBefore from "../../checkTokenBefore";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
-const apiURLLocal = process.env.NEXT_PUBLIC_API_URL_LOCAL;
 
 const EditEventModal = ({ selectedEvent, setEditEvent }) => {
   const [nome, setNome] = useState(selectedEvent.title);

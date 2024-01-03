@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { getCookie, deleteCookie } from "../../src/hooks/useCookies";
-import Aside from "../../src/components/dashboard/Aside";
-import UsersPage from "../../src/components/dashboard/UsersPage";
-import EventsPage from "../../src/components/dashboard/EventsPage";
+import { getCookie, deleteCookie } from "../../../src/hooks/useCookies";
+import Aside from "../../../src/components/dashboard/Aside";
+import UsersPage from "./UsersPage";
+import EventsPage from "./EventsPage";
+import Layout from "../../../src/components/dashboard/Layout";
 
 import { Box } from "@mui/material";
 
@@ -12,7 +13,6 @@ const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
 const Dashboard = () => {
   const [isValidToken, setIsValidToken] = useState(false);
-  const [dashboardRoute, setDashboardRoute] = useState("dashboard");
   const router = useRouter();
 
   const checkToken = async () => {
@@ -55,18 +55,15 @@ const Dashboard = () => {
   return (
     <Box
       sx={{
-        display: "flex",
         color: "#fff",
+        // display: "flex",
       }}
     >
-      <Aside
-        setDashboardRoute={setDashboardRoute}
-        dashboardRoute={dashboardRoute}
-      />
-
-      {dashboardRoute === "dashboard" && <h1>Dashboard</h1>}
-      {dashboardRoute === "users" && <UsersPage />}
-      {dashboardRoute === "events" && <EventsPage />}
+      <Layout>
+        <Aside />
+        {router.query.page === "users" && <UsersPage />}
+        {router.query.page === "events" && <EventsPage />}
+      </Layout>
     </Box>
   );
 };

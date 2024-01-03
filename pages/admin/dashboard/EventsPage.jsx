@@ -1,0 +1,227 @@
+import React, { useState, useEffect } from "react";
+import { Box, Button } from "@mui/material";
+import moment from "moment";
+import EditEventModal from "../../../src/components/dashboard/EditEventModal";
+import editEventIcon from "../../../src/images/Icons/editEvent.svg";
+import Image from "next/image";
+
+const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
+const apiURL = process.env.NEXT_PUBLIC_API_URL;
+
+const EventsPage = () => {
+  const [events, setEvents] = useState([]);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [editEvent, setEditEvent] = useState(false);
+
+  const modalEditEvent = (event) => {
+    setSelectedEvent(event);
+    setEditEvent(true);
+  };
+
+  const handleDeleteClick = (e, event) => {};
+
+  useEffect(() => {
+    const fetchApi = async () => {
+      try {
+        const result = await fetch(`${apiURL}/events`);
+        const data = await result.json();
+        setEvents(data);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      }
+    };
+    fetchApi();
+  }, [editEvent]);
+
+  return (
+    <>
+      <Box
+        sx={{
+          width: "70%",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: {
+            xs: "1rem",
+            sm: "1.5rem",
+            md: "2rem 1rem",
+            lg: "2rem 2rem",
+            xl: "2rem 6.1rem",
+          },
+          padding: "2.5rem 3rem",
+          "&::-webkit-scrollbar": {
+            width: "0.5rem",
+            bgcolor: "#3333",
+            borderRadius: "999px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            bgcolor: "#eb5310",
+            borderRadius: "999px",
+          },
+          position: "relative",
+          border: "1px solid #fff",
+        }}
+      >
+        {/* EVENT CARDS */}
+        <Box
+          sx={{
+            overflowY: "scroll",
+            height: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "1rem",
+            width: "100%",
+            marginBottom: "1rem",
+            height: "100%",
+          }}
+        >
+          {events.map((event) => (
+            <Box
+              key={event.id}
+              sx={{
+                position: "relative",
+                backgroundColor: "#4444",
+                borderRadius: "1rem",
+                padding: "1rem",
+                marginBottom: "1rem",
+                flexWrap: "wrap",
+                width: "16rem",
+                height: "16rem",
+                boxShadow: "2px 5px 10px #000",
+              }}
+            >
+              <h3
+                style={{
+                  textAlign: "center",
+                  borderBottom: "1px solid #fff",
+                }}
+              >
+                {event.title}
+              </h3>
+              <br />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                }}
+              >
+                <div>
+                  <h6>Data:</h6>
+                  <p>
+                    {moment(event.date).locale("pt-br").format("DD/MM/YYYY")}
+                  </p>
+                </div>
+                <div
+                  style={{
+                    borderLeft: "1px solid #fff",
+                    paddingLeft: "1rem",
+                  }}
+                >
+                  <h6>Horário:</h6>
+                  <p>{moment(event.time, "HH:mm").format("HH:mm")}</p>
+                </div>
+              </div>
+
+              {/* EDIT BTN */}
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  marginTop: "1rem",
+                  position: "absolute",
+                  bottom: "1rem",
+                  left: "1rem",
+                  borderRadius: "999px",
+                  width: "2.5rem",
+                  height: "2.5rem",
+                  bgcolor: "#eb5310",
+                  cursor: "pointer",
+                  "&:hover": {
+                    bgcolor: "#eb5310",
+                    opacity: "0.8",
+                    scale: "1.1",
+                  },
+                }}
+                onClick={() => modalEditEvent(event)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 -0.5 21 21"
+                  fill="#fff"
+                >
+                  <g transform="translate(-419.000000, -359.000000)">
+                    <g transform="translate(56.000000, 160.000000)">
+                      <path d="M384,209.210475 L384,219 L363,219 L363,199.42095 L373.5,199.42095 L373.5,201.378855 L365.1,201.378855 L365.1,217.042095 L381.9,217.042095 L381.9,209.210475 L384,209.210475 Z M370.35,209.51395 L378.7731,201.64513 L380.4048,203.643172 L371.88195,212.147332 L370.35,212.147332 L370.35,209.51395 Z M368.25,214.105237 L372.7818,214.105237 L383.18415,203.64513 L378.8298,199 L368.25,208.687714 L368.25,214.105237 Z" />
+                    </g>
+                  </g>
+                </svg>
+              </Box>
+
+              {/* TRASH BTN */}
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  marginTop: "1rem",
+                  position: "absolute",
+                  bottom: "1rem",
+                  right: "1rem",
+                  borderRadius: "999px",
+                  width: "2.5rem",
+                  height: "2.5rem",
+                  bgcolor: "#eb5310",
+                  cursor: "pointer",
+                  "&:hover": {
+                    bgcolor: "#eb5310",
+                    opacity: "0.8",
+                    scale: "1.1",
+                  },
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="#fff"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M11.5 1 C11.7761 1 12 1.22386 12 1.5 L12 2 L14.5 2 C14.7761 2 15 2.22386 15 2.5 C15 2.77614 14.7761 3 14.5 3 L14 3 L14 14.5 C14 14.7761 13.7761 15 13.5 15 L2.5 15 C2.22386 15 2 14.7761 2 14.5 L2 3 L1.5 3 C1.22386 3 1 2.77614 1 2.5 C1 2.22386 1.22386 2 1.5 2 L4 2 L4 1.5 C4 1.22386 4.22386 1 4.5 1 L11.5 1 Z M11.5 2 L4.5 2 L4.5 3 L11.5 3 L11.5 2 Z M3 4 L3 14 L13 14 L13 4 L3 4 Z M5 6 L5 12 L6 12 L6 6 L5 6 Z M8 6 L8 12 L9 12 L9 6 L8 6 Z M11 6 L11 12 L12 12 L12 6 L11 6 Z"
+                  />
+                </svg>
+              </Box>
+            </Box>
+          ))}
+        </Box>
+
+        {/* ADD EVENT BTN */}
+        <div
+          style={{
+            width: "100%",
+            height: "1rem",
+            position: "absolute",
+            border: "1px solid #fff",
+            bottom: "0",
+          }}
+        ></div>
+      </Box>
+
+      <Box>
+        {editEvent && (
+          <EditEventModal
+            setEditEvent={setEditEvent}
+            selectedEvent={selectedEvent}
+          />
+        )}
+      </Box>
+    </>
+  );
+};
+
+export default EventsPage;
