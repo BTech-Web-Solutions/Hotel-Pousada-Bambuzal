@@ -5,6 +5,7 @@ import EditEventModal from "../../../src/components/dashboard/EditEventModal";
 import editEventIcon from "../../../src/images/Icons/editEvent.svg";
 import Image from "next/image";
 import AddEventModal from "../../../src/components/dashboard/AddEventModal";
+import DeleteEventModal from "../../../src/components/dashboard/DeleteEventModal";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -14,13 +15,12 @@ const EventsPage = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [editEvent, setEditEvent] = useState(false);
   const [addEvent, setAddEvent] = useState(false);
+  const [deleteEvent, setDeleteEvent] = useState(false);
 
   const modalEditEvent = (event) => {
     setSelectedEvent(event);
     setEditEvent(true);
   };
-
-  const handleDeleteClick = (e, event) => {};
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -33,7 +33,7 @@ const EventsPage = () => {
       }
     };
     fetchApi();
-  }, [editEvent]);
+  }, [editEvent, addEvent, deleteEvent]);
 
   return (
     <>
@@ -79,6 +79,7 @@ const EventsPage = () => {
             },
           }}
         >
+          {events.length === 0 && <h1>Não há evento cadastrado!!</h1>}
           {events.map((event) => (
             <Box
               key={event.id}
@@ -185,6 +186,10 @@ const EventsPage = () => {
                     scale: "1.1",
                   },
                 }}
+                onClick={() => {
+                  setSelectedEvent(event);
+                  setDeleteEvent(true);
+                }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -248,9 +253,17 @@ const EventsPage = () => {
 
       <Box>
         {addEvent && <AddEventModal setAddEvent={setAddEvent} />}
+
         {editEvent && (
           <EditEventModal
             setEditEvent={setEditEvent}
+            selectedEvent={selectedEvent}
+          />
+        )}
+
+        {deleteEvent && (
+          <DeleteEventModal
+            setDeleteEvent={setDeleteEvent}
             selectedEvent={selectedEvent}
           />
         )}
