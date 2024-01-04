@@ -39,7 +39,9 @@ const EditUserModal = ({ selectedUser, setEditUser }) => {
           : "Erro ao atualizar usuário!"
       );
       setEditUser(false);
-    } catch (error) {}
+    } catch (error) {
+      console.error("Error editing user:", error);
+    }
   };
 
   const handleSave = async () => {
@@ -175,9 +177,10 @@ const EditUserModal = ({ selectedUser, setEditUser }) => {
           }}
           value={email}
         />
-        <h3>Role:</h3>
+        <h3>Cargo:</h3>
 
         <Select
+          disabled={role === "Administrador1" ? true : false}
           value={role}
           onChange={(e) => {
             setRole(e.target.value);
@@ -192,7 +195,7 @@ const EditUserModal = ({ selectedUser, setEditUser }) => {
           }}
         >
           <MenuItem value="Administrador">Administrador</MenuItem>
-          <MenuItem value="Employee">Funcionário</MenuItem>
+          <MenuItem value="Funcionário">Funcionário</MenuItem>
         </Select>
         <Box
           sx={{

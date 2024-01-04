@@ -106,7 +106,7 @@ const UsersPage = () => {
               <h4>Email:</h4>
               <p>{user.email}</p>
 
-              <h4>Role:</h4>
+              <h4>Cargo:</h4>
               <p>{user.role}</p>
 
               {/* EDIT BTN */}
