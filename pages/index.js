@@ -253,6 +253,7 @@ export default function Index() {
                           lg: "1.5rem",
                           xl: "1.5rem",
                         },
+                        overflowWrap: "break-word",
                       }}
                     >
                       As{" "}
