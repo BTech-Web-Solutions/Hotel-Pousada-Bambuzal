@@ -6,6 +6,7 @@ import editEventIcon from "../../../src/images/Icons/editEvent.svg";
 import Image from "next/image";
 import AddEventModal from "../../../src/components/dashboard/AddEventModal";
 import DeleteEventModal from "../../../src/components/dashboard/DeleteEventModal";
+import { deleteCookie, getCookie } from "../../../src/hooks/useCookies";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -16,16 +17,53 @@ const EventsPage = () => {
   const [editEvent, setEditEvent] = useState(false);
   const [addEvent, setAddEvent] = useState(false);
   const [deleteEvent, setDeleteEvent] = useState(false);
+  const [isValidToken, setIsValidToken] = useState(false);
 
   const modalEditEvent = (event) => {
     setSelectedEvent(event);
     setEditEvent(true);
   };
 
+  const checkToken = async () => {
+    const cookie = getCookie("admEmail");
+    if (cookie === "" || cookie === null) {
+      router.push("/admin");
+    } else {
+      const fetchApi = async () => {
+        const result = await fetch(`${apiURL}/admin/token-validate`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: apiKey,
+          },
+          body: JSON.stringify({
+            admEmail: getCookie("admEmail"),
+          }),
+        });
+
+        const data = await result.json();
+
+        if (data.message === "Invalid credentials") {
+          deleteCookie("admEmail");
+          router.push("/admin");
+        }
+      };
+      fetchApi();
+      setIsValidToken(true);
+    }
+  };
+
   useEffect(() => {
+    checkToken();
     const fetchApi = async () => {
       try {
-        const result = await fetch(`${apiURL}/events`);
+        const result = await fetch(`${apiURL}/events`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: apiKey,
+          },
+        });
         const data = await result.json();
         setEvents(data);
       } catch (error) {

@@ -257,7 +257,7 @@ body {
   color: rgb(17, 97, 237);
 }
 
-/* ESTILO PARA O INPUT DE MENSAGEM NO MODAL DE EDITAR EVENTP */
+/* ESTILO PARA O INPUT DE MENSAGEM NO EDIT_EVENT_MODAL */
 .MuiInputBase-multiline {
   ::-webkit-scrollbar {
     width: 5px;
@@ -274,6 +274,7 @@ body {
   }
 }
 
+/* ESTILO PARA O DROPDOWN DO CREATE_USER_MODAL */
 .mui-style-6hp17o-MuiList-root-MuiMenu-list {
   background-color: #202020;
   color: #fff;
@@ -284,5 +285,17 @@ body {
 }
 
 .mui-style-orzkfm-MuiButtonBase-root-MuiMenuItem-root:hover {
+  background-color: #303030;
+}
+
+.mui-style-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+  color: #fff;
+}
+
+.mui-style-bpeome-MuiSvgIcon-root-MuiSelect-icon {
+  color: #fff;
+}
+
+.mui-style-orzkfm-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover {
   background-color: #303030;
 }

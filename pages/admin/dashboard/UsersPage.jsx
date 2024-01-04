@@ -25,7 +25,13 @@ const UsersPage = () => {
   useEffect(() => {
     const fetchApi = async () => {
       try {
-        const result = await fetch(`${apiURL}/users`);
+        const result = await fetch(`${apiURL}/users`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: apiKey,
+          },
+        });
         const data = await result.json();
         setUsers(data);
 
@@ -242,6 +248,8 @@ const UsersPage = () => {
         </div>
 
         {/* MODALS */}
+        {addUser && <AddUserModal setAddUser={setAddUser} />}
+
         {editUser && (
           <EditUserModal
             setEditUser={setEditUser}
