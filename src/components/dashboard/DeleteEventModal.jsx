@@ -98,7 +98,7 @@ const DeleteEventModal = ({ selectedEvent, setDeleteEvent }) => {
           cursor: "auto",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -138,41 +138,33 @@ const DeleteEventModal = ({ selectedEvent, setDeleteEvent }) => {
         >
           Deletar Evento
         </h1>
-        <p
-          style={{
-            marginBottom: "2rem",
-            marginLeft: "2px",
-          }}
-        >
-          Título: {eventTitle}
-        </p>
 
-        <p
-          style={{
-            marginBottom: "2rem",
-            marginLeft: "2px",
-          }}
-        >
-          Data: {moment(eventDate).format("DD/MM/YYYY")}
-        </p>
+        <div>
+          <h2>Título</h2>
+          <p>{eventTitle}</p>
+        </div>
 
-        <p
-          style={{
-            marginBottom: "2rem",
-            marginLeft: "2px",
-          }}
-        >
-          Horário: {eventTime}
-        </p>
+        <div>
+          <h2>Data</h2>
+          <p>{moment(eventDate).format("DD/MM/YYYY")}</p>
+        </div>
 
-        <p
-          style={{
-            marginBottom: "2rem",
-            marginLeft: "2px",
-          }}
-        >
-          Descrição: {eventDescription}
-        </p>
+        <div>
+          <h2>Hora</h2>
+          <p>{eventTime}</p>
+        </div>
+
+        <div>
+          <h2>Descrição</h2>
+          <p
+            style={{
+              wordWrap: "break-word",
+            }}
+          >
+            {eventDescription}
+          </p>
+        </div>
+
         <h3>Tem certeza que deseja deletar este evento?</h3>
 
         <Box

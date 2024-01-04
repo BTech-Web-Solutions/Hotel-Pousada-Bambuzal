@@ -273,3 +273,16 @@ body {
     background: #eb3c10;
   }
 }
+
+.mui-style-6hp17o-MuiList-root-MuiMenu-list {
+  background-color: #202020;
+  color: #fff;
+}
+
+.mui-style-orzkfm-MuiButtonBase-root-MuiMenuItem-root {
+  min-height: auto;
+}
+
+.mui-style-orzkfm-MuiButtonBase-root-MuiMenuItem-root:hover {
+  background-color: #303030;
+}
