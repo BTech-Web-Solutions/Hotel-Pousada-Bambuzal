@@ -239,6 +239,13 @@ const UsersPage = () => {
             selectedUser={selectedUser}
           />
         )}
+
+        {deleteUser && (
+          <DeleteUserModal
+            setDeleteUser={setDeleteUser}
+            selectedUser={selectedUser}
+          />
+        )}
       </Box>
     </>
   );
