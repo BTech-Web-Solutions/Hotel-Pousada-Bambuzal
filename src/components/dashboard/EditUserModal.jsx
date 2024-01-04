@@ -50,8 +50,6 @@ const EditUserModal = ({ selectedUser, setEditUser }) => {
 
       if (isTokenValid) {
         await handlePreEdit();
-      } else {
-        alert("Você não tem permissão para editar usuários!");
       }
     } catch (error) {
       console.error("Error checking token:", error);

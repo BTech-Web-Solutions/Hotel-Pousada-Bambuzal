@@ -3,6 +3,8 @@ import AddUserModal from "../../../src/components/dashboard/AddUserModal";
 import EditUserModal from "../../../src/components/dashboard/EditUserModal";
 import DeleteUserModal from "../../../src/components/dashboard/DeleteUserModal";
 import { Box, Button } from "@mui/material";
+import { deleteCookie } from "../../../src/hooks/useCookies";
+import { useRouter } from "next/router";
 
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
@@ -14,6 +16,7 @@ const UsersPage = () => {
   const [addUser, setAddUser] = useState(false);
   const [deleteUser, setDeleteUser] = useState(false);
 
+  const router = useRouter();
   const modalEditUser = (user) => {
     setSelectedUser(user);
     setEditUser(true);
@@ -25,6 +28,12 @@ const UsersPage = () => {
         const result = await fetch(`${apiURL}/users`);
         const data = await result.json();
         setUsers(data);
+
+        if (data.length === 0) {
+          deleteCookie("token");
+          alert("Você não tem permissão para acessar essa página!");
+          router.push("/admin");
+        }
       } catch (error) {
         console.error("Error fetching users:", error);
       }

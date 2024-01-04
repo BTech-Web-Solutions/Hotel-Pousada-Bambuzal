@@ -7,6 +7,7 @@ const DeleteUserModal = ({ selectedUser, setDeleteUser }) => {
   const [userName, setUserName] = useState(selectedUser.name);
   const [userSurname, setUserSurname] = useState(selectedUser.surname);
   const [userEmail, setUserEmail] = useState(selectedUser.email);
+  const [userRole, setUserRole] = useState(selectedUser.role);
 
   const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
   const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -36,9 +37,21 @@ const DeleteUserModal = ({ selectedUser, setDeleteUser }) => {
     }
   };
 
+  const cantDeleteIfADM1 = () => {
+    if (selectedUser.role === "Administrador1") {
+      alert("Você não pode deletar um usuário administrador!");
+      setDeleteUser(false);
+      return true;
+    }
+  };
+
   const checkAndDelete = async () => {
     try {
       const isTokenValid = await checkTokenBefore();
+
+      if (cantDeleteIfADM1()) {
+        return;
+      }
 
       if (isTokenValid) {
         handleDelete();
