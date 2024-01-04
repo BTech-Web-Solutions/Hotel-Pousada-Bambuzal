@@ -26,12 +26,10 @@ const Aside = () => {
 
     const data = await result.json();
 
-    console.log("Logout response:", data);
+    console.log(data.message);
 
     if (data.message === "User logged out!") {
-      deleteCookie("admEmail");
       router.push("/admin");
-      deleteCookie("admEmail");
     } else {
       console.log("Logout failed");
     }
@@ -41,6 +39,7 @@ const Aside = () => {
     const admEmail = getCookie("admEmail");
     if (!admEmail) {
       alert("Você não está logado!");
+      router.push("/admin");
       return;
     }
 
@@ -176,7 +175,10 @@ const Aside = () => {
             e.target.style.backgroundColor = "#fff";
             e.target.style.color = "#eb5322";
           }}
-          onClick={handleLogout}
+          onClick={() => {
+            handleLogout();
+            deleteCookie("admEmail");
+          }}
         >
           Sair
         </button>
