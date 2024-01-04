@@ -51,7 +51,7 @@ export default function Index() {
     const fetchApi = async () => {
       const cookie = getCookie("admEmail");
 
-      if (cookie) {
+      if (cookie !== undefined && cookie !== "") {
         const result = await fetch(`${apiURL}/admin/token-validate`, {
           method: "POST",
           headers: {
@@ -68,7 +68,7 @@ export default function Index() {
 
         if (data.message === "Invalid credentials") {
           deleteCookie("admEmail");
-          router.push("/admin");
+          alert("Sua sessão expirou!");
         }
         if (data.message === "Token is valid!") {
           router.push("/admin/dashboard");

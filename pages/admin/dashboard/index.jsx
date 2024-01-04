@@ -1,3 +1,5 @@
+// /admin/dashboard/index.jsx
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getCookie, deleteCookie } from "../../../src/hooks/useCookies";
@@ -5,7 +7,6 @@ import Aside from "../../../src/components/dashboard/Aside";
 import UsersPage from "./UsersPage";
 import EventsPage from "./EventsPage";
 import Layout from "../../../src/components/dashboard/Layout";
-
 import { Box } from "@mui/material";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
@@ -20,27 +21,25 @@ const Dashboard = () => {
     if (cookie === "" || cookie === null) {
       router.push("/admin");
     } else {
-      const fetchApi = async () => {
-        const result = await fetch(`${apiURL}/admin/token-validate`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: apiKey,
-          },
-          body: JSON.stringify({
-            admEmail: getCookie("admEmail"),
-          }),
-        });
+      const result = await fetch(`${apiURL}/admin/token-validate`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: apiKey,
+        },
+        body: JSON.stringify({
+          admEmail: getCookie("admEmail"),
+        }),
+      });
 
-        const data = await result.json();
+      const data = await result.json();
 
-        if (data.message === "Invalid credentials") {
-          deleteCookie("admEmail");
-          router.push("/admin");
-        }
-      };
-      fetchApi();
-      setIsValidToken(true);
+      if (data.message === "Invalid credentials") {
+        deleteCookie("admEmail");
+        router.push("/admin");
+      } else {
+        setIsValidToken(true);
+      }
     }
   };
 
@@ -56,7 +55,6 @@ const Dashboard = () => {
     <Box
       sx={{
         color: "#fff",
-        // display: "flex",
       }}
     >
       <Layout>
