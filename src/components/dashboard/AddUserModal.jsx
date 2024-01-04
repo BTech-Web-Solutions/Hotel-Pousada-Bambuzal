@@ -46,6 +46,7 @@ const AddUserModal = ({ setAddUser }) => {
           ? "Usuário criado com sucesso!"
           : "Erro ao criar usuário!"
       );
+      setAddUser(false);
     } catch (error) {
       console.error("Error creating user:", error);
     }
