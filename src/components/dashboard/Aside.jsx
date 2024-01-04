@@ -82,6 +82,7 @@ const Aside = () => {
         borderRight: "4px solid #eb5322",
         borderRadius: "0 1rem 1rem 0",
         boxShadow: "0 0 12px 0 #000",
+        zIndex: "999",
       }}
     >
       <Box

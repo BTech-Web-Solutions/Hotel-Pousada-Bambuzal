@@ -6,6 +6,7 @@ import { Box, Button } from "@mui/material";
 import { deleteCookie } from "../../../src/hooks/useCookies";
 import { useRouter } from "next/router";
 import moment from "moment";
+import Loading from "../../../src/components/Loading";
 
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
@@ -16,6 +17,7 @@ const UsersPage = () => {
   const [editUser, setEditUser] = useState(false);
   const [addUser, setAddUser] = useState(false);
   const [deleteUser, setDeleteUser] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const router = useRouter();
   const modalEditUser = (user) => {
@@ -35,9 +37,10 @@ const UsersPage = () => {
         });
         const data = await result.json();
         setUsers(data);
+        setIsLoading(false);
 
         if (data.length === 0) {
-          deleteCookie("token");
+          deleteCookie("admEmail");
           alert("Você não tem permissão para acessar essa página!");
           router.push("/admin");
         }
@@ -93,7 +96,8 @@ const UsersPage = () => {
             },
           }}
         >
-          {users.length === 0 && <h1>Não há usuário cadastrado!!</h1>}
+          {isLoading && <Loading position="absolute" w="100vh" left="18%" />}
+
           {users
             .sort((a, b) => {
               const createdA = moment(a.createdAt);

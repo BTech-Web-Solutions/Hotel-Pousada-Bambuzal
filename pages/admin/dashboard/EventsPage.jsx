@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Box, Button } from "@mui/material";
 import moment from "moment";
 import EditEventModal from "../../../src/components/dashboard/EditEventModal";
-import editEventIcon from "../../../src/images/Icons/editEvent.svg";
-import Image from "next/image";
 import AddEventModal from "../../../src/components/dashboard/AddEventModal";
 import DeleteEventModal from "../../../src/components/dashboard/DeleteEventModal";
 import { deleteCookie, getCookie } from "../../../src/hooks/useCookies";
+import Loading from "../../../src/components/Loading";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -18,6 +17,7 @@ const EventsPage = () => {
   const [addEvent, setAddEvent] = useState(false);
   const [deleteEvent, setDeleteEvent] = useState(false);
   const [isValidToken, setIsValidToken] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const modalEditEvent = (event) => {
     setSelectedEvent(event);
@@ -42,6 +42,7 @@ const EventsPage = () => {
         });
 
         const data = await result.json();
+        setIsLoading(false);
 
         if (data.message === "Invalid credentials") {
           deleteCookie("admEmail");
@@ -54,7 +55,6 @@ const EventsPage = () => {
   };
 
   useEffect(() => {
-    checkToken();
     const fetchApi = async () => {
       try {
         const result = await fetch(`${apiURL}/events`, {
@@ -68,23 +68,26 @@ const EventsPage = () => {
         setEvents(data);
       } catch (error) {
         console.error("Error fetching events:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
+    checkToken();
     fetchApi();
   }, [editEvent, addEvent, deleteEvent]);
 
   return (
     <>
+      {isLoading && <Loading position="absolute" w="100vh" left="38%" />}
+
       <Box
         sx={{
           width: "70%",
           position: "relative",
-
           overflowY: "hidden",
           height: "calc(100vh)",
         }}
       >
-        {/* EVENT CARDS */}
         <Box
           sx={{
             height: "calc(100vh - 1rem)",
@@ -94,7 +97,6 @@ const EventsPage = () => {
             justifyContent: "center",
             alignItems: "center",
             padding: "3rem 0",
-
             gap: {
               xs: "1rem",
               sm: "1.5rem",
@@ -110,14 +112,12 @@ const EventsPage = () => {
             "&::-webkit-scrollbar-thumb": {
               bgcolor: "#eb5310",
               borderRadius: "999px",
-
               "&:hover": {
                 bgcolor: "#eb2110",
               },
             },
           }}
         >
-          {events.length === 0 && <h1>Não há evento cadastrado!!</h1>}
           {events.map((event) => (
             <Box
               key={event.id}
@@ -165,7 +165,6 @@ const EventsPage = () => {
                 </div>
               </div>
 
-              {/* EDIT BTN */}
               <Box
                 sx={{
                   display: "flex",
@@ -203,7 +202,6 @@ const EventsPage = () => {
                 </svg>
               </Box>
 
-              {/* TRASH BTN */}
               <Box
                 sx={{
                   display: "flex",
@@ -246,7 +244,6 @@ const EventsPage = () => {
           ))}
         </Box>
 
-        {/* ADD EVENT BTN */}
         <div
           style={{
             width: "100%",
@@ -257,14 +254,12 @@ const EventsPage = () => {
             paddingRight: "1rem",
           }}
         >
-          {/* PLUS SIGNAL SVG*/}
           <Button
             sx={{
               position: "relative",
               right: "0",
               bgcolor: "#eb5310",
               borderRadius: "999px",
-
               "&:hover": {
                 opacity: "0.8",
                 scale: "1.1",
@@ -291,14 +286,12 @@ const EventsPage = () => {
 
       <Box>
         {addEvent && <AddEventModal setAddEvent={setAddEvent} />}
-
         {editEvent && (
           <EditEventModal
             setEditEvent={setEditEvent}
             selectedEvent={selectedEvent}
           />
         )}
-
         {deleteEvent && (
           <DeleteEventModal
             setDeleteEvent={setDeleteEvent}

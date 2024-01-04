@@ -1,5 +1,3 @@
-// /admin/dashboard/index.jsx
-
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getCookie, deleteCookie } from "../../../src/hooks/useCookies";
@@ -8,12 +6,14 @@ import UsersPage from "./UsersPage";
 import EventsPage from "./EventsPage";
 import Layout from "../../../src/components/dashboard/Layout";
 import { Box } from "@mui/material";
+import Loading from "../../../src/components/Loading"; // Importe o componente Loading
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
 const Dashboard = () => {
   const [isValidToken, setIsValidToken] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Adicione um estado para o carregamento
   const router = useRouter();
 
   const checkToken = async () => {
@@ -41,11 +41,17 @@ const Dashboard = () => {
         setIsValidToken(true);
       }
     }
+
+    setIsLoading(false); // Desativar o carregamento após a verificação do token
   };
 
   useEffect(() => {
     checkToken();
   }, []);
+
+  if (isLoading) {
+    return <Loading />; // Mostrar o componente Loading enquanto está carregando
+  }
 
   if (!isValidToken) {
     return null;
