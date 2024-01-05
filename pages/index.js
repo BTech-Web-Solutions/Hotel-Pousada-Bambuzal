@@ -1,10 +1,9 @@
-import * as React from "react";
+import { React, useState, useEffect } from "react";
 import Link from "next/link";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Navbar from "../src/components/Navbar";
 import Typography from "@mui/material/Typography";
 import Carrousel from "../src/components/Carrousel";
-import styled from "styled-components";
 import { Accordion, AccordionSummary, Box } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -12,10 +11,46 @@ import TheButton from "../src/components/Button";
 import About from "../src/components/About";
 import Footer from "../src/components/Footer";
 import theme from "../src/theme";
+import moment from "moment";
 
-import events from "./api/events.json";
+const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export default function Index() {
+  const [events, setEvents] = useState([]);
+  const [packs, setPacks] = useState([]);
+
+  const getEvents = async () => {
+    fetch(`${apiUrl}/events`, {
+      method: "GET",
+      headers: {
+        Authorization: apiKey,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setEvents(data);
+      });
+  };
+
+  const getPacks = async () => {
+    fetch(`${apiUrl}/packs`, {
+      method: "GET",
+      headers: {
+        Authorization: apiKey,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setPacks(data);
+      });
+  };
+
+  useEffect(() => {
+    getEvents();
+    getPacks();
+  }, []);
+
   return (
     <Box>
       <ThemeProvider theme={theme}>
@@ -147,6 +182,7 @@ export default function Index() {
 
         <About />
 
+        {/* EVENTS SECTION */}
         <Box
           sx={{
             bgcolor: "secondary.main",
@@ -162,6 +198,7 @@ export default function Index() {
               xl: "3rem",
             },
             gap: "1rem",
+            margin: "1.5rem 0",
           }}
         >
           <Typography variant="h3">Eventos</Typography>
@@ -189,68 +226,183 @@ export default function Index() {
               flexWrap: "wrap",
             }}
           >
-            {events.map((event) => (
-              <Accordion
-                key={event.id}
-                sx={{
-                  width: {
-                    xs: "100%",
-                    sm: "100%",
-                    md: "100%",
-                    lg: "45%",
-                    xl: "45%",
-                  },
-                  bgcolor: "#212121",
-                  color: "white",
-                  marginBottom: "1rem",
-                  borderRadius: "0.5rem",
-                }}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
+            {events.length === 0 ? (
+              <h1>Não há eventos no momento!!</h1>
+            ) : (
+              events.map((event) => (
+                <Accordion
+                  key={event.id}
+                  sx={{
+                    width: {
+                      xs: "100%",
+                      sm: "100%",
+                      md: "100%",
+                      lg: "45%",
+                      xl: "45%",
+                    },
+                    bgcolor: "#212121",
+                    color: "white",
+                    marginBottom: "1rem",
+                    borderRadius: "0.5rem",
+                  }}
                 >
-                  <Typography
-                    sx={{
-                      fontSize: {
-                        xs: "1rem",
-                        sm: "1.5rem",
-                        md: "1.5rem",
-                        lg: "1.5rem",
-                        xl: "1.5rem",
-                      },
-                      fontWeight: "300",
-                    }}
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
                   >
-                    {event.title} <b>no dia</b>{" "}
-                    {event.date.split("-").reverse().join("/")}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography
-                    sx={{
-                      fontWeight: "300",
-                      fontSize: {
-                        xs: "1rem",
-                        sm: "1.5rem",
-                        md: "1.5rem",
-                        lg: "1.5rem",
-                        xl: "1.5rem",
-                      },
-                    }}
+                    <Typography
+                      sx={{
+                        fontSize: {
+                          xs: "1rem",
+                          sm: "1.5rem",
+                          md: "1.5rem",
+                          lg: "1.5rem",
+                          xl: "1.5rem",
+                        },
+                        fontWeight: "300",
+                      }}
+                    >
+                      {event.title} <b>no dia</b>{" "}
+                      {event.date.split("-").reverse().join("/")}
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography
+                      sx={{
+                        fontWeight: "300",
+                        fontSize: {
+                          xs: "1rem",
+                          sm: "1.5rem",
+                          md: "1.5rem",
+                          lg: "1.5rem",
+                          xl: "1.5rem",
+                        },
+                        overflowWrap: "break-word",
+                      }}
+                    >
+                      As{" "}
+                      {
+                        //time formated to PT-BR 24h
+                        event.time.split(":")[0] +
+                          ":" +
+                          event.time.split(":")[1] +
+                          "h"
+                      }
+                      <br /> {event.description}
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              ))
+            )}
+          </Box>
+        </Box>
+
+        {/* PACKS SECTION */}
+
+        <Box
+          sx={{
+            bgcolor: "secondary.main",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            color: "white",
+            padding: {
+              xs: "2rem",
+              sm: "2rem",
+              md: "2rem",
+              lg: "3rem",
+              xl: "3rem",
+            },
+            gap: "1rem",
+          }}
+        >
+          <Typography variant="h3">
+            Pacotes para {moment().format("YYYY")}
+          </Typography>
+          <Typography variant="h5">
+            Aqui se econtra o quadro de pacotes que oferecemos durante o ano no
+            nosso lugarzinho! 💝{" "}
+          </Typography>
+
+          <br />
+
+          <Box
+            sx={{
+              // bgcolor: "red",
+              display: "flex",
+              flexDirection: {
+                xs: "column",
+                sm: "column",
+                md: "column",
+                lg: "row",
+                xl: "row",
+              },
+              justifyContent: "space-evenly",
+              alignItems: "flex-start",
+
+              flexWrap: "wrap",
+            }}
+          >
+            {packs.length === 0 ? (
+              <h1>Não há pacotes no momento!!</h1>
+            ) : (
+              packs.map((event) => (
+                <Accordion
+                  key={event.id}
+                  sx={{
+                    width: {
+                      xs: "100%",
+                      sm: "100%",
+                      md: "100%",
+                      lg: "45%",
+                      xl: "45%",
+                    },
+                    bgcolor: "#212121",
+                    color: "white",
+                    marginBottom: "1rem",
+                    borderRadius: "0.5rem",
+                  }}
+                >
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
                   >
-                    As{" "}
-                    {
-                      //time formated to PT-BR 24h
-                      event.time.split(":")[0] +
-                        ":" +
-                        event.time.split(":")[1] +
-                        "h"
-                    }
-                    <br /> {event.description}
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            ))}
+                    <Typography
+                      sx={{
+                        fontSize: {
+                          xs: "1rem",
+                          sm: "1.5rem",
+                          md: "1.5rem",
+                          lg: "1.5rem",
+                          xl: "1.5rem",
+                        },
+                        fontWeight: "300",
+                      }}
+                    >
+                      {event.title}
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography
+                      sx={{
+                        fontWeight: "300",
+                        fontSize: {
+                          xs: "1rem",
+                          sm: "1.5rem",
+                          md: "1.5rem",
+                          lg: "1.5rem",
+                          xl: "1.5rem",
+                        },
+                        overflowWrap: "break-word",
+                      }}
+                    >
+                      Do dia {event.firstDate.split("-").reverse().join("/")}{" "}
+                      até {event.lastDate.split("-").reverse().join("/")} <br />
+                      <br />
+                      {event.description}
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              ))
+            )}
           </Box>
         </Box>
 

@@ -1,114 +1,120 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../src/components/Navbar";
 import { useRouter } from "next/router";
-import { database } from "/firebase/firebaseConfig";
-import { doc, getDoc, setDoc } from "firebase/firestore";
-import { setCookie, getCookie } from "../../src/hooks/useCookies";
+import { setCookie, getCookie, deleteCookie } from "../../src/hooks/useCookies";
+import Loading from "../../src/components/Loading";
 
 export default function Index() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [incorrectLogin, setIncorrectLogin] = useState(false);
-  const [token, setToken] = useState(null); // Estado para armazenar o token
+  const [isLoading, setIsLoading] = useState(true);
 
   const router = useRouter();
 
-  // Função assíncrona para fazer login
+  const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
+  const apiURL = process.env.NEXT_PUBLIC_API_URL;
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch("http://localhost:3000/api/user/login", {
-        method: "POST",
-        body: JSON.stringify({ email, password }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+    const result = await fetch(`${apiURL}/admin/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: apiKey,
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
 
-      if (response.ok) {
-        const { token } = await response.json();
-        const decodedToken = token
-          ? JSON.parse(atob(token.split(".")[1]))
-          : null;
-        const userDocRef = doc(database, "users", decodedToken.id);
-        setCookie("dbId", userDocRef.id, 14);
-        const userDocSnapshot = await getDoc(userDocRef);
+    const data = await result.json();
 
-        if (userDocSnapshot.exists()) {
-          await setDoc(userDocRef, { token }, { merge: true });
-          setToken(token); // Armazena o token no estado
-          router.push("/admin/dashboard");
-        } else {
-          setIncorrectLogin(true);
-        }
-      }
-    } catch (error) {
-      console.error("Erro no login:", error);
+    if (data.message === "Invalid credentials") {
+      setIncorrectLogin(true);
+    }
+
+    if (
+      data.message ===
+      "Can't add new command when connection is in closed state"
+    ) {
+      alert("Há algo errado com a API!");
+    }
+
+    if (data.message === "User logged in!") {
+      setCookie("admEmail", email);
+      router.push("/admin/dashboard");
     }
   };
 
-  const getTokenFromDB = async () => {
-    const id = getCookie("dbId");
-    const docRef = doc(database, "users", id);
-    const docSnap = await getDoc(docRef);
-    return docSnap.data().token;
-  };
-
   useEffect(() => {
-    const checkTokenValidity = async (token) => {
-      const response = await fetch("http://localhost:3000/api/user/validate", {
-        method: "POST",
-        body: JSON.stringify({ token }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+    const fetchApi = async () => {
+      const cookie = getCookie("admEmail");
 
-      return response.ok;
-    };
+      if (cookie !== undefined && cookie !== "") {
+        const result = await fetch(`${apiURL}/admin/token-validate`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: apiKey,
+          },
+          body: JSON.stringify({
+            admEmail: cookie,
+          }),
+        });
 
-    const checkAndRedirect = async () => {
-      const token = await getTokenFromDB();
-      if (token && (await checkTokenValidity(token))) {
-        router.push("/admin/dashboard");
+        const data = await result.json();
+        setIsLoading(false);
+        console.log(data.message);
+
+        if (data.message === "Invalid credentials") {
+          deleteCookie("admEmail");
+          alert("Sua sessão expirou!");
+        }
+        if (data.message === "Token is valid!") {
+          router.push("/admin/dashboard");
+        }
       }
     };
 
-    checkAndRedirect();
+    fetchApi();
   }, []);
 
   return (
-    <div>
-      <Navbar />
-      <div className="login-container">
-        <form className="form-login">
-          <ul className="login-nav">
-            <li className="login-nav__item active">
-              <a href="#">LogIn</a>
-            </li>
-          </ul>
-          <label htmlFor="login-input-user" className="login__label">
-            Email
-          </label>
-          <input
-            id="login-input-user"
-            className="login__input"
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label htmlFor="login-input-password" className="login__label">
-            Senha
-          </label>
-          <input
-            id="login-input-password"
-            className="login__input"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          {/* <label htmlFor="login-sign-up" className="login__label--checkbox">
+    <>
+      {isLoading && <Loading />}
+      <div>
+        <Navbar />
+        <div className="login-container">
+          <form className="form-login">
+            <ul className="login-nav">
+              <li className="login-nav__item active">
+                <a href="#">LogIn</a>
+              </li>
+            </ul>
+            <label htmlFor="login-input-user" className="login__label">
+              Email
+            </label>
+            <input
+              id="login-input-user"
+              className="login__input"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label htmlFor="login-input-password" className="login__label">
+              Senha
+            </label>
+            <input
+              id="login-input-password"
+              className="login__input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {/* <label htmlFor="login-sign-up" className="login__label--checkbox">
             <input
             id="login-sign-up"
             type="checkbox"
@@ -116,17 +122,18 @@ export default function Index() {
             />
             Mantenha conectado
           </label> */}
-          <button className="login__submit" onClick={handleLogin}>
-            Entrar
-          </button>
-        </form>
-        {incorrectLogin && (
-          <p className="login__incorrect">Email ou senha incorretos.</p>
-        )}
-        {/* <a href="#" className="login__forgot">
+            <button className="login__submit" onClick={handleLogin}>
+              Entrar
+            </button>
+          </form>
+          {incorrectLogin && (
+            <p className="login__incorrect">Email ou senha incorretos.</p>
+          )}
+          {/* <a href="#" className="login__forgot">
           Forgot Password?
         </a> */}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

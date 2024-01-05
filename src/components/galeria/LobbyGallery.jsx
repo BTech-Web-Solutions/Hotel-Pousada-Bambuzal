@@ -112,21 +112,21 @@ export default function LobbyGallery() {
 
 const itemData = [
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Lobby/lobby_inside.jpg",
+    img: new URL("/src/images/Lobby/lobby_inside.jpg", import.meta.url),
     title: "Lobby",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Lobby/lobby_entrance.jpg",
+    img: new URL("/src/images/Lobby/lobby_entrance.jpg", import.meta.url),
     title: "Entrance",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Lobby/lobby_inside_2.jpg",
+    img: new URL("/src/images/Lobby/lobby_inside_2.jpg", import.meta.url),
     title: "Lobby Inside",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Lobby/lobby_inside_3.jpg",
+    img: new URL("/src/images/Lobby/lobby_inside_3.jpg", import.meta.url),
     title: "Lobby Close",
     cols: 2,
   },

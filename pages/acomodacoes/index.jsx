@@ -4,6 +4,30 @@ import Footer from "../../src/components/Footer";
 import AcomodacaoCard from "../../src/components/AcomodacaoCard";
 import { Box } from "@mui/material";
 
+const images = () => {
+  const SuiteSimplesBG = new URL(
+    "../../src/images/SuiteSimples/1.jpg",
+    import.meta.url
+  );
+
+  const ChaleDuploBG = new URL(
+    "../../src/images/ChaleDuplo/1.jpg",
+    import.meta.url
+  );
+
+  const ChaleTriploBG = new URL(
+    "../../src/images/ChaleTriplo/1.jpg",
+    import.meta.url
+  );
+
+  const ChaleFamiliaBG = new URL(
+    "../../src/images/ChaleFamilia/1.jpg",
+    import.meta.url
+  );
+
+  return { SuiteSimplesBG, ChaleDuploBG, ChaleTriploBG, ChaleFamiliaBG };
+};
+
 const index = () => {
   return (
     <>
@@ -17,7 +41,7 @@ const index = () => {
         }}
       >
         <AcomodacaoCard
-          image="https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuiteSimples/1.jpg"
+          image={images().SuiteSimplesBG}
           title="Suíte Simples"
           desc="Suítes com Vista para o rio, uma ótima opção para se ouvir as
           águas do rio Sana."
@@ -25,7 +49,7 @@ const index = () => {
         />
 
         <AcomodacaoCard
-          image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ChaleDuplo/1.jpg?raw=true"
+          image={images().ChaleDuploBG}
           title="Chalé Duplo"
           desc="Chalé composto por garagem privativa, varanda com rede onde se
           pode desfrutar de uma paisagem deslumbrante das montanhas,
@@ -34,7 +58,7 @@ const index = () => {
         />
 
         <AcomodacaoCard
-          image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ChaleTriplo/1.jpg?raw=true"
+          image={images().ChaleTriploBG}
           title="Chalé Triplo"
           desc="Chalé composto por garagem privativa, varanda com rede onde se
           pode desfrutar de uma paisagem deslumbrante. Além de um amplo
@@ -43,7 +67,7 @@ const index = () => {
         />
 
         <AcomodacaoCard
-          image="https://github.com/brodrigues0ll/Hotel-Pousada-Bambuzal/blob/main/src/images/ChaleFamilia/1.jpg?raw=true"
+          image={images().ChaleFamiliaBG}
           title="Chalé Família"
           desc="Temos opções para quem ama viajar em família e que querem
           ficar juntinhos. Com dois quartos, nossos chalés família são

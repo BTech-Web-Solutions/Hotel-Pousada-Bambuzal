@@ -1,20 +1,31 @@
 import { Box, TextField } from "@mui/material";
 import * as React from "react";
 
-export default function ContactInput({ id, label, variant, rows, sx }) {
+export default function ModalInput({
+  id,
+  label,
+  variant,
+  rows,
+  type,
+  value,
+  onChange,
+}) {
   return (
     <TextField
+      value={value}
       id={id}
+      type={type ? type : "text"}
       label={label}
       variant={variant}
       multiline={id === "mensagem" ? true : false}
+      onChange={onChange}
       rows={rows ? rows : 1}
       sx={{
         width: "100%",
         marginBottom: "1rem",
         "& .MuiOutlinedInput-root": {
           "& fieldset": {
-            borderColor: "#000",
+            borderColor: "#fff",
             borderWidth: "2px",
           },
         },
@@ -27,7 +38,7 @@ export default function ContactInput({ id, label, variant, rows, sx }) {
 
         "& .MuiOutlinedInput-root.Mui-focused": {
           "& fieldset": {
-            borderColor: "#fff",
+            borderColor: "#eb5422",
           },
         },
 

@@ -101,60 +101,75 @@ export default function Suites() {
 
 const itemData = [
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuitePremiun/suite.jpg",
+    img: new URL("/src/images/SuitePremiun/suite.jpg", import.meta.url),
     title: "Suite Premiun",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuitePremiun/suite_2.jpg",
+    img: new URL("/src/images/SuitePremiun/suite_2.jpg", import.meta.url),
     title: "Suite Premiun 2",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuitePremiun/suite_3.jpg",
+    img: new URL("/src/images/SuitePremiun/suite_3.jpg", import.meta.url),
     title: "Suite Premiun 3",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuitePremiun/suite_4.jpg",
+    img: new URL("/src/images/SuitePremiun/suite_4.jpg", import.meta.url),
     title: "Suite Premiun 4",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuitePremiun/suite_5.jpg",
+    img: new URL("/src/images/SuitePremiun/suite_5.jpg", import.meta.url),
     title: "Suite Premiun 5",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuitePremiun/suite_6.jpg",
+    img: new URL("/src/images/SuitePremiun/suite_6.jpg", import.meta.url),
     title: "Suite Premiun 6",
     author: "@arwinneil",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuiteSimples/suite_simples.jpg",
+    img: new URL("/src/images/SuiteSimples/suite_simples.jpg", import.meta.url),
     title: "Suite Simples",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuiteSimples/suite_simples_2.jpg",
+    img: new URL(
+      "/src/images/SuiteSimples/suite_simples_2.jpg",
+      import.meta.url
+    ),
     title: "Suite Simples 2",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuiteSimples/suite_simples_3.jpg",
+    img: new URL(
+      "/src/images/SuiteSimples/suite_simples_3.jpg",
+      import.meta.url
+    ),
     title: "Suite Simples 3",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuiteSimples/suite_simples_4.jpg",
+    img: new URL(
+      "/src/images/SuiteSimples/suite_simples_4.jpg",
+      import.meta.url
+    ),
     title: "Suite Simples 4",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuiteSimples/suite_simples_5.jpg",
+    img: new URL(
+      "/src/images/SuiteSimples/suite_simples_5.jpg",
+      import.meta.url
+    ),
     title: "Suite Simples 5",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/SuiteSimples/suite_simples_6.jpg",
+    img: new URL(
+      "/src/images/SuiteSimples/suite_simples_6.jpg",
+      import.meta.url
+    ),
     title: "Suite Simples 6",
     cols: 4,
   },

@@ -101,40 +101,33 @@ export default function ChalesDuplos() {
 
 const itemData = [
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleDuplo/1.jpg",
+    img: new URL("/src/images/ChaleDuplo/chale_duplo.jpg", import.meta.url),
     title: "Chale Duplo",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleDuplo/chale_duplo.jpg",
-    title: "Chale Duplo 1",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleDuplo/chale_duplo_2.jpg",
+    img: new URL("/src/images/ChaleDuplo/chale_duplo_2.jpg", import.meta.url),
     title: "Chale Duplo 2",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleDuplo/chale_duplo_3.jpg",
+    img: new URL("/src/images/ChaleDuplo/chale_duplo_3.jpg", import.meta.url),
     title: "Chale Duplo 3",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleDuplo/chale_duplo_4.jpg",
+    img: new URL("/src/images/ChaleDuplo/chale_duplo_4.jpg", import.meta.url),
     title: "Chale Duplo 4",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ChaleDuplo/chale_duplo_5.jpg",
+    img: new URL("/src/images/ChaleDuplo/chale_duplo_5.jpg", import.meta.url),
     title: "Chale Duplo 5",
-    author: "@arwinneil",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/AcomodPages/ChaleDuplo/1.jpg",
+    img: new URL("/src/images/AcomodPages/ChaleDuplo/1.jpg", import.meta.url),
     title: "Chale Duplo 6",
     rows: 2,
     cols: 2,
-  }
+  },
 ];

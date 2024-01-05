@@ -101,27 +101,27 @@ export default function Ofuro() {
 
 const itemData = [
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Ofuro/ofuro.jpg",
+    img: new URL("/src/images/Ofuro/ofuro.jpg", import.meta.url),
     title: "Ofuro",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Ofuro/ofuro_2.jpg",
+    img: new URL("/src/images/Ofuro/ofuro_2.jpg", import.meta.url),
     title: "Ofuro 2",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Ofuro/ofuro_3.jpg",
+    img: new URL("/src/images/Ofuro/ofuro_3.jpg", import.meta.url),
     title: "Ofuro 3",
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Ofuro/ofuro_4.jpg",
+    img: new URL("/src/images/Ofuro/ofuro_4.jpg", import.meta.url),
     title: "Ofuro 4",
     cols: 2,
   },
   {
-    img: "https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/Ofuro/ofuro_5.jpg",
+    img: new URL("/src/images/Ofuro/ofuro_5.jpg", import.meta.url),
     title: "Ofuro 5",
     cols: 2,
-  }
+  },
 ];

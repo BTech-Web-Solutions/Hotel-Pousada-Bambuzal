@@ -52,7 +52,7 @@ body {
   max-width: 500px;
   min-height: 600px;
 
-  background-image: url(https://media.githubusercontent.com/media/BTech-Web-Solutions/Hotel-Pousada-Bambuzal/main/src/images/ImageList/6.jpg);
+  background-image: url("../src/images/ImageList/6.jpg");
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
   background-size: cover;
   background-position: bottom;
@@ -255,4 +255,47 @@ body {
 
 .login__forgot:hover {
   color: rgb(17, 97, 237);
+}
+
+/* ESTILO PARA O INPUT DE MENSAGEM NO EDIT_EVENT_MODAL */
+.MuiInputBase-multiline {
+  ::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #eb5310;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #eb3c10;
+  }
+}
+
+/* ESTILO PARA O DROPDOWN DO CREATE_USER_MODAL */
+.mui-style-6hp17o-MuiList-root-MuiMenu-list {
+  background-color: #202020;
+  color: #fff;
+}
+
+.mui-style-orzkfm-MuiButtonBase-root-MuiMenuItem-root {
+  min-height: auto;
+}
+
+.mui-style-orzkfm-MuiButtonBase-root-MuiMenuItem-root:hover {
+  background-color: #303030;
+}
+
+.mui-style-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+  color: #fff;
+}
+
+.mui-style-bpeome-MuiSvgIcon-root-MuiSelect-icon {
+  color: #fff;
+}
+
+.mui-style-orzkfm-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover {
+  background-color: #303030;
 }
