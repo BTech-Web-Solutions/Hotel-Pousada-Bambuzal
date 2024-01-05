@@ -204,6 +204,12 @@ const Aside = () => {
         onClick={() => handleRoute("events")}
         className={router.query.page === "events" ? "active" : ""}
       />
+
+      <Section
+        title="Pacotes"
+        onClick={() => handleRoute("packs")}
+        className={router.query.page === "packs" ? "active" : ""}
+      />
     </Box>
   );
 };

@@ -4,6 +4,7 @@ import { getCookie, deleteCookie } from "../../../src/hooks/useCookies";
 import Aside from "../../../src/components/dashboard/Aside";
 import UsersPage from "./UsersPage";
 import EventsPage from "./EventsPage";
+import PacksPage from "./PacksPage";
 import Layout from "../../../src/components/dashboard/Layout";
 import { Box } from "@mui/material";
 import Loading from "../../../src/components/Loading"; // Importe o componente Loading
@@ -67,6 +68,7 @@ const Dashboard = () => {
         <Aside />
         {router.query.page === "users" && <UsersPage />}
         {router.query.page === "events" && <EventsPage />}
+        {router.query.page === "packs" && <PacksPage />}
       </Layout>
     </Box>
   );
