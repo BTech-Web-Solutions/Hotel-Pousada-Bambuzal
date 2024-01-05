@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button } from "@mui/material";
 import moment from "moment";
-import EditEventModal from "../../../src/components/dashboard/EditEventModal";
+import EditPackModal from "../../../src/components/dashboard/EditPackModal";
 import AddEventModal from "../../../src/components/dashboard/AddEventModal";
 import DeleteEventModal from "../../../src/components/dashboard/DeleteEventModal";
 import { deleteCookie, getCookie } from "../../../src/hooks/useCookies";
@@ -294,18 +294,10 @@ const PacksPage = () => {
       </Box>
 
       <Box>
-        {addPack && <AddEventModal setAddEvent={setAddPack} />}{" "}
-        {/* Alteração aqui */}
         {editPack && (
-          <EditEventModal
-            setEditEvent={setEditPack}
-            selectedEvent={selectedPack}
-          />
-        )}
-        {deletePack && (
-          <DeleteEventModal
-            setDeleteEvent={setDeletePack}
-            selectedEvent={selectedPack}
+          <EditPackModal
+            setEditPack={setEditPack}
+            selectedPack={selectedPack}
           />
         )}
       </Box>
