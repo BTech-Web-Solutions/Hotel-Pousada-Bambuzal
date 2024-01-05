@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Box, Button } from "@mui/material";
 import moment from "moment";
 import EditPackModal from "../../../src/components/dashboard/EditPackModal";
-import AddEventModal from "../../../src/components/dashboard/AddEventModal";
-import DeleteEventModal from "../../../src/components/dashboard/DeleteEventModal";
+import AddPackModal from "../../../src/components/dashboard/AddPackModal";
+// import DeletePackModal from "../../../src/components/dashboard/DeletePackModal";
 import { deleteCookie, getCookie } from "../../../src/hooks/useCookies";
 import Loading from "../../../src/components/Loading";
 
@@ -156,7 +156,7 @@ const PacksPage = () => {
                 >
                   <div>
                     <h6>
-                      <b>Primeiro Dia:</b>
+                      <b>Início:</b>
                     </h6>
                     <p>{moment(pack.firstDate).format("DD/MM/YYYY")} </p>
                   </div>
@@ -167,7 +167,7 @@ const PacksPage = () => {
                     }}
                   >
                     <h6>
-                      <b>Ultimo Dia:</b>
+                      <b>Término:</b>
                     </h6>
                     <p>{moment(pack.lastDate).format("DD/MM/YYYY")}</p>{" "}
                   </div>
@@ -294,6 +294,7 @@ const PacksPage = () => {
       </Box>
 
       <Box>
+        {addPack && <AddPackModal setAddPack={setAddPack} />}
         {editPack && (
           <EditPackModal
             setEditPack={setEditPack}
