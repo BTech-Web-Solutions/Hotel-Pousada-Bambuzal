@@ -146,12 +146,12 @@ const DeletePackModal = ({ selectedPack, setDeletePack }) => {
         </div>
 
         <div>
-          <h2>Data de Início</h2>
+          <h2>Início</h2>
           <h5>{moment(packFirstDate).format("DD/MM/YYYY")}</h5>
         </div>
 
         <div>
-          <h2>Data de Término</h2>
+          <h2>Término</h2>
           <h5>{moment(packLastDate).format("DD/MM/YYYY")}</h5>
         </div>
 
