@@ -35,7 +35,7 @@ const AddPackModal = ({ setAddPack }) => {
       const data = await result.json();
       alert(
         data.message === "Pack created successfully"
-          ? "Pack criado com sucesso!"
+          ? "Pacote criado com sucesso!"
           : "Erro ao criar pack!"
       );
       setAddPack(false);

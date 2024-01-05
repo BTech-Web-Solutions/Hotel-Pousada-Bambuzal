@@ -33,7 +33,7 @@ const DeletePackModal = ({ selectedPack, setDeletePack }) => {
       const data = await result.json();
       alert(
         data.message === "Pack deleted successfully"
-          ? "Pack deletado com sucesso!"
+          ? "Pacote deletado com sucesso!"
           : "Erro ao deletar pack!"
       );
       setDeletePack(false);

@@ -36,7 +36,7 @@ const EditPackModal = ({ selectedPack, setEditPack }) => {
       const data = await result.json();
       alert(
         data.message === "Pack updated!"
-          ? "Pack atualizado com sucesso!"
+          ? "Pacote atualizado com sucesso!"
           : "Erro ao atualizar pack!"
       );
       setEditPack(false);
