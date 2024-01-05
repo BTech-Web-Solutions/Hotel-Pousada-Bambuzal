@@ -3,12 +3,15 @@ import Navbar from "../../src/components/Navbar";
 import { useRouter } from "next/router";
 import { setCookie, getCookie, deleteCookie } from "../../src/hooks/useCookies";
 import Loading from "../../src/components/Loading";
+import moment from "moment";
 
 export default function Index() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [incorrectLogin, setIncorrectLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  console.log(moment().format("YYYY-MM-DD HH:mm:ss"));
 
   const router = useRouter();
 
