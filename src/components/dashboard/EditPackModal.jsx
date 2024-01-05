@@ -141,7 +141,7 @@ const EditPackModal = ({ selectedPack, setEditPack }) => {
             marginBottom: "-5px",
           }}
         >
-          Editando Pack
+          Editando Pacote
         </h1>
         <p
           style={{

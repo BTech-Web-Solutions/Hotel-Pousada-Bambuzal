@@ -7,49 +7,47 @@ import checkTokenBefore from "../../checkTokenBefore";
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
-const AddPackModal = ({ setAddPack }) => {
-  const [title, setTitle] = useState("");
-  const [firstDate, setFirstDate] = useState("");
-  const [lastDate, setLastDate] = useState("");
-  const [description, setDescription] = useState("");
+const DeletePackModal = ({ selectedPack, setDeletePack }) => {
+  const [packId, setPackId] = useState(selectedPack.id);
+  const [packTitle, setPackTitle] = useState(selectedPack.title);
+  const [packFirstDate, setPackFirstDate] = useState(selectedPack.firstDate);
+  const [packLastDate, setPackLastDate] = useState(selectedPack.lastDate);
+  const [packDescription, setPackDescription] = useState(
+    selectedPack.description
+  );
 
   const handleCancel = () => {
-    setAddPack(false);
+    setDeletePack(false);
   };
 
-  const handleCreate = async () => {
+  const handleDelete = async () => {
     try {
-      const result = await fetch(`${apiURL}/packs/create`, {
-        method: "POST",
+      // Adicione sua lógica para deletar o pack
+      const result = await fetch(`${apiURL}/packs/delete/${packId}`, {
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
           Authorization: apiKey,
         },
-        body: JSON.stringify({
-          title,
-          firstDate: moment(firstDate, "YYYY-MM-DD").format("YYYY-MM-DD"),
-          lastDate: moment(lastDate, "YYYY-MM-DD").format("YYYY-MM-DD"),
-          description,
-        }),
       });
       const data = await result.json();
       alert(
-        data.message === "Pack created successfully"
-          ? "Pack criado com sucesso!"
-          : "Erro ao criar pack!"
+        data.message === "Pack deleted successfully"
+          ? "Pack deletado com sucesso!"
+          : "Erro ao deletar pack!"
       );
-      setAddPack(false);
+      setDeletePack(false);
     } catch (error) {
-      console.error("Error creating pack:", error);
+      console.error("Erro ao deletar pack:", error);
     }
   };
 
-  const checkAndCreate = async () => {
+  const checkAndDelete = async () => {
     try {
       const isTokenValid = await checkTokenBefore();
 
       if (isTokenValid) {
-        handleCreate();
+        handleDelete();
       }
     } catch (error) {
       console.error("Error checking token:", error);
@@ -72,7 +70,7 @@ const AddPackModal = ({ setAddPack }) => {
       }}
       onClick={(e) => {
         if (e.target === e.currentTarget) {
-          setAddPack(false);
+          setDeletePack(false);
         }
       }}
     >
@@ -100,7 +98,7 @@ const AddPackModal = ({ setAddPack }) => {
           cursor: "auto",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -138,79 +136,37 @@ const AddPackModal = ({ setAddPack }) => {
             marginBottom: "-5px",
           }}
         >
-          Criando Novo Pacote
+          Deletando Pacote
         </h1>
-        <h3>Título:</h3>
-        <ModalInput
-          id="title"
-          variant="outlined"
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
-          value={title}
-        />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            gap: {
-              xs: "1rem",
-              sm: "5rem",
-              md: "10rem",
-              lg: "10rem",
-              xl: "10rem",
-            },
-          }}
-        >
-          <div
+        <h5>ID: {packId}</h5>
+
+        <div>
+          <h2>Título</h2>
+          <h5>{packTitle}</h5>
+        </div>
+
+        <div>
+          <h2>Data de Início</h2>
+          <h5>{moment(packFirstDate).format("DD/MM/YYYY")}</h5>
+        </div>
+
+        <div>
+          <h2>Data de Término</h2>
+          <h5>{moment(packLastDate).format("DD/MM/YYYY")}</h5>
+        </div>
+
+        <div>
+          <h2>Descrição</h2>
+          <p
             style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "50%",
+              wordWrap: "break-word",
             }}
           >
-            <h3>Início:</h3>
-            <ModalInput
-              id="firstDate"
-              label=""
-              variant="outlined"
-              type="Date"
-              onChange={(e) => {
-                setFirstDate(e.target.value);
-              }}
-            />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "50%",
-            }}
-          >
-            <h3>Término:</h3>
-            <ModalInput
-              id="lastDate"
-              label=""
-              variant="outlined"
-              type="Date"
-              onChange={(e) => {
-                setLastDate(e.target.value);
-              }}
-            />
-          </div>
-        </Box>
-        <h3>Descrição:</h3>
-        <ModalInput
-          id="mensagem"
-          variant="outlined"
-          rows={5}
-          onChange={(e) => {
-            setDescription(e.target.value);
-          }}
-          sx={{
-            overflowY: "scroll",
-          }}
-        />
+            {packDescription}
+          </p>
+        </div>
+
+        <h3>Tem certeza que deseja deletar este pack?</h3>
 
         <Box
           sx={{
@@ -251,12 +207,9 @@ const AddPackModal = ({ setAddPack }) => {
                 border: "none",
               },
             }}
-            onClick={(e) => {
-              e.preventDefault();
-              checkAndCreate();
-            }}
+            onClick={checkAndDelete}
           >
-            CRIAR
+            DELETAR
           </Button>
         </Box>
       </Box>
@@ -264,4 +217,4 @@ const AddPackModal = ({ setAddPack }) => {
   );
 };
 
-export default AddPackModal;
+export default DeletePackModal;

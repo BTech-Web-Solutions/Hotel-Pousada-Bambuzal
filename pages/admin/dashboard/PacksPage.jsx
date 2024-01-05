@@ -3,7 +3,7 @@ import { Box, Button } from "@mui/material";
 import moment from "moment";
 import EditPackModal from "../../../src/components/dashboard/EditPackModal";
 import AddPackModal from "../../../src/components/dashboard/AddPackModal";
-// import DeletePackModal from "../../../src/components/dashboard/DeletePackModal";
+import DeletePackModal from "../../../src/components/dashboard/DeletePackModal";
 import { deleteCookie, getCookie } from "../../../src/hooks/useCookies";
 import Loading from "../../../src/components/Loading";
 
@@ -298,6 +298,12 @@ const PacksPage = () => {
         {editPack && (
           <EditPackModal
             setEditPack={setEditPack}
+            selectedPack={selectedPack}
+          />
+        )}
+        {deletePack && (
+          <DeletePackModal
+            setDeletePack={setDeletePack}
             selectedPack={selectedPack}
           />
         )}
