@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { Box, Button } from "@mui/material";
 import moment from "moment";
 import EditPackModal from "../../../src/components/dashboard/packs/EditPackModal";
@@ -19,6 +20,8 @@ const PacksPage = () => {
   const [deletePack, setDeletePack] = useState(false); // Alteração aqui
   const [isValidToken, setIsValidToken] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  const router = useRouter();
 
   const modalEditPack = (pack) => {
     // Alteração aqui

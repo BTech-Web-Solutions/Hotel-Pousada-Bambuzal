@@ -26,12 +26,8 @@ const Aside = () => {
 
     const data = await result.json();
 
-    console.log(data.message);
-
     if (data.message === "User logged out!") {
       router.push("/admin");
-    } else {
-      console.log("Logout failed");
     }
   };
 
@@ -58,7 +54,7 @@ const Aside = () => {
       const data = await result.json();
       setLoggedUser(data);
     } catch (error) {
-      console.log(error.message);
+      alert("Há algo errado com a API!");
     }
   };
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { Box, Button } from "@mui/material";
 import moment from "moment";
 import EditEventModal from "../../../src/components/dashboard/events/EditEventModal";
@@ -18,6 +19,8 @@ const EventsPage = () => {
   const [deleteEvent, setDeleteEvent] = useState(false);
   const [isValidToken, setIsValidToken] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  const router = useRouter();
 
   const modalEditEvent = (event) => {
     setSelectedEvent(event);

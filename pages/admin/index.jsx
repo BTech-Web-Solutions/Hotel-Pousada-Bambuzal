@@ -11,8 +11,6 @@ export default function Index() {
   const [incorrectLogin, setIncorrectLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(moment().format("YYYY-MM-DD HH:mm:ss"));
-
   const router = useRouter();
 
   const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
@@ -70,14 +68,16 @@ export default function Index() {
 
         const data = await result.json();
         setIsLoading(false);
-        console.log(data.message);
 
         if (data.message === "Invalid credentials") {
           deleteCookie("admEmail");
-          alert("Sua sessão expirou!");
         }
         if (data.message === "Token is valid!") {
           router.push("/admin/dashboard");
+        }
+        if (data.message === "jwt expired") {
+          deleteCookie("admEmail");
+          alert("Sua sessão expirou!");
         }
       }
     };

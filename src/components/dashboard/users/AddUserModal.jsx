@@ -14,10 +14,6 @@ const AddUserModal = ({ setAddUser }) => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
-  useEffect(() => {
-    console.log(role);
-  }, [role]);
-
   const handleCancel = () => {
     setAddUser(false);
   };

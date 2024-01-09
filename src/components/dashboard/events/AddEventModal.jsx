@@ -177,7 +177,6 @@ const AddEventModal = ({ setAddEvent }) => {
               type="Date"
               onChange={(e) => {
                 setDate(e.target.value);
-                console.log(date);
               }}
             />
           </div>
@@ -196,7 +195,6 @@ const AddEventModal = ({ setAddEvent }) => {
               type="Time"
               onChange={(e) => {
                 setTime(e.target.value);
-                console.log(time);
               }}
             />
           </div>
