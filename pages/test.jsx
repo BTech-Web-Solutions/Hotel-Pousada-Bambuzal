@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import AddImagesInput from "../src/components/dashboard/events/AddImagesInput";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -122,13 +123,7 @@ const Test = () => {
     >
       <h1>TEST</h1>
 
-      <input
-        type="file"
-        name="image"
-        onChange={handleFileChange}
-        multiple={true}
-        accept="image/*"
-      />
+      <AddImagesInput onChange={handleFileChange} />
 
       <button onClick={uploadImage}>Enviar</button>
 

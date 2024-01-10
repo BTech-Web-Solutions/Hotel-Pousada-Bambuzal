@@ -12,6 +12,9 @@ import About from "../src/components/About";
 import Footer from "../src/components/Footer";
 import theme from "../src/theme";
 import moment from "moment";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import rendersixfour from "../pages/[id]";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -19,6 +22,9 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 export default function Index() {
   const [events, setEvents] = useState([]);
   const [packs, setPacks] = useState([]);
+  const [eventImages, setEventImages] = useState([]);
+
+  const router = useRouter();
 
   const getEvents = async () => {
     fetch(`${apiUrl}/events`, {
@@ -31,6 +37,25 @@ export default function Index() {
       .then((data) => {
         setEvents(data);
       });
+  };
+
+  const fetchEventImages = async () => {
+    try {
+      const result = await fetch(`${apiUrl}/images/`, {
+        method: "GET",
+        headers: {
+          Authorization: apiKey,
+        },
+      });
+
+      const data = await result.json();
+
+      if (result.ok) {
+        setEventImages(data);
+      }
+    } catch (error) {
+      console.error("Unexpected error during image fetch:", error);
+    }
   };
 
   const getPacks = async () => {
@@ -46,9 +71,17 @@ export default function Index() {
       });
   };
 
+  const imageClickRedirect = (imgBase) => {
+    router.push({
+      pathname: "/[id]",
+      query: { id: imgBase },
+    });
+  };
+
   useEffect(() => {
     getEvents();
     getPacks();
+    fetchEventImages();
   }, []);
 
   return (
@@ -289,6 +322,47 @@ export default function Index() {
                       }
                       <br /> {event.description}
                     </Typography>
+                    <Box
+                      sx={{
+                        overflowX: "scroll",
+                        display: "flex",
+
+                        "&::-webkit-scrollbar": {
+                          height: "10px",
+                        },
+
+                        "&::-webkit-scrollbar-thumb": {
+                          backgroundColor: "#fff",
+                          borderRadius: "1rem",
+                        },
+
+                        transition: "all 0.5s ease",
+                      }}
+                    >
+                      {eventImages.map((image) => {
+                        if (image.event_id === event.id) {
+                          return (
+                            <Image
+                              key={image.id}
+                              src={`data:image/png;base64,${image.image}`}
+                              alt="Imagem"
+                              width="200"
+                              height="300"
+                              style={{
+                                border: "1px solid #fff",
+                                borderRadius: "5px",
+                                margin: "5px",
+                                objectFit: "cover",
+                              }}
+                              loading="lazy"
+                              onClick={() => {
+                                imageClickRedirect(image.image);
+                              }}
+                            />
+                          );
+                        }
+                      })}
+                    </Box>
                   </AccordionDetails>
                 </Accordion>
               ))
