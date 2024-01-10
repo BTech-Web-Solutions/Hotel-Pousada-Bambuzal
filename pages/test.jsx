@@ -76,9 +76,16 @@ const Test = () => {
 
       <button onClick={fetchImages}>Ver imagens</button>
 
-      {images.map((image) => (
-        <div key={image.image}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          width: "100%",
+        }}
+      >
+        {images.map((image) => (
           <Image
+            key={image.id}
             src={`data:image/png;base64,${image.image}`}
             alt="Imagem"
             width="200"
@@ -89,9 +96,10 @@ const Test = () => {
               margin: "5px",
               objectFit: "cover",
             }}
+            loading="lazy" // Adiciona o lazy loading
           />
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
