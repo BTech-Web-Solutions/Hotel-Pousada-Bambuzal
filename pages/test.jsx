@@ -56,7 +56,8 @@ const Test = () => {
 
       const uploadNextImage = async (index) => {
         if (index < totalFiles) {
-          formData.set("image", files[index]);
+          const compressedFile = files[index];
+          formData.append("image", compressedFile, compressedFile.name);
 
           try {
             const result = await fetch(`${apiURL}/images/create`, {
