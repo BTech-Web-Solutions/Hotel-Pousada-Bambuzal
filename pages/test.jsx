@@ -5,18 +5,21 @@ const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
 const Test = () => {
-  const [file, setFile] = useState(null);
+  const [files, setFiles] = useState([]);
   const [eventId, setEventId] = useState("c02a9433a93b4b1793460d2ecd9d96b5");
   const [images, setImages] = useState([]);
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    const selectedFiles = e.target.files;
+    setFiles(Array.from(selectedFiles));
   };
 
   const uploadImage = async () => {
     try {
       const formData = new FormData();
-      formData.append("image", file);
+      files.forEach((file, index) => {
+        formData.append("image", file); // Use the same field name "image" for all files
+      });
       formData.append("eventId", eventId);
 
       const result = await fetch(`${apiURL}/images/create`, {
@@ -30,10 +33,10 @@ const Test = () => {
       const data = await result.json();
 
       if (result.ok) {
-        console.log("Image uploaded successfully:", data);
-        fetchImages(); // Atualiza a lista de imagens após o upload
+        console.log("Images uploaded successfully:", data);
+        fetchImages(); // Update the image list after upload
       } else {
-        console.error("Failed to upload image:", data.error);
+        console.error("Failed to upload images:", data.error);
       }
     } catch (error) {
       console.error("Unexpected error during image upload:", error);
@@ -96,7 +99,7 @@ const Test = () => {
               margin: "5px",
               objectFit: "cover",
             }}
-            loading="lazy" // Adiciona o lazy loading
+            loading="lazy"
           />
         ))}
       </div>
