@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React, { useState } from "react";
+import imageCompression from "browser-image-compression";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -10,9 +10,40 @@ const Test = () => {
   const [images, setImages] = useState([]);
   const [uploadQueue, setUploadQueue] = useState(0);
 
-  const handleFileChange = (e) => {
+  const handleFileChange = async (e) => {
     const selectedFiles = e.target.files;
-    setFiles(Array.from(selectedFiles));
+
+    // Compress each selected file
+    const compressedFiles = await Promise.all(
+      Array.from(selectedFiles).map(async (file) => {
+        try {
+          const compressedFile = await compressImage(file);
+          return compressedFile;
+        } catch (error) {
+          // Handle compression errors if needed
+          console.error("Error during image compression:", error);
+          return file;
+        }
+      })
+    );
+
+    setFiles(compressedFiles);
+  };
+
+  const compressImage = async (file) => {
+    try {
+      const options = {
+        maxSizeMB: 1, // Max size in megabytes
+        maxWidthOrHeight: 1920, // Max width or height
+        useWebWorker: true,
+      };
+
+      const compressedFile = await imageCompression(file, options);
+      return compressedFile;
+    } catch (error) {
+      console.error("Error during image compression:", error);
+      throw error;
+    }
   };
 
   const uploadImage = async () => {
@@ -145,7 +176,7 @@ const Test = () => {
         }}
       >
         {images.map((image) => (
-          <Image
+          <img
             key={image.id}
             src={`data:image/png;base64,${image.image}`}
             alt="Imagem"
