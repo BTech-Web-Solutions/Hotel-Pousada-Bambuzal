@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
@@ -63,7 +64,13 @@ const Test = () => {
     <div style={{ color: "#fff" }}>
       <h1>TEST</h1>
 
-      <input type="file" name="image" onChange={handleFileChange} />
+      <input
+        type="file"
+        name="image"
+        onChange={handleFileChange}
+        multiple={true}
+        accept="image/*"
+      />
 
       <button onClick={uploadImage}>Enviar</button>
 
@@ -71,10 +78,17 @@ const Test = () => {
 
       {images.map((image) => (
         <div key={image.image}>
-          <img
+          <Image
             src={`data:image/png;base64,${image.image}`}
             alt="Imagem"
             width="200"
+            height="200"
+            style={{
+              border: "1px solid #fff",
+              borderRadius: "5px",
+              margin: "5px",
+              objectFit: "cover",
+            }}
           />
         </div>
       ))}
