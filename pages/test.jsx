@@ -114,7 +114,12 @@ const Test = () => {
   };
 
   return (
-    <div style={{ color: "#fff" }}>
+    <div
+      style={{
+        color: "#fff",
+        padding: "2rem",
+      }}
+    >
       <h1>TEST</h1>
 
       <input
@@ -136,6 +141,7 @@ const Test = () => {
           display: "flex",
           flexDirection: "row",
           width: "100%",
+          flexWrap: "wrap",
         }}
       >
         {images.map((image) => (
