@@ -1,5 +1,5 @@
+import Image from "next/image";
 import React, { useState } from "react";
-import imageCompression from "browser-image-compression";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -10,40 +10,9 @@ const Test = () => {
   const [images, setImages] = useState([]);
   const [uploadQueue, setUploadQueue] = useState(0);
 
-  const handleFileChange = async (e) => {
+  const handleFileChange = (e) => {
     const selectedFiles = e.target.files;
-
-    // Compress each selected file
-    const compressedFiles = await Promise.all(
-      Array.from(selectedFiles).map(async (file) => {
-        try {
-          const compressedFile = await compressImage(file);
-          return compressedFile;
-        } catch (error) {
-          // Handle compression errors if needed
-          console.error("Error during image compression:", error);
-          return file;
-        }
-      })
-    );
-
-    setFiles(compressedFiles);
-  };
-
-  const compressImage = async (file) => {
-    try {
-      const options = {
-        maxSizeMB: 1, // Max size in megabytes
-        maxWidthOrHeight: 1920, // Max width or height
-        useWebWorker: true,
-      };
-
-      const compressedFile = await imageCompression(file, options);
-      return compressedFile;
-    } catch (error) {
-      console.error("Error during image compression:", error);
-      throw error;
-    }
+    setFiles(Array.from(selectedFiles));
   };
 
   const uploadImage = async () => {
@@ -56,8 +25,7 @@ const Test = () => {
 
       const uploadNextImage = async (index) => {
         if (index < totalFiles) {
-          const compressedFile = files[index];
-          formData.append("image", compressedFile, compressedFile.name);
+          formData.set("image", files[index]);
 
           try {
             const result = await fetch(`${apiURL}/images/create`, {
@@ -177,7 +145,7 @@ const Test = () => {
         }}
       >
         {images.map((image) => (
-          <img
+          <Image
             key={image.id}
             src={`data:image/png;base64,${image.image}`}
             alt="Imagem"
