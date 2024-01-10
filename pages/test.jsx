@@ -17,32 +17,46 @@ const Test = () => {
   const uploadImage = async () => {
     try {
       const formData = new FormData();
-      files.forEach((file, index) => {
-        formData.append("image", file); // Use the same field name "image" for all files
-      });
       formData.append("eventId", eventId);
 
-      const result = await fetch(`${apiURL}/images/create`, {
-        method: "POST",
-        headers: {
-          Authorization: apiKey,
-        },
-        body: formData,
-      });
+      const uploadNextImage = async (index) => {
+        if (index < files.length) {
+          formData.set("image", files[index]);
 
-      const data = await result.json();
+          try {
+            const result = await fetch(`${apiURL}/images/create`, {
+              method: "POST",
+              headers: {
+                Authorization: apiKey,
+              },
+              body: formData,
+            });
 
-      if (result.ok) {
-        console.log("Images uploaded successfully:", data);
-        fetchImages(); // Update the image list after upload
-      } else {
-        console.error("Failed to upload images:", data.error);
-      }
+            const data = await result.json();
+
+            if (result.ok) {
+              console.log(`Image ${index + 1} uploaded successfully:`, data);
+            } else {
+              console.error(`Failed to upload image ${index + 1}:`, data.error);
+            }
+
+            // Upload the next image in the queue
+            uploadNextImage(index + 1);
+          } catch (error) {
+            console.error(
+              `Unexpected error during image upload ${index + 1}:`,
+              error
+            );
+          }
+        }
+      };
+
+      // Start the upload queue with the first image
+      uploadNextImage(0);
     } catch (error) {
       console.error("Unexpected error during image upload:", error);
     }
   };
-
   const fetchImages = async () => {
     try {
       const result = await fetch(`${apiURL}/images/${eventId}`, {
@@ -63,6 +77,32 @@ const Test = () => {
     }
   };
 
+  const cleanImages = async () => {
+    try {
+      const result = await fetch(`${apiURL}/table/clean`, {
+        method: "PUT",
+        headers: {
+          Authorization: apiKey,
+          "Content-Type": "application/json", // Specify content type
+        },
+        body: JSON.stringify({
+          name: "images",
+        }),
+      });
+
+      const data = await result.json();
+      fetchImages();
+
+      if (result.ok) {
+        console.log("Images deleted successfully:");
+      } else {
+        console.error("Error deleting images:", data.message);
+      }
+    } catch (error) {
+      console.error("Unexpected error during image delete:", error);
+    }
+  };
+
   return (
     <div style={{ color: "#fff" }}>
       <h1>TEST</h1>
@@ -78,6 +118,8 @@ const Test = () => {
       <button onClick={uploadImage}>Enviar</button>
 
       <button onClick={fetchImages}>Ver imagens</button>
+
+      <button onClick={cleanImages}>Limpar Tudo</button>
 
       <div
         style={{
