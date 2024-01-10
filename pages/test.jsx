@@ -8,6 +8,7 @@ const Test = () => {
   const [files, setFiles] = useState([]);
   const [eventId, setEventId] = useState("c02a9433a93b4b1793460d2ecd9d96b5");
   const [images, setImages] = useState([]);
+  const [uploadQueue, setUploadQueue] = useState(0);
 
   const handleFileChange = (e) => {
     const selectedFiles = e.target.files;
@@ -19,8 +20,11 @@ const Test = () => {
       const formData = new FormData();
       formData.append("eventId", eventId);
 
+      const totalFiles = files.length;
+      let uploadedFiles = 0;
+
       const uploadNextImage = async (index) => {
-        if (index < files.length) {
+        if (index < totalFiles) {
           formData.set("image", files[index]);
 
           try {
@@ -32,13 +36,18 @@ const Test = () => {
               body: formData,
             });
 
-            const data = await result.json();
-
-            if (result.ok) {
-              console.log(`Image ${index + 1} uploaded successfully:`, data);
-            } else {
+            if (!result.ok) {
+              const data = await result.json();
               console.error(`Failed to upload image ${index + 1}:`, data.error);
+            } else {
+              console.log(`Image ${index + 1} uploaded successfully.`);
             }
+
+            uploadedFiles += 1;
+
+            // Calculate and set the upload percentage
+            const uploadPercentage = (uploadedFiles / totalFiles) * 100;
+            setUploadQueue(uploadPercentage);
 
             // Upload the next image in the queue
             uploadNextImage(index + 1);
@@ -57,6 +66,7 @@ const Test = () => {
       console.error("Unexpected error during image upload:", error);
     }
   };
+
   const fetchImages = async () => {
     try {
       const result = await fetch(`${apiURL}/images/${eventId}`, {
@@ -145,6 +155,7 @@ const Test = () => {
           />
         ))}
       </div>
+      <h1>{`Carregando ${uploadQueue}%`}</h1>
     </div>
   );
 };
