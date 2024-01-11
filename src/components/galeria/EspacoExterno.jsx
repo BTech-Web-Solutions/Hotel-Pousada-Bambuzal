@@ -14,7 +14,7 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-export default function Piscina() {
+export default function EspacoExterno() {
   const [selectedImage, setSelectedImage] = React.useState(null);
 
   const handleImageClick = (image) => {
@@ -37,7 +37,7 @@ export default function Piscina() {
             alignItems: "center",
           }}
         >
-          Piscina
+          Espaço Externo
         </Typography>
       </Box>
 
@@ -101,61 +101,93 @@ export default function Piscina() {
 
 const itemData = [
   {
-    img: new URL("/src/images/Piscina/piscina.jpg", import.meta.url),
-    title: "Piscina 1",
+    img: new URL("/src/images/EspacoExterno/ext_3.jpg", import.meta.url),
+    title: "EspacoExterno 3",
     rows: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_2.jpg", import.meta.url),
-    title: "Piscina 2",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: new URL("/src/images/Piscina/piscina_3.jpg", import.meta.url),
-    title: "Piscina 3",
+    img: new URL("/src/images/EspacoExterno/ext_4.jpg", import.meta.url),
+    title: "EspacoExterno 4",
     rows: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_4.jpg", import.meta.url),
-    title: "Piscina 4",
+    img: new URL("/src/images/EspacoExterno/ext_5.jpg", import.meta.url),
+    title: "EspacoExterno 5",
     rows: 2,
-    cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_5.jpg", import.meta.url),
-    title: "Piscina 5",
+    img: new URL("/src/images/EspacoExterno/ext_6.jpg", import.meta.url),
+    title: "EspacoExterno 6",
     rows: 2,
-    cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_6.jpg", import.meta.url),
-    title: "Piscina 6",
+    img: new URL("/src/images/EspacoExterno/ext_7.jpg", import.meta.url),
+    title: "EspacoExterno 7",
     rows: 2,
-    cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_7.jpg", import.meta.url),
-    title: "Piscina 7",
+    img: new URL("/src/images/EspacoExterno/ext_8.jpg", import.meta.url),
+    title: "EspacoExterno 8",
     rows: 2,
-    cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_8.jpg", import.meta.url),
-    title: "Piscina 8",
+    img: new URL("/src/images/EspacoExterno/ext_9.jpg", import.meta.url),
+    title: "EspacoExterno 9",
     rows: 2,
-    cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_9.jpg", import.meta.url),
-    title: "Piscina 9",
+    img: new URL("/src/images/EspacoExterno/ext_10.jpg", import.meta.url),
+    title: "EspacoExterno 10",
     rows: 2,
-    cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_10.jpg", import.meta.url),
-    title: "Piscina 10",
+    img: new URL("/src/images/EspacoExterno/ext_11.jpg", import.meta.url),
+    title: "EspacoExterno 11",
     rows: 2,
-    cols: 2,
+  },
+  {
+    img: new URL("/src/images/EspacoExterno/ext_12.jpg", import.meta.url),
+    title: "EspacoExterno 12",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/EspacoExterno/ext_13.jpg", import.meta.url),
+    title: "EspacoExterno 13",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/EspacoExterno/ext_14.jpg", import.meta.url),
+    title: "EspacoExterno 14",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/EspacoExterno/ext_15.jpg", import.meta.url),
+    title: "EspacoExterno 15",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/EspacoExterno/ext_16.jpg", import.meta.url),
+    title: "EspacoExterno 16",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/EspacoExterno/ext_17.jpg", import.meta.url),
+    title: "EspacoExterno 17",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/EspacoExterno/ext_18.jpg", import.meta.url),
+    title: "EspacoExterno 18",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/EspacoExterno/ext_19.jpg", import.meta.url),
+    title: "EspacoExterno 19",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/EspacoExterno/ext_20.jpg", import.meta.url),
+    title: "EspacoExterno 20",
+    rows: 2,
   },
 ];
