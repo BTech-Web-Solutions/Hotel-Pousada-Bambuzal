@@ -129,6 +129,23 @@ export default function Chales() {
 
 const itemData = [
   {
+    img: new URL("/src/images/Chales/chale_3.jpg", import.meta.url),
+    title: "Chale 3",
+    rows: 5,
+    cols: 4,
+  },
+  {
+    img: new URL("/src/images/Chales/chale_2.jpg", import.meta.url),
+    title: "Chale 2",
+    rows: 2,
+  },
+
+  {
+    img: new URL("/src/images/Chales/chale_4.jpg", import.meta.url),
+    title: "Chale 4",
+    rows: 2,
+  },
+  {
     img: new URL("/src/images/ChaleDuplo/chale_duplo.jpg", import.meta.url),
     title: "Chale Duplo",
     rows: 2,
@@ -263,21 +280,6 @@ const itemData = [
   {
     img: new URL("/src/images/Chales/chale.jpg", import.meta.url),
     title: "Chale",
-    rows: 2,
-  },
-  {
-    img: new URL("/src/images/Chales/chale_2.jpg", import.meta.url),
-    title: "Chale 2",
-    rows: 2,
-  },
-  {
-    img: new URL("/src/images/Chales/chale_3.jpg", import.meta.url),
-    title: "Chale 3",
-    rows: 2,
-  },
-  {
-    img: new URL("/src/images/Chales/chale_4.jpg", import.meta.url),
-    title: "Chale 4",
     rows: 2,
   },
 ];

@@ -123,6 +123,15 @@ export default function Suites() {
 
 const itemData = [
   {
+    img: new URL(
+      "/src/images/SuiteSimples/suite_simples_7.jpg",
+      import.meta.url
+    ),
+    title: "Suite Simples 7",
+    rows: 3,
+    cols: 4,
+  },
+  {
     img: new URL("/src/images/SuitePremiun/suite.jpg", import.meta.url),
     title: "Suite Premiun",
     rows: 2,
@@ -204,6 +213,6 @@ const itemData = [
     ),
     title: "Suite Simples 6",
     rows: 2,
-    cols: 4,
+    cols: 2,
   },
 ];
