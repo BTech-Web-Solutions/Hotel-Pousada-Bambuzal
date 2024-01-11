@@ -12,10 +12,9 @@ const AddImagesInput = ({ onChange, eventId }) => {
         borderRadius: "999px",
         border: "2px solid #eb5310",
         color: "#fff",
-        fontSize: "0.8rem",
         cursor: "pointer",
         "&:hover": {
-          transform: "scale(1.1)",
+          transform: "scale(1.050)",
           backgroundColor: "#eb5100",
           border: "none",
         },

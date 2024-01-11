@@ -10,7 +10,7 @@ const rendersixfour = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "90vh",
+        height: "100vh",
       }}
     >
       <img src={`data:image/png;base64,${id}`} alt="Imagem" />

@@ -4,11 +4,12 @@ import ModalInput from "../ModalInput";
 import moment from "moment";
 import checkTokenBefore from "../../../checkTokenBefore";
 import AddImagesInput from "./AddImagesInput";
+import Image from "next/image";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
-const EditEventModal = ({ selectedEvent, setEditEvent }) => {
+const EditEventModal = ({ selectedEvent, setEditEvent, imagesFromEventId }) => {
   const [nome, setNome] = useState(selectedEvent.title);
   const [dia, setDia] = useState(selectedEvent.date);
   const [hora, setHora] = useState(
@@ -122,6 +123,29 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
     }
   };
 
+  const deleteImage = async (imageId) => {
+    try {
+      const result = await fetch(`${apiURL}/images/delete/${imageId}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: apiKey,
+        },
+      });
+      const data = await result.json();
+      console.log(data);
+
+      if (data.message === "Image deleted") {
+        alert("Imagem deletada com sucesso!");
+      } else {
+        alert("Erro ao deletar imagem!");
+      }
+
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -151,6 +175,7 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
             lg: "40%",
             xl: "35rem",
           },
+
           height: {
             xs: "90%",
             sm: "80%",
@@ -158,6 +183,7 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
             lg: "90%",
             xl: "80%",
           },
+
           border: "2px solid #eb5310",
           backgroundColor: "#222e",
           borderRadius: "1rem",
@@ -166,7 +192,11 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
           cursor: "auto",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-around",
+          overflowY: "scroll",
+
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -288,6 +318,45 @@ const EditEventModal = ({ selectedEvent, setEditEvent }) => {
             overflowY: "scroll",
           }}
         />
+
+        <Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              "&::-webkit-scrollbar": {
+                height: "5px",
+              },
+
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#eb5310",
+                borderRadius: "1rem",
+              },
+              overflowX: "scroll",
+              overflowY: "hidden",
+              marginBottom: "1rem",
+            }}
+          >
+            {imagesFromEventId.map((image) => {
+              if (image.event_id === eventId) {
+                return (
+                  <Image
+                    key={image.id}
+                    src={`data:image/png;base64,${image.image}`}
+                    alt="Imagem"
+                    width="130"
+                    height="130"
+                    loading="lazy"
+                    className="images__editeventmodal"
+                    onClick={() => {
+                      deleteImage(image.id);
+                    }}
+                  />
+                );
+              }
+            })}
+          </Box>
+        </Box>
 
         <AddImagesInput onChange={handleFileChange} eventId={eventId} />
 

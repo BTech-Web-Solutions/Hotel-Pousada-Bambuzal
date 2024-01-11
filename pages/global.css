@@ -299,3 +299,31 @@ body {
 .mui-style-orzkfm-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover {
   background-color: #303030;
 }
+
+.images__editeventmodal {
+  margin: 10px;
+  object-fit: cover;
+  position: relative;
+}
+
+.images__editeventmodal:hover {
+  cursor: pointer;
+  opacity: 0.2;
+}
+
+.images__editeventmodal::before {
+  position: absolute;
+  content: "Clique para alterar a imagem";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  /* opacity: 0; Inicialmente oculto */
+}
+
+.images__editeventmodal:hover::before {
+  opacity: 1; /* Torna o texto visível no hover */
+}

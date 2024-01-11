@@ -19,6 +19,7 @@ const EventsPage = () => {
   const [deleteEvent, setDeleteEvent] = useState(false);
   const [isValidToken, setIsValidToken] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [imagesFromEventId, setImagesFromEventId] = useState([]);
 
   const router = useRouter();
 
@@ -57,6 +58,26 @@ const EventsPage = () => {
     }
   };
 
+  const fetchImages = async () => {
+    try {
+      const result = await fetch(`${apiURL}/images/`, {
+        method: "GET",
+        headers: {
+          Authorization: apiKey,
+        },
+      });
+
+      const data = await result.json();
+
+      if (result.ok) {
+        console.log(data);
+        setImagesFromEventId(data);
+      }
+    } catch (error) {
+      console.error("Unexpected error during image fetch:", error);
+    }
+  };
+
   useEffect(() => {
     const fetchApi = async () => {
       try {
@@ -77,6 +98,7 @@ const EventsPage = () => {
     };
     checkToken();
     fetchApi();
+    fetchImages();
   }, [editEvent, addEvent, deleteEvent]);
 
   return (
@@ -293,6 +315,7 @@ const EventsPage = () => {
           <EditEventModal
             setEditEvent={setEditEvent}
             selectedEvent={selectedEvent}
+            imagesFromEventId={imagesFromEventId}
           />
         )}
         {deleteEvent && (
