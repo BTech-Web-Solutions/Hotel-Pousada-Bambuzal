@@ -26,7 +26,13 @@ const index = () => {
             lg: "1rem 5rem",
             xl: "1rem 5rem",
           },
-          width: "70%",
+          width: {
+            xs: "100%",
+            sm: "100%",
+            md: "80%",
+            lg: "70%",
+            xl: "70%",
+          },
           margin: "auto",
         }}
       >
