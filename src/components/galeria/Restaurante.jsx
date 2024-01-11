@@ -101,8 +101,21 @@ export default function Restaurante() {
 
 const itemData = [
   {
+    img: new URL("/src/images/Restaurante/restaurante_5.jpg", import.meta.url),
+    title: "Restaurante 5",
+    cols: 2,
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Restaurante/restaurante_15.jpg", import.meta.url),
+    title: "Restaurante 15",
+    cols: 2,
+    rows: 2,
+  },
+  {
     img: new URL("/src/images/Restaurante/restaurante.jpg", import.meta.url),
     title: "Restaurante 1",
+    rows: 2,
   },
   {
     img: new URL("/src/images/Restaurante/restaurante_2.jpg", import.meta.url),
@@ -113,10 +126,67 @@ const itemData = [
   {
     img: new URL("/src/images/Restaurante/restaurante_3.jpg", import.meta.url),
     title: "Restaurante 3",
+    rows: 2,
   },
   {
     img: new URL("/src/images/Restaurante/restaurante_4.jpg", import.meta.url),
     title: "Restaurante 4",
     cols: 2,
+    rows: 2,
+  },
+
+  {
+    img: new URL("/src/images/Restaurante/restaurante_6.jpg", import.meta.url),
+    title: "Restaurante 6",
+    cols: 2,
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Restaurante/restaurante_7.jpg", import.meta.url),
+    title: "Restaurante 7",
+    cols: 2,
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Restaurante/restaurante_8.jpg", import.meta.url),
+    title: "Restaurante 8",
+    cols: 2,
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Restaurante/restaurante_9.jpg", import.meta.url),
+    title: "Restaurante 9",
+    cols: 2,
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Restaurante/restaurante_10.jpg", import.meta.url),
+    title: "Restaurante 10",
+    cols: 2,
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Restaurante/restaurante_11.jpg", import.meta.url),
+    title: "Restaurante 11",
+    cols: 2,
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Restaurante/restaurante_12.jpg", import.meta.url),
+    title: "Restaurante 12",
+    cols: 2,
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Restaurante/restaurante_13.jpg", import.meta.url),
+    title: "Restaurante 13",
+    cols: 2,
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Restaurante/restaurante_14.jpg", import.meta.url),
+    title: "Restaurante 14",
+    cols: 2,
+    rows: 2,
   },
 ];

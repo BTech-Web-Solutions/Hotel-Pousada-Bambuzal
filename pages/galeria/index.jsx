@@ -8,6 +8,7 @@ import Chales from "../../src/components/galeria/Chales";
 import Piscina from "../../src/components/galeria/Piscina";
 import Ofuro from "../../src/components/galeria/Ofuro";
 import Restaurante from "../../src/components/galeria/Restaurante";
+import Rio from "../../src/components/galeria/Rio";
 
 const index = () => {
   return (
@@ -63,6 +64,8 @@ const index = () => {
         <Suites />
 
         <Chales />
+
+        <Rio />
 
         <Ofuro />
 

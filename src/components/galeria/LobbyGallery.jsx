@@ -117,6 +117,7 @@ const itemData = [
   {
     img: new URL("/src/images/Lobby/lobby_inside.jpg", import.meta.url),
     title: "Lobby",
+    rows: 2,
   },
   {
     img: new URL("/src/images/Lobby/lobby_entrance.jpg", import.meta.url),
@@ -127,10 +128,12 @@ const itemData = [
   {
     img: new URL("/src/images/Lobby/lobby_inside_2.jpg", import.meta.url),
     title: "Lobby Inside",
+    rows: 2,
   },
   {
     img: new URL("/src/images/Lobby/lobby_inside_3.jpg", import.meta.url),
     title: "Lobby Close",
     cols: 2,
+    rows: 2,
   },
 ];

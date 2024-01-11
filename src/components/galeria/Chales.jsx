@@ -131,19 +131,23 @@ const itemData = [
   {
     img: new URL("/src/images/ChaleDuplo/chale_duplo.jpg", import.meta.url),
     title: "Chale Duplo",
+    rows: 2,
   },
   {
     img: new URL("/src/images/ChaleDuplo/chale_duplo_2.jpg", import.meta.url),
     title: "Chale Duplo 2",
+    rows: 2,
   },
   {
     img: new URL("/src/images/ChaleDuplo/chale_duplo_3.jpg", import.meta.url),
     title: "Chale Duplo 3",
+    rows: 2,
     cols: 2,
   },
   {
     img: new URL("/src/images/ChaleDuplo/chale_duplo_4.jpg", import.meta.url),
     title: "Chale Duplo 4",
+    rows: 2,
     cols: 2,
   },
   {
@@ -161,6 +165,7 @@ const itemData = [
   {
     img: new URL("/src/images/ChaleTriplo/1.jpg", import.meta.url),
     title: "Chale Triplo",
+    rows: 2,
   },
   {
     img: new URL("/src/images/ChaleTriplo/chale_triplo.jpg", import.meta.url),
@@ -171,20 +176,24 @@ const itemData = [
   {
     img: new URL("/src/images/ChaleTriplo/chale_triplo_2.jpg", import.meta.url),
     title: "Chale Triplo 2",
+    rows: 2,
   },
   {
     img: new URL("/src/images/ChaleTriplo/chale_triplo_3.jpg", import.meta.url),
     title: "Chale Triplo 3",
+    rows: 2,
     cols: 2,
   },
   {
     img: new URL("/src/images/ChaleTriplo/chale_triplo_4.jpg", import.meta.url),
     title: "Chale Triplo 4",
+    rows: 2,
     cols: 2,
   },
   {
     img: new URL("/src/images/ChaleTriplo/chale_triplo_5.jpg", import.meta.url),
     title: "Chale Triplo 5",
+    rows: 2,
     author: "@arwinneil",
     rows: 2,
     cols: 2,
@@ -192,6 +201,7 @@ const itemData = [
   {
     img: new URL("/src/images/ChaleFamilia/1.jpg", import.meta.url),
     title: "Chale Familia",
+    rows: 2,
   },
   {
     img: new URL("/src/images/ChaleFamilia/chale_familia.jpg", import.meta.url),
@@ -205,6 +215,7 @@ const itemData = [
       import.meta.url
     ),
     title: "Chale Familia 2",
+    rows: 2,
   },
   {
     img: new URL(
@@ -212,6 +223,7 @@ const itemData = [
       import.meta.url
     ),
     title: "Chale Familia 3",
+    rows: 2,
     cols: 2,
   },
   {
@@ -220,6 +232,7 @@ const itemData = [
       import.meta.url
     ),
     title: "Chale Familia 4",
+    rows: 2,
     cols: 2,
   },
   {
@@ -237,6 +250,7 @@ const itemData = [
       import.meta.url
     ),
     title: "Chale Familia 6",
+    rows: 2,
   },
   {
     img: new URL(
@@ -244,5 +258,26 @@ const itemData = [
       import.meta.url
     ),
     title: "Chale Familia 7",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Chales/chale.jpg", import.meta.url),
+    title: "Chale",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Chales/chale_2.jpg", import.meta.url),
+    title: "Chale 2",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Chales/chale_3.jpg", import.meta.url),
+    title: "Chale 3",
+    rows: 2,
+  },
+  {
+    img: new URL("/src/images/Chales/chale_4.jpg", import.meta.url),
+    title: "Chale 4",
+    rows: 2,
   },
 ];

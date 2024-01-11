@@ -14,7 +14,7 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-export default function Piscina() {
+export default function Rio() {
   const [selectedImage, setSelectedImage] = React.useState(null);
 
   const handleImageClick = (image) => {
@@ -37,7 +37,7 @@ export default function Piscina() {
             alignItems: "center",
           }}
         >
-          Piscina
+          Rio
         </Typography>
       </Box>
 
@@ -101,48 +101,38 @@ export default function Piscina() {
 
 const itemData = [
   {
-    img: new URL("/src/images/Piscina/piscina.jpg", import.meta.url),
-    title: "Piscina 1",
-    rows: 2,
-  },
-  {
-    img: new URL("/src/images/Piscina/piscina_2.jpg", import.meta.url),
-    title: "Piscina 2",
+    img: new URL("/src/images/Rio/rio.jpg", import.meta.url),
+    title: "Rio",
     rows: 2,
     cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_3.jpg", import.meta.url),
-    title: "Piscina 3",
-    rows: 2,
-  },
-  {
-    img: new URL("/src/images/Piscina/piscina_4.jpg", import.meta.url),
-    title: "Piscina 4",
+    img: new URL("/src/images/Rio/rio_2.jpg", import.meta.url),
+    title: "Rio 2",
     rows: 2,
     cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_5.jpg", import.meta.url),
-    title: "Piscina 5",
+    img: new URL("/src/images/Rio/rio_3.jpg", import.meta.url),
+    title: "Rio 3",
     rows: 2,
     cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_6.jpg", import.meta.url),
-    title: "Piscina 6",
+    img: new URL("/src/images/Rio/rio_4.jpg", import.meta.url),
+    title: "Rio 4",
     rows: 2,
     cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_7.jpg", import.meta.url),
-    title: "Piscina 7",
+    img: new URL("/src/images/Rio/rio_5.jpg", import.meta.url),
+    title: "Rio 5",
     rows: 2,
     cols: 2,
   },
   {
-    img: new URL("/src/images/Piscina/piscina_8.jpg", import.meta.url),
-    title: "Piscina 8",
+    img: new URL("/src/images/Rio/rio_6.jpg", import.meta.url),
+    title: "Rio 6",
     rows: 2,
     cols: 2,
   },

@@ -125,37 +125,43 @@ const itemData = [
   {
     img: new URL("/src/images/SuitePremiun/suite.jpg", import.meta.url),
     title: "Suite Premiun",
+    rows: 2,
   },
   {
     img: new URL("/src/images/SuitePremiun/suite_2.jpg", import.meta.url),
     title: "Suite Premiun 2",
     rows: 2,
+
     cols: 2,
   },
   {
     img: new URL("/src/images/SuitePremiun/suite_3.jpg", import.meta.url),
     title: "Suite Premiun 3",
+    rows: 2,
   },
   {
     img: new URL("/src/images/SuitePremiun/suite_4.jpg", import.meta.url),
     title: "Suite Premiun 4",
+    rows: 2,
     cols: 2,
   },
   {
     img: new URL("/src/images/SuitePremiun/suite_5.jpg", import.meta.url),
     title: "Suite Premiun 5",
+    rows: 2,
     cols: 2,
   },
   {
     img: new URL("/src/images/SuitePremiun/suite_6.jpg", import.meta.url),
     title: "Suite Premiun 6",
-    author: "@arwinneil",
     rows: 2,
+    author: "@arwinneil",
     cols: 2,
   },
   {
     img: new URL("/src/images/SuiteSimples/suite_simples.jpg", import.meta.url),
     title: "Suite Simples",
+    rows: 2,
   },
   {
     img: new URL(
@@ -163,6 +169,7 @@ const itemData = [
       import.meta.url
     ),
     title: "Suite Simples 2",
+    rows: 2,
   },
   {
     img: new URL(
@@ -171,6 +178,7 @@ const itemData = [
     ),
     title: "Suite Simples 3",
     rows: 2,
+
     cols: 2,
   },
   {
@@ -179,6 +187,7 @@ const itemData = [
       import.meta.url
     ),
     title: "Suite Simples 4",
+    rows: 2,
   },
   {
     img: new URL(
@@ -186,6 +195,7 @@ const itemData = [
       import.meta.url
     ),
     title: "Suite Simples 5",
+    rows: 2,
   },
   {
     img: new URL(
@@ -193,6 +203,7 @@ const itemData = [
       import.meta.url
     ),
     title: "Suite Simples 6",
+    rows: 2,
     cols: 4,
   },
 ];

@@ -102,7 +102,9 @@ export default function Ofuro() {
 const itemData = [
   {
     img: new URL("/src/images/Ofuro/ofuro.jpg", import.meta.url),
+    rows: 2,
     title: "Ofuro",
+    rows: 2,
   },
   {
     img: new URL("/src/images/Ofuro/ofuro_2.jpg", import.meta.url),
@@ -113,15 +115,36 @@ const itemData = [
   {
     img: new URL("/src/images/Ofuro/ofuro_3.jpg", import.meta.url),
     title: "Ofuro 3",
+    rows: 2,
   },
   {
     img: new URL("/src/images/Ofuro/ofuro_4.jpg", import.meta.url),
     title: "Ofuro 4",
+    rows: 2,
     cols: 2,
   },
   {
     img: new URL("/src/images/Ofuro/ofuro_5.jpg", import.meta.url),
     title: "Ofuro 5",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: new URL("/src/images/Ofuro/ofuro_6.jpg", import.meta.url),
+    title: "Ofuro 6",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: new URL("/src/images/Ofuro/ofuro_7.jpg", import.meta.url),
+    title: "Ofuro 7",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: new URL("/src/images/Ofuro/ofuro_8.jpg", import.meta.url),
+    title: "Ofuro 8",
+    rows: 2,
     cols: 2,
   },
 ];
