@@ -9,7 +9,12 @@ import Image from "next/image";
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
-const EditEventModal = ({ selectedEvent, setEditEvent, imagesFromEventId }) => {
+const EditEventModal = ({
+  selectedEvent,
+  setEditEvent,
+  imagesFromEventId,
+  fetchImages,
+}) => {
   const [nome, setNome] = useState(selectedEvent.title);
   const [dia, setDia] = useState(selectedEvent.date);
   const [hora, setHora] = useState(
@@ -95,8 +100,6 @@ const EditEventModal = ({ selectedEvent, setEditEvent, imagesFromEventId }) => {
             if (!result.ok) {
               const data = await result.json();
               console.error(`Failed to upload image ${index + 1}:`, data.error);
-            } else {
-              console.log(`Image ${index + 1} uploaded successfully.`);
             }
 
             uploadedFiles += 1;
@@ -132,15 +135,13 @@ const EditEventModal = ({ selectedEvent, setEditEvent, imagesFromEventId }) => {
         },
       });
       const data = await result.json();
-      console.log(data);
 
       if (data.message === "Image deleted") {
         alert("Imagem deletada com sucesso!");
       } else {
         alert("Erro ao deletar imagem!");
       }
-
-      console.log(data);
+      fetchImages();
     } catch (error) {
       console.error(error);
     }
@@ -318,7 +319,6 @@ const EditEventModal = ({ selectedEvent, setEditEvent, imagesFromEventId }) => {
             overflowY: "scroll",
           }}
         />
-
         <Box>
           <Box
             sx={{
@@ -358,8 +358,17 @@ const EditEventModal = ({ selectedEvent, setEditEvent, imagesFromEventId }) => {
           </Box>
         </Box>
 
+        <p
+          className={
+            imagesFromEventId.length > 0 &&
+            eventId === imagesFromEventId[0].event_id
+              ? "images__editeventmodal__warning"
+              : "images__editeventmodal__warning-off"
+          }
+        >
+          Clique na imagem para deletar.
+        </p>
         <AddImagesInput onChange={handleFileChange} eventId={eventId} />
-
         <Box
           sx={{
             display: "flex",

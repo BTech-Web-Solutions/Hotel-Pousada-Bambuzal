@@ -3,6 +3,8 @@
   src: url("../src/utils/font/Proxima\ Nova\ Light.otf");
 }
 
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -326,4 +328,16 @@ body {
 
 .images__editeventmodal:hover::before {
   opacity: 1; /* Torna o texto visível no hover */
+}
+
+.images__editeventmodal__warning {
+  color: #fff;
+  background-color: rgb(235, 83, 16, 0.5);
+  padding: 0.5rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.images__editeventmodal__warning-off {
+  display: none;
 }

@@ -33,7 +33,7 @@ const EventsPage = () => {
     if (cookie === "" || cookie === null) {
       router.push("/admin");
     } else {
-      const fetchApi = async () => {
+      const fetchValidate = async () => {
         const result = await fetch(`${apiURL}/admin/token-validate`, {
           method: "POST",
           headers: {
@@ -41,7 +41,7 @@ const EventsPage = () => {
             Authorization: apiKey,
           },
           body: JSON.stringify({
-            admEmail: getCookie("admEmail"),
+            admEmail: cookie,
           }),
         });
 
@@ -53,7 +53,7 @@ const EventsPage = () => {
           router.push("/admin");
         }
       };
-      fetchApi();
+      fetchValidate();
       setIsValidToken(true);
     }
   };
@@ -70,7 +70,6 @@ const EventsPage = () => {
       const data = await result.json();
 
       if (result.ok) {
-        console.log(data);
         setImagesFromEventId(data);
       }
     } catch (error) {
@@ -316,6 +315,7 @@ const EventsPage = () => {
             setEditEvent={setEditEvent}
             selectedEvent={selectedEvent}
             imagesFromEventId={imagesFromEventId}
+            fetchImages={fetchImages}
           />
         )}
         {deleteEvent && (
