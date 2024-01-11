@@ -33,11 +33,31 @@ export default function Piscina() {
           sx={{
             marginBottom: "2rem",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "start",
             alignItems: "center",
           }}
         >
           Piscina
+        </Typography>
+
+        <Typography
+          variant="p"
+          sx={{
+            display: "flex",
+            margin: "1rem 0",
+            fontSize: {
+              xs: "1rem",
+              sm: "1rem",
+              md: "1.2rem",
+              lg: "1.5rem",
+              xl: "1.5rem",
+            },
+          }}
+        >
+          Não há prazer comparável ao mergulho revigorante em uma piscina. Em
+          nossa pousada, garantimos que a experiência seja completa,
+          proporcionando também opções dedicadas para as crianças desfrutarem da
+          diversão aquática com segurança e alegria.
         </Typography>
       </Box>
 

@@ -33,11 +33,31 @@ export default function Restaurante() {
           sx={{
             marginBottom: "2rem",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "start",
             alignItems: "center",
           }}
         >
           Restaurante
+        </Typography>
+
+        <Typography
+          variant="p"
+          sx={{
+            display: "flex",
+            margin: "1rem 0",
+            fontSize: {
+              xs: "1rem",
+              sm: "1rem",
+              md: "1.2rem",
+              lg: "1.5rem",
+              xl: "1.5rem",
+            },
+          }}
+        >
+          Em nosso restaurante, começamos o dia com um café da manhã delicioso,
+          oferecemos opções variadas para o almoço e, à noite, transformamos o
+          ambiente em uma pizzaria, servindo também petiscos e caldos. Uma
+          experiência gastronômica completa do amanhecer ao anoitecer.
         </Typography>
       </Box>
 

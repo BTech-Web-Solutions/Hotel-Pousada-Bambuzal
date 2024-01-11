@@ -33,11 +33,31 @@ export default function EspacoExterno() {
           sx={{
             marginBottom: "2rem",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "start",
             alignItems: "center",
           }}
         >
           Espaço Externo
+        </Typography>
+
+        <Typography
+          variant="p"
+          sx={{
+            display: "flex",
+            margin: "1rem 0",
+            fontSize: {
+              xs: "1rem",
+              sm: "1rem",
+              md: "1.2rem",
+              lg: "1.5rem",
+              xl: "1.5rem",
+            },
+          }}
+        >
+          Piscinas que oferecem tanto opções refrescantes quanto aquecidas,
+          decks estrategicamente posicionados para apreciar vistas
+          deslumbrantes, e mesas à beira do rio, criando um ambiente perfeito
+          para desfrutar da serenidade das águas.
         </Typography>
       </Box>
 

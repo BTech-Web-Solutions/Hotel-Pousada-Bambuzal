@@ -26,6 +26,8 @@ const index = () => {
             lg: "1rem 5rem",
             xl: "1rem 5rem",
           },
+          width: "70%",
+          margin: "auto",
         }}
       >
         <Typography
@@ -60,21 +62,93 @@ const index = () => {
           ajudá-lo a planejar sua próxima viagem.
         </Typography>
 
-        <LobbyGallery />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <LobbyGallery />
 
-        <EspacoExterno />
+          <div
+            style={{
+              width: "100%",
+              height: "1px",
+              border: "1px solid #a5a5a5",
+              margin: "2rem 0",
+            }}
+          />
 
-        <Suites />
+          <EspacoExterno />
 
-        <Chales />
+          <div
+            style={{
+              width: "100%",
+              height: "1px",
+              border: "1px solid #a5a5a5",
+              margin: "2rem 0",
+            }}
+          />
 
-        <Rio />
+          <Suites />
 
-        <Ofuro />
+          <div
+            style={{
+              width: "100%",
+              height: "1px",
+              border: "1px solid #a5a5a5",
+              margin: "2rem 0",
+            }}
+          />
 
-        <Piscina />
+          <Chales />
 
-        <Restaurante />
+          <div
+            style={{
+              width: "100%",
+              height: "1px",
+              border: "1px solid #a5a5a5",
+              margin: "2rem 0",
+            }}
+          />
+
+          <Rio />
+
+          <div
+            style={{
+              width: "100%",
+              height: "1px",
+              border: "1px solid #a5a5a5",
+              margin: "2rem 0",
+            }}
+          />
+
+          <Ofuro />
+
+          <div
+            style={{
+              width: "100%",
+              height: "1px",
+              border: "1px solid #a5a5a5",
+              margin: "2rem 0",
+            }}
+          />
+
+          <Piscina />
+
+          <div
+            style={{
+              width: "100%",
+              height: "1px",
+              border: "1px solid #a5a5a5",
+              margin: "2rem 0",
+            }}
+          />
+
+          <Restaurante />
+        </Box>
       </Box>
 
       <Footer />

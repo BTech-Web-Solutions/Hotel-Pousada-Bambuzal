@@ -28,7 +28,17 @@ export default function LobbyGallery() {
   return (
     <>
       <Box>
-        <Typography variant="h4">Recepção do Hotel</Typography>
+        <Typography
+          variant="h4"
+          sx={{
+            marginBottom: "2rem",
+            display: "flex",
+            justifyContent: "start",
+            alignItems: "center",
+          }}
+        >
+          Recepção do Hotel
+        </Typography>
 
         <Typography
           variant="p"

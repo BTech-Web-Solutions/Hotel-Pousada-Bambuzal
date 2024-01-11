@@ -33,11 +33,31 @@ export default function Ofuro() {
           sx={{
             marginBottom: "2rem",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "start",
             alignItems: "center",
           }}
         >
           Ofurô
+        </Typography>
+
+        <Typography
+          variant="p"
+          sx={{
+            display: "flex",
+            margin: "1rem 0",
+            fontSize: {
+              xs: "1rem",
+              sm: "1rem",
+              md: "1.2rem",
+              lg: "1.5rem",
+              xl: "1.5rem",
+            },
+          }}
+        >
+          Acreditamos que cada momento de tranquilidade é uma oportunidade para
+          reconectar-se consigo mesmo e com aqueles que amamos. Em nosso ofurô,
+          convidamos vocês a desacelerarem, a apreciarem a serenidade do momento
+          e a mergulharem num estado de completa harmonia com a natureza.
         </Typography>
       </Box>
 

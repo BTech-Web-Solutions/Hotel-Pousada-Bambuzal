@@ -33,11 +33,33 @@ export default function Rio() {
           sx={{
             marginBottom: "2rem",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "start",
             alignItems: "center",
           }}
         >
           Rio
+        </Typography>
+
+        <Typography
+          variant="p"
+          sx={{
+            display: "flex",
+            margin: "1rem 0",
+            fontSize: {
+              xs: "1rem",
+              sm: "1rem",
+              md: "1.2rem",
+              lg: "1.5rem",
+              xl: "1.5rem",
+            },
+          }}
+        >
+          Não há nada como desfrutar de um refúgio tranquilo, onde se pode
+          relaxar ao som suave da natureza, mergulhando nas águas claras do Rio
+          Sana. A serenidade das margens, o murmúrio reconfortante da correnteza
+          e as paisagens deslumbrantes oferecem uma experiência revitalizante,
+          proporcionando momentos de paz e renovando o espírito em meio à beleza
+          natural.
         </Typography>
       </Box>
 

@@ -32,7 +32,7 @@ export default function Chales() {
           sx={{
             marginBottom: "2rem",
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "start",
             alignItems: "center",
           }}
           variant="h4"
