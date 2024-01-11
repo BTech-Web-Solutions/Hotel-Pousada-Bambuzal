@@ -5,6 +5,8 @@ import moment from "moment";
 import checkTokenBefore from "../../../checkTokenBefore";
 import AddImagesInput from "./AddImagesInput";
 import Image from "next/image";
+import { Upload } from "@mui/icons-material";
+import UploadImagesBtn from "./UploadImagesBtn";
 
 const apiKey = process.env.NEXT_PUBLIC_API_AUTH_KEY;
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
@@ -50,7 +52,6 @@ const EditEventModal = ({
           ? "Evento atualizado com sucesso!"
           : "Erro ao atualizar evento!"
       );
-      setEditEvent(false);
     } catch (error) {}
   };
 
@@ -62,6 +63,7 @@ const EditEventModal = ({
       if (isTokenValid) {
         // Se o token for válido, continue com a lógica de salvamento
         await handlePreEdit();
+        setEditEvent(false);
       } else {
         // Se o token não for válido, exiba uma mensagem ao usuário
         alert("Você não tem permissão para editar eventos!");
@@ -81,46 +83,39 @@ const EditEventModal = ({
       const formData = new FormData();
       formData.append("eventId", selectedEvent.id);
 
-      const totalFiles = files.length;
-      let uploadedFiles = 0;
+      for (let index = 0; index < files.length; index++) {
+        formData.set("image", files[index]);
 
-      const uploadNextImage = async (index) => {
-        if (index < totalFiles) {
-          formData.set("image", files[index]);
+        try {
+          const result = await fetch(`${apiURL}/images/create`, {
+            method: "POST",
+            headers: {
+              Authorization: apiKey,
+            },
+            body: formData,
+          });
 
-          try {
-            const result = await fetch(`${apiURL}/images/create`, {
-              method: "POST",
-              headers: {
-                Authorization: apiKey,
-              },
-              body: formData,
-            });
-
-            if (!result.ok) {
-              const data = await result.json();
-              console.error(`Failed to upload image ${index + 1}:`, data.error);
-            }
-
-            uploadedFiles += 1;
-
-            // Calculate and set the upload percentage
-            const uploadPercentage = (uploadedFiles / totalFiles) * 100;
-            setUploadQueue(uploadPercentage);
-
-            // Upload the next image in the queue
-            uploadNextImage(index + 1);
-          } catch (error) {
-            console.error(
-              `Unexpected error during image upload ${index + 1}:`,
-              error
-            );
+          if (!result.ok) {
+            const data = await result.json();
+            console.error(`Failed to upload image ${index + 1}:`, data.error);
           }
-        }
-      };
 
-      // Start the upload queue with the first image
-      uploadNextImage(0);
+          // Calculate and set the upload percentage
+          const uploadPercentage = ((index + 1) / files.length) * 100;
+          setUploadQueue(uploadPercentage);
+        } catch (error) {
+          console.error(
+            `Unexpected error during image upload ${index + 1}:`,
+            error
+          );
+        }
+      }
+
+      // All images are uploaded, now you can fetch the updated images
+      fetchImages();
+
+      // Reset the upload percentage
+      setUploadQueue(0);
     } catch (error) {
       console.error("Unexpected error during image upload:", error);
     }
@@ -368,7 +363,25 @@ const EditEventModal = ({
         >
           Clique na imagem para deletar.
         </p>
-        <AddImagesInput onChange={handleFileChange} eventId={eventId} />
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+        >
+          <AddImagesInput onChange={handleFileChange} eventId={eventId} />
+          <UploadImagesBtn
+            onClick={async () => {
+              if (files.length > 0) {
+                await uploadImages();
+                alert("Imagens salvas com sucesso!");
+              }
+              fetchImages();
+            }}
+          />
+        </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -411,9 +424,6 @@ const EditEventModal = ({
             onClick={(e) => {
               e.preventDefault();
               handleSave();
-              if (files.length > 0) {
-                uploadImages();
-              }
             }}
           >
             SALVAR
