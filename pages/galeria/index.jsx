@@ -4,9 +4,7 @@ import React from "react";
 import Navbar from "../../src/components/Navbar";
 import LobbyGallery from "../../src/components/galeria/LobbyGallery";
 import Suites from "../../src/components/galeria/Suites";
-import ChalesDuplos from "../../src/components/galeria/ChalesDuplos";
-import ChalesTriplos from "../../src/components/galeria/ChalesTriplos";
-import ChalesFamilia from "../../src/components/galeria/ChalesFamilia";
+import Chales from "../../src/components/galeria/Chales";
 import Piscina from "../../src/components/galeria/Piscina";
 import Ofuro from "../../src/components/galeria/Ofuro";
 import Restaurante from "../../src/components/galeria/Restaurante";
@@ -64,11 +62,7 @@ const index = () => {
 
         <Suites />
 
-        <ChalesDuplos />
-
-        <ChalesTriplos />
-
-        <ChalesFamilia />
+        <Chales />
 
         <Ofuro />
 

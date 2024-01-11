@@ -39,6 +39,28 @@ export default function Suites() {
         >
           Suítes
         </Typography>
+
+        <Typography
+          variant="p"
+          sx={{
+            display: "flex",
+            margin: "1rem 0",
+            fontSize: {
+              xs: "1rem",
+              sm: "1rem",
+              md: "1.2rem",
+              lg: "1.5rem",
+              xl: "1.5rem",
+            },
+          }}
+        >
+          Desfrute de uma vista encantadora e relaxante do Rio Sana diretamente
+          das nossas suítes. Oferecendo um cenário natural deslumbrante, nossas
+          acomodações proporcionam uma conexão íntima com a natureza. Delicie-se
+          com momentos de tranquilidade enquanto aprecia essa paisagem
+          cativante, proporcionando uma estadia verdadeiramente relaxante e
+          memorável.
+        </Typography>
       </Box>
 
       <ImageList

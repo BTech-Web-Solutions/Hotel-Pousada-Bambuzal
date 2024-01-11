@@ -14,7 +14,7 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-export default function ChalesDuplos() {
+export default function Chales() {
   const [selectedImage, setSelectedImage] = React.useState(null);
 
   const handleImageClick = (image) => {
@@ -37,12 +37,40 @@ export default function ChalesDuplos() {
           }}
           variant="h4"
         >
-          Chales Duplos
+          Chalés
+        </Typography>
+
+        <Typography
+          variant="p"
+          sx={{
+            display: "flex",
+            margin: "1rem 0",
+            fontSize: {
+              xs: "1rem",
+              sm: "1rem",
+              md: "1.2rem",
+              lg: "1.5rem",
+              xl: "1.5rem",
+            },
+          }}
+        >
+          Os chalés da Pousada Bambuzal são verdadeiros refúgios encantadores.
+          Com uma atmosfera que mescla rusticidade e conforto, cada chalé
+          oferece uma estadia acolhedora em meio à natureza exuberante.
+          Completos e bem equipados, esses chalés proporcionam um ambiente
+          relaxante, muitos deles com varandas privativas que presenteiam os
+          hóspedes com vistas deslumbrantes do entorno verdejante. Seja para
+          descansar ou apreciar a serenidade, os chalés da Pousada Bambuzal são
+          o lugar ideal para uma estadia tranquila e memorável.
         </Typography>
       </Box>
 
       <ImageList
-        sx={{ width: "80%", height: 500, margin: "0 auto" }}
+        sx={{
+          width: "80%",
+          height: 500,
+          margin: "0 auto",
+        }}
         variant="quilted"
         cols={4}
         rowHeight={121}
@@ -129,5 +157,92 @@ const itemData = [
     title: "Chale Duplo 6",
     rows: 2,
     cols: 2,
+  },
+  {
+    img: new URL("/src/images/ChaleTriplo/1.jpg", import.meta.url),
+    title: "Chale Triplo",
+  },
+  {
+    img: new URL("/src/images/ChaleTriplo/chale_triplo.jpg", import.meta.url),
+    title: "Chale Triplo 1",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: new URL("/src/images/ChaleTriplo/chale_triplo_2.jpg", import.meta.url),
+    title: "Chale Triplo 2",
+  },
+  {
+    img: new URL("/src/images/ChaleTriplo/chale_triplo_3.jpg", import.meta.url),
+    title: "Chale Triplo 3",
+    cols: 2,
+  },
+  {
+    img: new URL("/src/images/ChaleTriplo/chale_triplo_4.jpg", import.meta.url),
+    title: "Chale Triplo 4",
+    cols: 2,
+  },
+  {
+    img: new URL("/src/images/ChaleTriplo/chale_triplo_5.jpg", import.meta.url),
+    title: "Chale Triplo 5",
+    author: "@arwinneil",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: new URL("/src/images/ChaleFamilia/1.jpg", import.meta.url),
+    title: "Chale Familia",
+  },
+  {
+    img: new URL("/src/images/ChaleFamilia/chale_familia.jpg", import.meta.url),
+    title: "Chale Familia 1",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_2.jpg",
+      import.meta.url
+    ),
+    title: "Chale Familia 2",
+  },
+  {
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_3.jpg",
+      import.meta.url
+    ),
+    title: "Chale Familia 3",
+    cols: 2,
+  },
+  {
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_4.jpg",
+      import.meta.url
+    ),
+    title: "Chale Familia 4",
+    cols: 2,
+  },
+  {
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_5.jpg",
+      import.meta.url
+    ),
+    title: "Chale Familia 5",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_6.jpg",
+      import.meta.url
+    ),
+    title: "Chale Familia 6",
+  },
+  {
+    img: new URL(
+      "/src/images/ChaleFamilia/chale_familia_7.jpg",
+      import.meta.url
+    ),
+    title: "Chale Familia 7",
   },
 ];

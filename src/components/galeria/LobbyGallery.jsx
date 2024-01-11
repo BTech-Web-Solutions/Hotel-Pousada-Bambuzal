@@ -28,7 +28,7 @@ export default function LobbyGallery() {
   return (
     <>
       <Box>
-        <Typography variant="h4">Lobby do Hotel</Typography>
+        <Typography variant="h4">Recepção do Hotel</Typography>
 
         <Typography
           variant="p"
@@ -44,10 +44,13 @@ export default function LobbyGallery() {
             },
           }}
         >
-          Este é o nosso lobby, onde você será recebido por nossa equipe
-          simpática e prestativa assim que chegar. Aqui, você pode relaxar em
-          confortáveis poltronas, ou tomar um café enquanto espera pelo seu
-          check-in.
+          Seja bem-vindo ao nosso Hotel! Ao chegar, você será direcionado à
+          nossa recepção, que funciona diariamente das 7h às 22h. Nossa equipe
+          estará pronta para recebê-lo calorosamente e auxiliá-lo durante toda a
+          sua estadia. Estamos totalmente preparados para fornecer informações
+          detalhadas sobre as nossas instalações, oferecer orientações úteis e
+          compartilhar dicas preciosas sobre as maravilhas da região de Sana que
+          você não pode perder.
         </Typography>
       </Box>
 

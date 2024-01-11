@@ -173,11 +173,11 @@ const EditEventModal = ({
           },
 
           height: {
-            xs: "90%",
-            sm: "80%",
+            xs: "92%",
+            sm: "82%",
             md: "100%",
-            lg: "90%",
-            xl: "80%",
+            lg: "92%",
+            xl: "82%",
           },
 
           border: "2px solid #eb5310",
