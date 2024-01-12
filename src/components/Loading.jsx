@@ -42,7 +42,7 @@ const CircularProgress = ({ position, w, left }) => (
   >
     <Circle />
 
-    <Image src={logob} alt="Logo" width={100} height={100} />
+    <Image src={logob} alt="Logo" width={100} height={100} priority={true} />
   </div>
 );
 
