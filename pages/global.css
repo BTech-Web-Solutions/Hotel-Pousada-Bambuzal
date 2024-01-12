@@ -342,16 +342,16 @@ body {
   display: none;
 }
 
-.mui-style-lj8271-MuiImageList-root {
+.MuiImageList-root {
   overflow-y: scroll;
 }
 
-.mui-style-lj8271-MuiImageList-root::-webkit-scrollbar {
+.MuiImageList-root::-webkit-scrollbar {
   width: 8px;
   border-radius: 999px;
 }
 
-.mui-style-lj8271-MuiImageList-root::-webkit-scrollbar-thumb {
+.MuiImageList-root::-webkit-scrollbar-thumb {
   background: #eb5310;
   border-radius: 999px;
 }
