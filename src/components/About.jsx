@@ -210,10 +210,6 @@ export default function About() {
             >
               Perfeito para quem busca tranquilidade e contato com a natureza.
             </Typography>
-
-            <Box>
-              <TheButton title="Saiba Mais" />
-            </Box>
           </Box>
         </Grid>
       </Grid>
