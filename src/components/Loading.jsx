@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
-import logob from "../images/logoB.png";
+import logob from "../images/logoB_11zon.png";
 
 const rotate = keyframes`
   from {
