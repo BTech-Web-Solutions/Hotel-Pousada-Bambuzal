@@ -310,6 +310,7 @@ export default function Index() {
                           xl: "1.5rem",
                         },
                         overflowWrap: "break-word",
+                        whiteSpace: "pre-line",
                       }}
                     >
                       As{" "}
@@ -466,6 +467,7 @@ export default function Index() {
                           xl: "1.5rem",
                         },
                         overflowWrap: "break-word",
+                        whiteSpace: "pre-line",
                       }}
                     >
                       Do dia {event.firstDate.split("-").reverse().join("/")}{" "}

@@ -29,7 +29,7 @@ const AddEventModal = ({ setAddEvent }) => {
           title: title,
           date: moment(date, "YYYY-MM-DD").format("YYYY-MM-DD"),
           time: moment(time, "HH:mm").format("HH:mm"),
-          description: description,
+          description: description.replace(/\n/g, "\\n"),
         }),
       });
       const data = await result.json();
