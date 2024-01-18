@@ -33,7 +33,13 @@ const ContactCard = ({ src, alt, title, p }) => {
       }}
     >
       <Image style={{ height: "50px", width: "50px" }} src={src} alt={alt} />
-      <Typography sx={{ margin: "0.5rem", textAlign: "center" }} variant="h5">
+      <Typography
+        sx={{
+          margin: "0.5rem",
+          textAlign: "center",
+        }}
+        variant="h5"
+      >
         {title}
       </Typography>
 
@@ -47,6 +53,8 @@ const ContactCard = ({ src, alt, title, p }) => {
             lg: "1rem",
             xl: "1rem",
           },
+          width: "100%",
+          wordWrap: "break-word",
         }}
         variant="p"
       >

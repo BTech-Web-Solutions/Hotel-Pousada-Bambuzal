@@ -32,7 +32,7 @@ const index = () => {
             xl: "row",
           },
           alignItems: "center",
-          position: "relative",
+          justifyContent: "center",
           padding: "3rem 0",
         }}
       >
@@ -44,14 +44,6 @@ const index = () => {
           lg={6}
           xl={5}
           sx={{
-            position: {
-              xs: "relative",
-              sm: "relative",
-              md: "relative",
-              lg: "absolute",
-              xl: "absolute",
-            },
-            zIndex: "1",
             marginLeft: {
               xs: "0",
               sm: "0",
@@ -189,106 +181,6 @@ const index = () => {
                 />
               </Grid>
             </Grid>
-          </Box>
-        </Grid>
-
-        <Grid
-          item
-          sx={{
-            marginRight: {
-              xs: "0",
-              sm: "0",
-              md: "0",
-              lg: "5%",
-              xl: "10%",
-            },
-            width: {
-              xs: "90%",
-              sm: "75%",
-              md: "80%",
-              lg: "100%",
-              xl: "100%",
-            },
-          }}
-        >
-          <Box
-            sx={{
-              // bgcolor: "red",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: {
-                xs: "center",
-                sm: "center",
-                md: "flex-end",
-                lg: "flex-end",
-                xl: "flex-end",
-              },
-              justifyContent: "center",
-            }}
-          >
-            <Box
-              sx={{
-                border: "3px solid #000",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "",
-                justifyContent: "space-evenly",
-                bgcolor: "#181818",
-
-                color: "#fff",
-                padding: {
-                  xs: "8rem 3rem",
-                  sm: "8rem 5rem",
-                  md: "8rem",
-                  lg: "8rem",
-                  xl: "8rem",
-                },
-                width: {
-                  xs: "100%",
-                  sm: "100%",
-                  md: "100%",
-                  lg: "56%",
-                  xl: "50%",
-                },
-              }}
-            >
-              <Typography
-                variant="h3"
-                sx={{
-                  marginBottom: "2rem",
-                  marginTop: "-5rem",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  fontSize: {
-                    xs: "1.8rem",
-                    sm: "2.5rem",
-                    md: "2.5rem",
-                    lg: "2.9rem",
-                    xl: "2.5rem",
-                  },
-                }}
-              >
-                Entre em contato conosco
-              </Typography>
-
-              <ContactInput id="nome" label="Nome" variant="outlined" />
-
-              <ContactInput id="email" label="Email" variant="outlined" />
-
-              <ContactInput id="telefone" label="Telefone" variant="outlined" />
-
-              <ContactInput
-                id="mensagem"
-                label="Mensagem"
-                variant="outlined"
-                rows={6}
-              />
-
-              <TheButton title="Enviar" />
-            </Box>
           </Box>
         </Grid>
       </Grid>
